@@ -1,0 +1,58 @@
+# Configurare Netlify — site static, fără build
+# Documentație: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  publish = "."
+  command = ""
+
+# ---------------------------------------------------------------------------
+# Antete de securitate, aplicate la tot site-ul
+# ---------------------------------------------------------------------------
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+# ---------------------------------------------------------------------------
+# HTML: nu se ține în cache, ca modificările să apară imediat
+# ---------------------------------------------------------------------------
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ---------------------------------------------------------------------------
+# Media: cache lung, fișierele astea nu se schimbă des
+# ---------------------------------------------------------------------------
+[[headers]]
+  for = "/*.mp4"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+# ---------------------------------------------------------------------------
+# Adrese fără .html funcționează și ele
+# /politica-cookies  ->  /politica-cookies.html
+# ---------------------------------------------------------------------------
+[build.processing]
+  skip_processing = false
+
+[build.processing.html]
+  pretty_urls = true
