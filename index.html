@@ -563,7 +563,9 @@
 
 <!-- Hero -->
 <div class="hero">
-  <video class="hero-vid" autoplay muted loop playsinline preload="none" data-src="hero.mp4"></video>
+  <video class="hero-vid" autoplay muted loop playsinline preload="auto">
+    <source src="hero.mp4" type="video/mp4" media="(min-width: 641px)">
+  </video>
   <div class="container">
     <span class="pre">Recrutare de personal pentru Germania</span>
     <h1>Noi te ducem la muncă în <span>Germania</span> — serios, legal, direct.</h1>
@@ -1456,33 +1458,5 @@ function ckSet(v){try{localStorage.setItem("skp_cookie_consent",v?"all":"necessa
 (function(){var c=null;try{c=localStorage.getItem("skp_cookie_consent");}catch(e){}if(!c){setTimeout(function(){var b=document.getElementById("ck-bar");if(b)b.classList.add("show");},900);}})();
 </script>
 
-<script>
-/* Hero video: se descarca doar pe desktop si doar dupa ce pagina s-a incarcat.
-   Pe telefon nu se cere niciun byte din cei 4,5 MB. */
-(function(){
-  var v = document.querySelector('.hero-vid');
-  if(!v || !v.dataset.src) return;
-  var esteMobil = window.matchMedia('(max-width: 640px)').matches;
-  var dateReduse = window.matchMedia('(prefers-reduced-data: reduce)').matches;
-  if(esteMobil || dateReduse) return;          // nu incarcam nimic
-  function porneste(){
-    // Inlocuim elementul cu unul nou, care are src de la bun inceput.
-    // Un <video> caruia ii pui src dupa creare nu mai porneste singur,
-    // oricat de mult il rogi cu play(). Unul nou porneste.
-    var n = document.createElement('video');
-    n.className = v.className;
-    n.muted = true; n.defaultMuted = true;
-    n.autoplay = true; n.loop = true; n.playsInline = true;
-    n.setAttribute('muted',''); n.setAttribute('playsinline','');
-    n.setAttribute('preload','auto');
-    n.src = v.dataset.src;
-    v.replaceWith(n);
-    var p = n.play();
-    if(p && p.catch) p.catch(function(){});   // daca browserul refuza, ramane poza de fundal
-  }
-  if(document.readyState === 'complete') porneste();
-  else window.addEventListener('load', porneste, {once:true});
-})();
-</script>
 </body>
 </html>
