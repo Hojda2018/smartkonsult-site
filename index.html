@@ -1466,9 +1466,14 @@ function ckSet(v){try{localStorage.setItem("skp_cookie_consent",v?"all":"necessa
   var dateReduse = window.matchMedia('(prefers-reduced-data: reduce)').matches;
   if(esteMobil || dateReduse) return;          // nu incarcam nimic
   function porneste(){
+    // atributul autoplay nu se mai declanseaza cand punem src din JS,
+    // deci pornim explicit, dar abia dupa ce video-ul chiar are date
+    v.addEventListener('canplay', function(){
+      var p = v.play();
+      if(p && p.catch) p.catch(function(){});  // daca browserul refuza, ramane poza de fundal
+    }, {once:true});
     v.src = v.dataset.src;
-    var p = v.play();
-    if(p && p.catch) p.catch(function(){});    // daca browserul refuza autoplay, ramane poza
+    v.load();
   }
   if(document.readyState === 'complete') porneste();
   else window.addEventListener('load', porneste, {once:true});
