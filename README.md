@@ -16,6 +16,15 @@ Un singur fișier HTML, fără framework, fără build. Se publică singur pe Ne
 | `robots.txt`, `sitemap.xml` | Pentru Google |
 | `netlify.toml` | Setări de publicare: cache și securitate. Nu-l modifica dacă nu știi ce faci |
 
+## Unde e publicat
+
+| | |
+|---|---|
+| Adresă Netlify | <https://smartkonsultplus.netlify.app> |
+| Panou Netlify | <https://app.netlify.com/projects/smartkonsultplus> |
+| Repo | <https://github.com/Hojda2018/smartkonsult-site> |
+| Publicare automată | **activă** — orice push pe `main` se publică singur |
+
 ## Cum modifici site-ul
 
 **Varianta simplă, direct din browser, fără programe instalate:**
@@ -26,7 +35,7 @@ Un singur fișier HTML, fără framework, fără build. Se publică singur pe Ne
 4. Faci modificarea
 5. Jos, scrii pe scurt ce ai schimbat și apeși **Commit changes**
 
-Gata. Netlify publică singur în aproximativ 30 de secunde.
+Gata. Netlify publică singur în aproximativ 30 de secunde. Verificat: un push ajunge live fără să atingi nimic.
 
 **Varianta de pe calculator:**
 
