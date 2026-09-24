@@ -5,5 +5,3 @@ Allow: /wp-admin/admin-ajax.php
 Disallow: /multumim.html
 
 Sitemap: https://smartkonsultplus.ro/sitemap.xml
-
-# Publicare automata din GitHub activata pe 24.09.2026.
