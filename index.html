@@ -557,7 +557,12 @@
 }
 
 /* ===== Harta: din toata Romania, in toata Germania ===== */
-.skp-map{background:linear-gradient(160deg,#0f2a4a,#16375e);border-radius:16px;padding:26px 20px 20px;color:#fff;box-shadow:0 4px 24px rgba(15,42,74,.18);max-width:980px;margin:0 auto}
+.skp-map{position:relative;overflow:hidden;background:linear-gradient(160deg,#0f2a4a,#16375e);border-radius:16px;padding:26px 20px 20px;color:#fff;box-shadow:0 4px 24px rgba(15,42,74,.18);max-width:980px;margin:0 auto}
+/* fundal: aceeasi poza ca in hero, deci din cache, fara octeti in plus */
+.skp-map::before{content:"";position:absolute;inset:0;z-index:0;background:url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1600&q=70') center/cover;opacity:.13;filter:blur(2px) saturate(.55);pointer-events:none}
+.skp-map::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(160deg,rgba(15,42,74,.55),rgba(22,55,94,.7));pointer-events:none}
+.skp-map > *{position:relative;z-index:1}
+@media (max-width:640px){.skp-map::before{background-image:url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=900&q=60')}}
 .skp-map h3{font-size:22px;font-weight:800;margin:0 0 6px;color:#fff}
 .skp-map .m-sub{font-size:14px;color:#a8c0dc;margin:0 0 18px;max-width:620px}
 .skp-map svg{width:100%;height:auto;display:block;overflow:visible}
