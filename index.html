@@ -834,7 +834,9 @@
         <div class="row"><div class="ico">💬</div><div><b>WhatsApp</b><a href="https://wa.me/40774772117">Scrie-ne acum — răspundem rapid</a></div></div>
         <div class="row" style="border:none"><div class="ico">📍</div><div><b>Sediu</b><span>Cluj-Napoca, România</span></div></div>
       </div>
-      <form id="form-contact" onsubmit="return false">
+      <form id="form-contact" name="contact" method="POST" data-netlify="true" netlify-honeypot="prenume-mijlociu" onsubmit="return false">
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none"><label>Nu completa: <input name="prenume-mijlociu"></label></p>
         <input type="hidden" name="Anunț" value="Formular general — site SmartKonsult Plus">
         <div class="form-grid">
           <div class="field"><label>Nume complet *</label><input type="text" name="Nume" placeholder="Ex: Ion Popescu" required></div>
@@ -870,13 +872,10 @@
       <h2>Aplică cu CV-ul tău</h2>
       <p class="lead">Atașează CV-ul și îl primim direct pe e-mail. Te contactăm în maximum 24 de ore, în limba română.</p>
     </div>
-    <form class="cv-card" action="https://formsubmit.co/job@smartkonsultplus.ro" method="POST" enctype="multipart/form-data">
-      <input type="hidden" name="_subject" value="CV nou de pe smartkonsultplus.ro">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://smartkonsultplus.ro/multumim.html">
-      <input type="text" name="_honey" style="display:none">
-      <div class="cv-grid">
+    <form class="cv-card" name="cv" method="POST" action="/multumim.html" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="prenume-mijlociu">
+      <input type="hidden" name="form-name" value="cv">
+      <p style="display:none"><label>Nu completa: <input name="prenume-mijlociu"></label></p>
+                                    <div class="cv-grid">
         <div class="field"><label>Nume și prenume *</label><input type="text" name="Nume" placeholder="Ex: Ion Popescu" required></div>
         <div class="field"><label>Telefon (WhatsApp) *</label><input type="tel" name="Telefon" placeholder="Ex: 07xx xxx xxx" required></div>
         <div class="field"><label>E-mail *</label><input type="email" name="Email" placeholder="exemplu@email.com" required></div>
@@ -951,8 +950,23 @@ function sendWA(formId, phone){
   var f = document.getElementById(formId);
   if(!f.reportValidity()) return;
   var d = new FormData(f);
+
+  // Salvam cererea in Netlify Forms INAINTE de WhatsApp.
+  // Daca omul nu are WhatsApp, inchide fereastra sau se razgandeste,
+  // datele lui tot ajung la noi. Inainte se pierdeau complet.
+  try{
+    fetch('/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: new URLSearchParams(d).toString()
+    }).catch(function(){});
+  }catch(e){}
+
   var lines = ['🆕 CERERE NOUĂ – SmartKonsult Plus', '━━━━━━━━━━━━━━'];
-  d.forEach(function(v,k){ if(v) lines.push('▪️ ' + k + ': ' + v); });
+  d.forEach(function(v,k){
+    if(k === 'form-name' || k === 'prenume-mijlociu') return;  // campuri tehnice
+    if(v) lines.push('▪️ ' + k + ': ' + v);
+  });
   lines.push('━━━━━━━━━━━━━━');
   lines.push('📅 ' + new Date().toLocaleString('ro-RO'));
   window.open('https://wa.me/' + phone + '?text=' + encodeURIComponent(lines.join('\n')), '_blank');
