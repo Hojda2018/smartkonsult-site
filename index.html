@@ -562,10 +562,10 @@
 .skp-map .m-sub{font-size:14px;color:#a8c0dc;margin:0 0 18px;max-width:620px}
 .skp-map svg{width:100%;height:auto;display:block;overflow:visible}
 .map-zone{fill:rgba(255,255,255,.05);stroke:rgba(255,255,255,.14);stroke-width:1}
-.map-zlab{fill:#7e97b4;font-size:10px;font-weight:800;letter-spacing:1.3px}
+.map-zlab{fill:#7e97b4;font-size:13px;font-weight:800;letter-spacing:1.4px}
 
 /* rutele */
-.ruta{fill:none;stroke:#f59e0b;stroke-width:1.6;stroke-linecap:round;opacity:.55;
+.ruta{fill:none;stroke:#f59e0b;stroke-width:2;stroke-linecap:round;opacity:.55;
   stroke-dasharray:var(--len,700);stroke-dashoffset:var(--len,700)}
 .skp-map.go .ruta{animation:rutaDraw 1.5s cubic-bezier(.4,0,.2,1) forwards}
 @keyframes rutaDraw{to{stroke-dashoffset:0}}
@@ -573,20 +573,19 @@
 /* orase Romania */
 .ro-c{opacity:0}
 .ro-c circle{fill:#60a5fa}
-.ro-c text{fill:#dbe8f7;font-size:9.5px;font-weight:700;text-anchor:middle}
+.ro-c text{fill:#dbe8f7;font-size:14px;font-weight:700;text-anchor:middle}
 .skp-map.go .ro-c{animation:cityPop .45s cubic-bezier(.34,1.56,.64,1) forwards}
 
 /* orase Germania, acoperire */
 .de-c{opacity:0}
-.de-c circle{fill:rgba(255,255,255,.4)}
-.de-c text{fill:#8fa8c4;font-size:8.5px;font-weight:600;text-anchor:middle}
+.de-c{fill:rgba(255,255,255,.42)}
 .skp-map.go .de-c{animation:cityFade .6s ease forwards;animation-delay:1.4s}
 
 /* parteneri directi */
 .de-a{opacity:0}
 .de-a circle{fill:#f59e0b}
-.de-a text{fill:#fff;font-size:11px;font-weight:800}
-.de-a text.rol{fill:#a8c0dc;font-size:8.5px;font-weight:600}
+.de-a text{fill:#fff;font-size:15px;font-weight:800}
+.de-a text.rol{fill:#a8c0dc;font-size:11px;font-weight:600}
 .skp-map.go .de-a{animation:cityPop .5s cubic-bezier(.34,1.56,.64,1) forwards}
 
 @keyframes cityPop{from{opacity:0;transform:translateY(6px) scale(.6)}to{opacity:1;transform:none}}
@@ -601,10 +600,10 @@
 @media (max-width:640px){
   .skp-map{padding:20px 14px 16px}
   .skp-map h3{font-size:18px}
-  .de-c text{display:none}          /* etichetele mici nu incap pe telefon */
-  .ro-c text{font-size:12px}
-  .de-a text{font-size:13px}
-  .de-a text.rol{font-size:10px}
+  .ro-c text{font-size:19px}
+  .de-a text{font-size:20px}
+  .de-a text.rol{font-size:15px}
+  .map-zlab{font-size:17px}
 }
 /* ===== Pasii fixati pe ecran, doar pe desktop ===== */
 .steps-rail{display:none}
@@ -920,15 +919,15 @@
       <h3>Din toată România, în toată Germania</h3>
       <p class="m-sub">Recrutăm din orice județ. Plasăm în toată Germania, iar în locurile marcate lucrăm prin parteneri direcți.</p>
 
-      <svg viewBox="0 0 880 260" role="img" aria-label="Schemă: recrutăm din orașele mari ale României și plasăm în Germania, cu parteneri în Papenburg, Stadtallendorf, Fulda, Nürnberg și Echternach in Luxemburg">
-        <rect class="map-zone" x="80" y="40" width="250" height="200" rx="16"/>
-        <text class="map-zlab" x="94" y="62">GERMANIA · LUXEMBURG</text>
-        <rect class="map-zone" x="580" y="70" width="250" height="160" rx="16"/>
-        <text class="map-zlab" x="594" y="92">ROMÂNIA</text>
-        <path class="ruta" style="animation-delay:0.90s" d="M700,150 C560,120 430,120 240,130"/><path class="ruta" style="animation-delay:1.02s" d="M700,160 C560,150 430,150 220,165"/><path class="ruta" style="animation-delay:1.14s" d="M700,170 C560,185 430,190 236,192"/><path class="ruta" style="animation-delay:1.26s" d="M700,155 C560,110 420,90 168,72"/><path class="ruta" style="animation-delay:1.38s" d="M700,165 C560,175 420,185 112,178"/>
-        <g class="de-c"><circle cx="196" cy="74" r="3.2"/><text x="196" y="67">Hamburg</text></g><g class="de-c"><circle cx="176" cy="92" r="3.2"/><text x="176" y="85">Bremen</text></g><g class="de-c"><circle cx="286" cy="90" r="3.2"/><text x="286" y="83">Berlin</text></g><g class="de-c"><circle cx="206" cy="112" r="3.2"/><text x="206" y="105">Hannover</text></g><g class="de-c"><circle cx="270" cy="126" r="3.2"/><text x="270" y="119">Leipzig</text></g><g class="de-c"><circle cx="152" cy="130" r="3.2"/><text x="152" y="123">Dortmund</text></g><g class="de-c"><circle cx="132" cy="142" r="3.2"/><text x="132" y="135">Düsseldorf</text></g><g class="de-c"><circle cx="140" cy="152" r="3.2"/><text x="140" y="145">Köln</text></g><g class="de-c"><circle cx="176" cy="172" r="3.2"/><text x="176" y="165">Frankfurt</text></g><g class="de-c"><circle cx="190" cy="206" r="3.2"/><text x="190" y="199">Stuttgart</text></g><g class="de-c"><circle cx="250" cy="216" r="3.2"/><text x="250" y="209">München</text></g>
-        <g class="de-a" style="animation-delay:1.50s"><circle cx="164" cy="70" r="6"/><text x="175" y="71">Papenburg</text><text class="rol" x="175" y="82">construcții navale</text></g><g class="de-a" style="animation-delay:1.63s"><circle cx="198" cy="146" r="6"/><text x="209" y="147">Stadtallendorf</text><text class="rol" x="209" y="158">Chronos</text></g><g class="de-a" style="animation-delay:1.76s"><circle cx="214" cy="162" r="6"/><text x="225" y="163">Fulda</text><text class="rol" x="225" y="174">logistică</text></g><g class="de-a" style="animation-delay:1.89s"><circle cx="232" cy="192" r="6"/><text x="243" y="193">Nürnberg</text><text class="rol" x="243" y="204">AlphaConsult · MBS</text></g><g class="de-a" style="animation-delay:2.02s"><circle cx="108" cy="178" r="6"/><text x="119" y="179">Echternach</text><text class="rol" x="119" y="190">Luxemburg</text></g>
-        <g class="ro-c" style="animation-delay:0.15s"><circle cx="612" cy="116" r="4"/><text x="612" y="108">Oradea</text></g><g class="ro-c" style="animation-delay:0.22s"><circle cx="626" cy="96" r="4"/><text x="626" y="88">Satu Mare</text></g><g class="ro-c" style="animation-delay:0.29s"><circle cx="668" cy="124" r="4"/><text x="668" y="116">Cluj-Napoca</text></g><g class="ro-c" style="animation-delay:0.36s"><circle cx="620" cy="168" r="4"/><text x="620" y="160">Timișoara</text></g><g class="ro-c" style="animation-delay:0.43s"><circle cx="614" cy="146" r="4"/><text x="614" y="138">Arad</text></g><g class="ro-c" style="animation-delay:0.50s"><circle cx="676" cy="166" r="4"/><text x="676" y="158">Sibiu</text></g><g class="ro-c" style="animation-delay:0.57s"><circle cx="712" cy="170" r="4"/><text x="712" y="162">Brașov</text></g><g class="ro-c" style="animation-delay:0.64s"><circle cx="700" cy="136" r="4"/><text x="700" y="128">Târgu Mureș</text></g><g class="ro-c" style="animation-delay:0.71s"><circle cx="744" cy="138" r="4"/><text x="744" y="130">Bacău</text></g><g class="ro-c" style="animation-delay:0.78s"><circle cx="764" cy="112" r="4"/><text x="764" y="104">Iași</text></g><g class="ro-c" style="animation-delay:0.85s"><circle cx="736" cy="96" r="4"/><text x="736" y="88">Suceava</text></g><g class="ro-c" style="animation-delay:0.92s"><circle cx="772" cy="168" r="4"/><text x="772" y="160">Galați</text></g><g class="ro-c" style="animation-delay:0.99s"><circle cx="800" cy="196" r="4"/><text x="800" y="188">Constanța</text></g><g class="ro-c" style="animation-delay:1.06s"><circle cx="736" cy="200" r="4"/><text x="736" y="192">București</text></g><g class="ro-c" style="animation-delay:1.13s"><circle cx="668" cy="200" r="4"/><text x="668" y="192">Craiova</text></g><g class="ro-c" style="animation-delay:1.20s"><circle cx="700" cy="188" r="4"/><text x="700" y="180">Pitești</text></g>
+      <svg viewBox="0 0 1200 420" role="img" aria-label="Schemă: recrutăm din orașele mari ale României și plasăm în Germania, cu parteneri în Papenburg, Stadtallendorf, Fulda, Nürnberg și Echternach în Luxemburg">
+        <rect class="map-zone" x="90" y="70" width="380" height="320" rx="20"/>
+        <text class="map-zlab" x="108" y="98">GERMANIA · LUXEMBURG</text>
+        <rect class="map-zone" x="840" y="110" width="320" height="250" rx="20"/>
+        <text class="map-zlab" x="858" y="138">ROMÂNIA</text>
+        <path class="ruta" style="animation-delay:0.90s" d="M900,230 C700,190 520,150 210,110"/><path class="ruta" style="animation-delay:1.03s" d="M900,240 C700,225 520,235 262,246"/><path class="ruta" style="animation-delay:1.16s" d="M900,250 C700,250 520,268 290,274"/><path class="ruta" style="animation-delay:1.29s" d="M900,260 C700,280 520,306 314,320"/><path class="ruta" style="animation-delay:1.42s" d="M900,268 C700,300 460,318 128,302"/>
+        <circle class="de-c" cx="250" cy="120" r="4"/><circle class="de-c" cx="214" cy="152" r="4"/><circle class="de-c" cx="392" cy="148" r="4"/><circle class="de-c" cx="272" cy="186" r="4"/><circle class="de-c" cx="372" cy="210" r="4"/><circle class="de-c" cx="176" cy="214" r="4"/><circle class="de-c" cx="142" cy="236" r="4"/><circle class="de-c" cx="156" cy="256" r="4"/><circle class="de-c" cx="226" cy="286" r="4"/><circle class="de-c" cx="250" cy="344" r="4"/><circle class="de-c" cx="352" cy="356" r="4"/>
+        <g class="de-a" style="animation-delay:1.55s"><circle cx="200" cy="104" r="7"/><text x="186" y="105" text-anchor="end">Papenburg</text><text class="rol" x="186" y="118" text-anchor="end">construcții navale</text></g><g class="de-a" style="animation-delay:1.68s"><circle cx="268" cy="244" r="7"/><text x="282" y="245" text-anchor="start">Stadtallendorf</text><text class="rol" x="282" y="258" text-anchor="start">Chronos</text></g><g class="de-a" style="animation-delay:1.81s"><circle cx="296" cy="272" r="7"/><text x="310" y="273" text-anchor="start">Fulda</text><text class="rol" x="310" y="286" text-anchor="start">logistică</text></g><g class="de-a" style="animation-delay:1.94s"><circle cx="320" cy="318" r="7"/><text x="334" y="319" text-anchor="start">Nürnberg</text><text class="rol" x="334" y="332" text-anchor="start">AlphaConsult · MBS</text></g><g class="de-a" style="animation-delay:2.07s"><circle cx="118" cy="300" r="7"/><text x="104" y="301" text-anchor="end">Echternach</text><text class="rol" x="104" y="314" text-anchor="end">Luxemburg</text></g>
+        <g class="ro-c" style="animation-delay:0.15s"><circle cx="905" cy="150" r="5"/><text x="905" y="140">Satu Mare</text></g><g class="ro-c" style="animation-delay:0.21s"><circle cx="880" cy="186" r="5"/><text x="880" y="176">Oradea</text></g><g class="ro-c" style="animation-delay:0.27s"><circle cx="940" cy="150" r="5"/><text x="940" y="140">Baia Mare</text></g><g class="ro-c" style="animation-delay:0.33s"><circle cx="960" cy="196" r="5"/><text x="960" y="186">Cluj-Napoca</text></g><g class="ro-c" style="animation-delay:0.39s"><circle cx="1020" cy="150" r="5"/><text x="1020" y="140">Suceava</text></g><g class="ro-c" style="animation-delay:0.45s"><circle cx="1070" cy="178" r="5"/><text x="1070" y="168">Iași</text></g><g class="ro-c" style="animation-delay:0.51s"><circle cx="1010" cy="212" r="5"/><text x="1010" y="202">Târgu Mureș</text></g><g class="ro-c" style="animation-delay:0.57s"><circle cx="876" cy="228" r="5"/><text x="876" y="218">Arad</text></g><g class="ro-c" style="animation-delay:0.63s"><circle cx="886" cy="262" r="5"/><text x="886" y="252">Timișoara</text></g><g class="ro-c" style="animation-delay:0.69s"><circle cx="964" cy="254" r="5"/><text x="964" y="244">Sibiu</text></g><g class="ro-c" style="animation-delay:0.75s"><circle cx="1016" cy="258" r="5"/><text x="1016" y="248">Brașov</text></g><g class="ro-c" style="animation-delay:0.81s"><circle cx="1054" cy="214" r="5"/><text x="1054" y="204">Bacău</text></g><g class="ro-c" style="animation-delay:0.87s"><circle cx="1086" cy="262" r="5"/><text x="1086" y="252">Galați</text></g><g class="ro-c" style="animation-delay:0.93s"><circle cx="930" cy="310" r="5"/><text x="930" y="300">Craiova</text></g><g class="ro-c" style="animation-delay:0.99s"><circle cx="990" cy="300" r="5"/><text x="990" y="290">Pitești</text></g><g class="ro-c" style="animation-delay:1.05s"><circle cx="1040" cy="308" r="5"/><text x="1040" y="298">București</text></g><g class="ro-c" style="animation-delay:1.11s"><circle cx="1116" cy="300" r="5"/><text x="1116" y="290">Constanța</text></g>
       </svg>
 
       <div class="m-legend">
@@ -1788,9 +1787,16 @@ function ckSet(v){try{localStorage.setItem("skp_cookie_consent",v?"all":"necessa
   /* ---- harta: porneste cand intra in ecran ---- */
   var harta=document.getElementById('skpMap');
   if(harta){
-    harta.querySelectorAll('.ruta').forEach(function(p){
-      p.style.setProperty('--len', p.getTotalLength().toFixed(1));
-    });
+    var setLen=function(){
+      harta.querySelectorAll('.ruta').forEach(function(p){
+        var L=p.getTotalLength();
+        if(L>0) p.style.setProperty('--len', L.toFixed(1));
+      });
+    };
+    setLen();
+    /* daca fonturile sau layout-ul se aseaza mai tarziu, recalculez */
+    if(document.fonts && document.fonts.ready) document.fonts.ready.then(setLen);
+    addEventListener('load', setLen, {once:true});
     new IntersectionObserver(function(es,obs){
       es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('go'); obs.unobserve(en.target); } });
     },{threshold:.3}).observe(harta);
