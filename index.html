@@ -590,6 +590,21 @@
   .pin-stage .step .num{transition:background .35s,color .35s}
   .pin-stage .step.on .num{background:#f59e0b;color:#0f2a4a}
 }
+
+/* ===== Bara fixa de aplicare, doar pe telefon ===== */
+.apply-bar{position:fixed;left:0;right:0;bottom:0;z-index:900;display:none;
+  gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(11,31,58,.97);backdrop-filter:blur(8px);
+  border-top:1px solid rgba(255,255,255,.14);box-shadow:0 -4px 20px rgba(0,0,0,.28);
+  transform:translateY(110%);transition:transform .28s cubic-bezier(.22,.61,.36,1)}
+.apply-bar.show{transform:translateY(0)}
+.apply-bar a{display:flex;align-items:center;justify-content:center;gap:8px;
+  border-radius:12px;font-weight:800;font-size:15px;text-decoration:none;padding:14px 10px;min-height:52px}
+.apply-bar .wa{flex:1;background:#25d366;color:#fff}
+.apply-bar .tel{flex:0 0 58px;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.2);font-size:20px}
+.apply-bar .wa svg{width:20px;height:20px;fill:currentColor;flex:none}
+@media (max-width:900px){ .apply-bar{display:flex} body{padding-bottom:76px} }
+@media (prefers-reduced-motion: reduce){ .apply-bar{transition:none} }
 </style>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"EmploymentAgency","name":"Smart Konsult Plus SRL","alternateName":"Smart Konsult Plus","url":"https://smartkonsultplus.ro/","description":"Agenție de recrutare și plasare de forță de muncă în Germania. Conectăm oameni cu locuri de muncă, legal și transparent.","email":"job@smartkonsultplus.ro","telephone":["+40774772117"],"address":{"@type":"PostalAddress","addressLocality":"Cluj-Napoca","addressCountry":"RO"},"areaServed":[{"@type":"Country","name":"Germania"},{"@type":"Country","name":"România"}],"knowsLanguage":["ro","de","en","es","uk","hu"]}</script>
@@ -1603,6 +1618,9 @@ DD({
 //I18N-DATA
 var I18N_LANGS=['ro','de','en','es','uk','hu'];
 function oreUnit(l){l=l||(function(){try{return localStorage.getItem('skp_lang')||'ro'}catch(e){return 'ro'}})();var m={ro:'ore / lună',de:'Std. / Monat',en:'hours / month',es:'horas / mes',uk:'год / місяць',hu:'óra / hó'};return m[l]||m.ro;}window.oreUnit=oreUnit;DD({
+"Aplică pe WhatsApp":["Über WhatsApp bewerben","Apply on WhatsApp","Solicitar por WhatsApp","Подати заявку у WhatsApp","Jelentkezés WhatsAppon"]
+});
+DD({
 "De acasă, până la locul de muncă":["Von zu Hause bis zum Arbeitsplatz","From home to the workplace","De casa al puesto de trabajo","З дому до робочого місця","Otthonról a munkahelyig"],
 "Plecăm din Cluj-Napoca. Parteneri germani în trei regiuni.":["Start in Cluj-Napoca. Deutsche Partner in drei Regionen.","We start from Cluj-Napoca. German partners in three regions.","Salimos de Cluj-Napoca. Socios alemanes en tres regiones.","Вирушаємо з Клуж-Напоки. Німецькі партнери у трьох регіонах.","Kolozsvárról indulunk. Német partnerek három régióban."],
 "sediul nostru":["unser Sitz","our office","nuestra sede","наш офіс","az irodánk"],
@@ -1772,6 +1790,45 @@ function ckSet(v){try{localStorage.setItem("skp_cookie_consent",v?"all":"necessa
     addEventListener('resize',laScroll,{passive:true});
     actualizeaza();
   }
+})();
+</script>
+
+<div class="apply-bar" id="applyBar">
+  <a class="wa" href="https://wa.me/40774772117?text=Bun%C4%83%20ziua!%20Vreau%20s%C4%83%20aplic%20pentru%20un%20loc%20de%20munc%C4%83%20%C3%AEn%20Germania." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1s-.8 1-.9 1.2c-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.6 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.6 4.9.8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.5-.4z"/><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+    Aplică pe WhatsApp
+  </a>
+  <a class="tel" href="tel:+40774772117" aria-label="Sună acum">📞</a>
+</div>
+
+<script>
+/* Bara de aplicare: apare dupa ce omul a derulat putin,
+   se ascunde cand e la formular (ca sa nu-l acopere) sau cand e bannerul de cookies */
+(function(){
+  var bara=document.getElementById('applyBar'); if(!bara) return;
+  var ck=document.getElementById('ck-bar');
+  var zone=[document.getElementById('contact'), document.getElementById('cv')].filter(Boolean);
+  var laFormular=false;
+
+  if(zone.length && 'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      laFormular = es.some(function(e){ return e.isIntersecting; }) ||
+                   zone.some(function(z){ var r=z.getBoundingClientRect(); return r.top<innerHeight*0.9 && r.bottom>0; });
+      hotaraste();
+    },{threshold:0.01});
+    zone.forEach(function(z){ io.observe(z); });
+  }
+
+  function bannerVizibil(){ return ck && ck.classList.contains('show'); }
+  function hotaraste(){
+    var derulat = scrollY > 400;
+    bara.classList.toggle('show', derulat && !laFormular && !bannerVizibil());
+  }
+  var astept=false;
+  addEventListener('scroll', function(){ if(!astept){ astept=true; requestAnimationFrame(function(){ astept=false; hotaraste(); }); } }, {passive:true});
+  addEventListener('resize', hotaraste, {passive:true});
+  document.addEventListener('click', function(e){ if(e.target.closest('#ck-bar')) setTimeout(hotaraste,120); });
+  hotaraste();
 })();
 </script>
 </body>
