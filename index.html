@@ -528,6 +528,68 @@
 .c-note{font-size:11.5px;color:#8fa8c4;margin:16px 0 0;line-height:1.55}
 .c-cta{display:block;margin-top:18px;background:#f59e0b;color:#0f2a4a;text-align:center;padding:14px;border-radius:11px;font-weight:800;text-decoration:none;font-size:15px}
 @media(max-width:600px){.calc-wrap{padding:22px 16px}.calc-wrap h3{font-size:19px}.c-out .c.big .v{font-size:27px}}
+
+/* ===== Accesibilitate: cine a oprit animatiile in sistem nu primeste niciuna ===== */
+@media (prefers-reduced-motion: reduce){
+  .rv{opacity:1 !important;transform:none !important;transition:none !important}
+  .tilt{transition:none !important;transform:none !important}
+  .skp-prog{display:none}
+  .map-route{stroke-dashoffset:0 !important}
+  .map-pin{opacity:1 !important}
+  .skp-map.go .map-route,.skp-map.go .map-pin{animation:none !important}
+  .pin-stage .step{opacity:1 !important;transform:none !important;transition:none !important}
+}
+
+/* ===== Bara de progres a paginii ===== */
+@media (prefers-reduced-motion: no-preference){
+  @supports (animation-timeline: scroll()){
+    .skp-prog{position:fixed;top:0;left:0;width:100%;height:3px;z-index:9999;
+      background:linear-gradient(90deg,#f59e0b,#2563eb);transform-origin:0 50%;
+      animation:progGrow linear both;animation-timeline:scroll(root)}
+    @keyframes progGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  }
+}
+
+/* ===== Tilt 3D pe carduri, doar cu mouse ===== */
+@media (prefers-reduced-motion: no-preference) and (pointer:fine){
+  .tilt{transition:transform .18s ease-out,box-shadow .18s ease-out;will-change:transform}
+  .tilt:hover{box-shadow:0 18px 40px rgba(15,42,74,.2)}
+}
+
+/* ===== Harta Cluj -> Germania ===== */
+.skp-map{background:linear-gradient(160deg,#0f2a4a,#16375e);border-radius:16px;padding:26px 20px 20px;color:#fff;box-shadow:0 4px 24px rgba(15,42,74,.18);max-width:760px;margin:0 auto}
+.skp-map h3{font-size:22px;font-weight:800;margin:0 0 6px;color:#fff}
+.skp-map .m-sub{font-size:14px;color:#a8c0dc;margin:0 0 18px}
+.skp-map svg{width:100%;height:auto;display:block;overflow:visible}
+.map-zone{fill:rgba(255,255,255,.05);stroke:rgba(255,255,255,.16);stroke-width:1}
+.map-zlab{fill:#7e97b4;font-size:11px;font-weight:800;letter-spacing:1.2px}
+.map-route{fill:none;stroke:#f59e0b;stroke-width:2.5;stroke-linecap:round;stroke-dasharray:var(--len);stroke-dashoffset:var(--len)}
+.skp-map.go .map-route{animation:mapDraw 1.6s cubic-bezier(.4,0,.2,1) forwards;stroke-dashoffset:0}
+@keyframes mapDraw{from{stroke-dashoffset:var(--len)}to{stroke-dashoffset:0}}
+.map-pin{opacity:0}
+.skp-map.go .map-pin{animation:mapPop .5s cubic-bezier(.34,1.56,.64,1) forwards;opacity:1}
+@keyframes mapPop{from{opacity:0;transform:translateY(7px) scale(.6)}to{opacity:1;transform:none}}
+.skp-map .d0 .map-pin{animation-delay:.1s}.skp-map .d1 .map-pin{animation-delay:1.05s}
+.skp-map .d2 .map-pin{animation-delay:1.25s}.skp-map .d3 .map-pin{animation-delay:1.45s}
+.map-pin circle{fill:#f59e0b}.skp-map .d0 .map-pin circle{fill:#60a5fa}
+.map-pin text{fill:#fff;font-size:11.5px;font-weight:700}
+.map-pin .role{fill:#a8c0dc;font-size:9.5px;font-weight:600}
+.skp-map .m-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px;font-size:12.5px;color:#a8c0dc}
+.skp-map .m-legend b{color:#f59e0b;font-size:15px}
+
+/* ===== Pasii fixati pe ecran, doar pe desktop ===== */
+.steps-rail{display:none}
+@media (min-width:900px) and (prefers-reduced-motion: no-preference){
+  .pin-track{position:relative;height:220vh}
+  .pin-stage{position:sticky;top:0;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+  .steps-rail{display:block;position:relative;height:3px;background:rgba(255,255,255,.14);border-radius:3px;margin:0 60px 26px}
+  .steps-rail i{position:absolute;inset:0 auto 0 0;width:0;background:linear-gradient(90deg,#f59e0b,#fbbf24);border-radius:3px;transition:width .35s cubic-bezier(.22,.61,.36,1)}
+  .pin-stage .step{transition:transform .4s cubic-bezier(.22,.61,.36,1),opacity .4s,border-color .4s,box-shadow .4s;opacity:.42;transform:scale(.94)}
+  .pin-stage .step.done{opacity:.72;transform:scale(.97)}
+  .pin-stage .step.on{opacity:1;transform:scale(1.04);border-color:rgba(245,158,11,.55);box-shadow:0 18px 44px rgba(0,0,0,.34)}
+  .pin-stage .step .num{transition:background .35s,color .35s}
+  .pin-stage .step.on .num{background:#f59e0b;color:#0f2a4a}
+}
 </style>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"EmploymentAgency","name":"Smart Konsult Plus SRL","alternateName":"Smart Konsult Plus","url":"https://smartkonsultplus.ro/","description":"Agenție de recrutare și plasare de forță de muncă în Germania. Conectăm oameni cu locuri de muncă, legal și transparent.","email":"job@smartkonsultplus.ro","telephone":["+40774772117"],"address":{"@type":"PostalAddress","addressLocality":"Cluj-Napoca","addressCountry":"RO"},"areaServed":[{"@type":"Country","name":"Germania"},{"@type":"Country","name":"România"}],"knowsLanguage":["ro","de","en","es","uk","hu"]}</script>
@@ -580,6 +642,7 @@
 </script>
 </head>
 <body>
+<div class="skp-prog" aria-hidden="true"></div>
 
 <!-- Topbar -->
 <div class="topbar">
@@ -801,6 +864,33 @@
       <a class="c-cta" href="#cv">Trimite-ne CV-ul</a>
 
       <p class="c-note">Estimare orientativă pentru clasa fiscală I, fără copii, după baremul german §32a EStG. La aceste posturi firma germană plătește chiria în avans și o reține din salariu. Suma finală depinde de landul federal, contribuția la biserică și situația ta familială.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Harta rutei -->
+<section id="harta" style="padding:56px 0">
+  <div class="container">
+    <div class="skp-map" id="skpMap">
+      <h3>De acasă, până la locul de muncă</h3>
+      <p class="m-sub">Plecăm din Cluj-Napoca. Parteneri germani în trei regiuni.</p>
+      <svg viewBox="0 0 400 210" role="img" aria-label="Schemă cu ruta din Cluj-Napoca către Nürnberg, Fulda și Stadtallendorf">
+        <rect class="map-zone" x="40" y="30" width="200" height="120" rx="14"/>
+        <text class="map-zlab" x="52" y="50">GERMANIA</text>
+        <rect class="map-zone" x="285" y="140" width="105" height="58" rx="14"/>
+        <text class="map-zlab" x="296" y="160">ROMÂNIA</text>
+        <path class="map-route" id="mapRoute" d="M330,182 C262,168 176,132 96,92"/>
+        <g class="d0" transform="translate(330,182)"><g class="map-pin"><circle r="5"/><text x="-10" y="1" text-anchor="end">Cluj-Napoca</text><text class="role" x="-10" y="13" text-anchor="end">sediul nostru</text></g></g>
+        <g class="d1" transform="translate(96,92)"><g class="map-pin"><circle r="5"/><text x="10" y="1">Nürnberg</text><text class="role" x="10" y="13">AlphaConsult · MBS</text></g></g>
+        <g class="d2" transform="translate(150,118)"><g class="map-pin"><circle r="5"/><text x="10" y="1">Fulda</text><text class="role" x="10" y="13">logistică</text></g></g>
+        <g class="d3" transform="translate(112,64)"><g class="map-pin"><circle r="5"/><text x="10" y="1">Stadtallendorf</text><text class="role" x="10" y="13">Chronos Operations</text></g></g>
+      </svg>
+      <div class="m-legend">
+        <span><b>200+</b> oameni plasați</span>
+        <span><b>3</b> parteneri</span>
+        <span><b>24h</b> răspuns</span>
+      </div>
     </div>
   </div>
 </section>
@@ -1513,6 +1603,15 @@ DD({
 //I18N-DATA
 var I18N_LANGS=['ro','de','en','es','uk','hu'];
 function oreUnit(l){l=l||(function(){try{return localStorage.getItem('skp_lang')||'ro'}catch(e){return 'ro'}})();var m={ro:'ore / lună',de:'Std. / Monat',en:'hours / month',es:'horas / mes',uk:'год / місяць',hu:'óra / hó'};return m[l]||m.ro;}window.oreUnit=oreUnit;DD({
+"De acasă, până la locul de muncă":["Von zu Hause bis zum Arbeitsplatz","From home to the workplace","De casa al puesto de trabajo","З дому до робочого місця","Otthonról a munkahelyig"],
+"Plecăm din Cluj-Napoca. Parteneri germani în trei regiuni.":["Start in Cluj-Napoca. Deutsche Partner in drei Regionen.","We start from Cluj-Napoca. German partners in three regions.","Salimos de Cluj-Napoca. Socios alemanes en tres regiones.","Вирушаємо з Клуж-Напоки. Німецькі партнери у трьох регіонах.","Kolozsvárról indulunk. Német partnerek három régióban."],
+"sediul nostru":["unser Sitz","our office","nuestra sede","наш офіс","az irodánk"],
+"logistică":["Logistik","logistics","logística","логістика","logisztika"],
+"oameni plasați":["Menschen vermittelt","people placed","personas colocadas","працевлаштованих","elhelyezett ember"],
+"parteneri":["Partner","partners","socios","партнери","partner"],
+"răspuns":["Antwortzeit","response","respuesta","відповідь","válaszidő"]
+});
+DD({
 "Cât iei în mână în Germania?":["Wie viel bekommst du in Deutschland netto?","How much do you take home in Germany?","¿Cuánto cobras neto en Alemania?","Скільки ви отримаєте на руки в Німеччині?","Mennyi marad a zsebedben Németországban?"],
 "Estimare net, clasa fiscală I. Alege postul și orele pe lună.":["Nettoschätzung, Steuerklasse I. Wähle die Stelle und die Stunden pro Monat.","Net estimate, tax class I. Choose the job and the hours per month.","Estimación neta, clase fiscal I. Elige el puesto y las horas al mes.","Оцінка нетто, податковий клас I. Оберіть посаду та години на місяць.","Nettó becslés, I. adóosztály. Válaszd ki a munkakört és a havi órákat."],
 "Postul":["Die Stelle","The job","El puesto","Посада","A munkakör"],
@@ -1606,6 +1705,73 @@ function ckSet(v){try{localStorage.setItem("skp_cookie_consent",v?"all":"necessa
   });
   $('cRange').addEventListener('input', ruleaza);
   ruleaza();
+})();
+</script>
+
+<script>
+/* Tilt 3D, bara de progres, harta si pasii fixati */
+(function(){
+  var reduse = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- tilt 3D pe carduri, doar cu mouse ---- */
+  if(!reduse && window.matchMedia('(pointer:fine)').matches){
+    document.querySelectorAll('.job,.svc,.testi,.partner').forEach(function(e){ e.classList.add('tilt'); });
+    document.addEventListener('pointermove', function(e){
+      var c=e.target.closest('.tilt'); if(!c) return;
+      var r=c.getBoundingClientRect();
+      var px=(e.clientX-r.left)/r.width-.5, py=(e.clientY-r.top)/r.height-.5;
+      c.style.transform='perspective(900px) rotateX('+(-py*5).toFixed(2)+'deg) rotateY('+(px*6).toFixed(2)+'deg) translateY(-3px)';
+    },{passive:true});
+    document.addEventListener('pointerout', function(e){
+      var c=e.target.closest && e.target.closest('.tilt');
+      if(c && !c.contains(e.relatedTarget)) c.style.transform='';
+    },{passive:true});
+  }
+
+  /* ---- harta: porneste cand intra in ecran ---- */
+  var harta=document.getElementById('skpMap'), ruta=document.getElementById('mapRoute');
+  if(harta && ruta){
+    harta.style.setProperty('--len', ruta.getTotalLength().toFixed(1));
+    new IntersectionObserver(function(es,obs){
+      es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('go'); obs.unobserve(en.target); } });
+    },{threshold:.3}).observe(harta);
+  }
+
+  /* ---- pasii fixati pe ecran, doar desktop ---- */
+  var sec=document.getElementById('cum-functioneaza');
+  var grid=sec && sec.querySelector('.steps-grid');
+  if(!reduse && grid){
+    var pasi=[].slice.call(grid.querySelectorAll('.step'));
+    pasi.forEach(function(p){ p.classList.remove('tilt'); });   /* tilt-ul s-ar bate cu scale */
+    var track=document.createElement('div'); track.className='pin-track';
+    var stage=document.createElement('div'); stage.className='pin-stage';
+    var rail=document.createElement('div'); rail.className='steps-rail'; rail.innerHTML='<i></i>';
+    grid.parentNode.insertBefore(track,grid);
+    track.appendChild(stage); stage.appendChild(rail); stage.appendChild(grid);
+    /* titlul intra in zona fixata, altfel cardurile raman fara context */
+    var cap=[]; sec.querySelectorAll('.kicker,h2,p.lead').forEach(function(n){ if(!stage.contains(n)) cap.push(n); });
+    cap.reverse().forEach(function(n){ stage.insertBefore(n, stage.firstChild); });
+
+    var fill=rail.querySelector('i'), astept=false, ultim=-1;
+    function actualizeaza(){
+      astept=false;
+      if(!window.matchMedia('(min-width:900px)').matches){
+        pasi.forEach(function(p){ p.classList.remove('on','done'); }); ultim=-1; return;
+      }
+      var total=track.offsetHeight-innerHeight; if(total<=0) return;
+      var p=Math.min(1,Math.max(0,-track.getBoundingClientRect().top/total));
+      var idx=Math.min(pasi.length-1, Math.floor(p*pasi.length));
+      fill.style.width=(((idx+1)/pasi.length)*100).toFixed(1)+'%';
+      if(idx!==ultim){
+        pasi.forEach(function(x,k){ x.classList.toggle('on',k===idx); x.classList.toggle('done',k<idx); });
+        ultim=idx;
+      }
+    }
+    function laScroll(){ if(!astept){ astept=true; requestAnimationFrame(actualizeaza); } }
+    addEventListener('scroll',laScroll,{passive:true});
+    addEventListener('resize',laScroll,{passive:true});
+    actualizeaza();
+  }
 })();
 </script>
 </body>
