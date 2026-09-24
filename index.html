@@ -564,6 +564,8 @@
 .skp-map > *{position:relative;z-index:1}
 @media (max-width:640px){.skp-map::before{background-image:url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=900&q=60')}}
 .skp-map h3{font-size:22px;font-weight:800;margin:0 0 6px;color:#fff}
+.skp-map .m-punch{font-size:17px;font-weight:800;color:#f59e0b;margin:0 0 10px;letter-spacing:-.2px}
+@media (max-width:640px){.skp-map .m-punch{font-size:15px}}
 .skp-map .m-sub{font-size:14px;color:#a8c0dc;margin:0 0 18px;max-width:620px}
 .skp-map svg{width:100%;height:auto;display:block;overflow:visible}
 .map-zone{fill:rgba(255,255,255,.05);stroke:rgba(255,255,255,.14);stroke-width:1}
@@ -939,8 +941,9 @@
 <section id="harta" style="padding:56px 0">
   <div class="container">
     <div class="skp-map" id="skpMap">
-      <h3>Din toată România, în toată Germania</h3>
-      <p class="m-sub">Recrutăm din orice județ. Toate drumurile trec prin sediul nostru din Cluj-Napoca. Plasăm în toată Germania, iar în locurile marcate lucrăm prin parteneri direcți.</p>
+      <h3>De unde pleci nu contează. Contează unde ajungi.</h3>
+      <p class="m-punch">Și, pentru noi, contează dacă rămâi.</p>
+      <p class="m-sub">Venim după tine din orice județ, te ducem la un loc de muncă sigur, cu contract, și rămânem alături după ce ajungi acolo.</p>
 
       <svg viewBox="0 0 760 470" role="img" aria-label="Schemă: candidații vin din toate orașele mari ale României la sediul Smart Konsult din Cluj-Napoca, de unde sunt plasați în Germania și Luxemburg">
         <text class="map-zlab" x="42" y="76">GERMANIA · LUXEMBURG</text>
@@ -1678,6 +1681,11 @@ DD({
 //I18N-DATA
 var I18N_LANGS=['ro','de','en','es','uk','hu'];
 function oreUnit(l){l=l||(function(){try{return localStorage.getItem('skp_lang')||'ro'}catch(e){return 'ro'}})();var m={ro:'ore / lună',de:'Std. / Monat',en:'hours / month',es:'horas / mes',uk:'год / місяць',hu:'óra / hó'};return m[l]||m.ro;}window.oreUnit=oreUnit;DD({
+"De unde pleci nu contează. Contează unde ajungi.":["Woher du kommst, zählt nicht. Es zählt, wo du ankommst.","Where you start doesn't matter. Where you arrive does.","De dónde partes no importa. Importa a dónde llegas.","Звідки ти їдеш, неважливо. Важливо, куди ти приїдеш.","Nem az számít, honnan indulsz. Az számít, hova érkezel."],
+"Și, pentru noi, contează dacă rămâi.":["Und für uns zählt, ob du bleibst.","And for us, it matters whether you stay.","Y para nosotros importa si te quedas.","А для нас важливо, чи ти залишишся.","És nekünk az is számít, hogy maradsz-e."],
+"Venim după tine din orice județ, te ducem la un loc de muncă sigur, cu contract, și rămânem alături după ce ajungi acolo.":["Wir holen dich aus jedem Kreis ab, bringen dich zu einem sicheren Arbeitsplatz mit Vertrag und bleiben an deiner Seite, auch nachdem du angekommen bist.","We come for you from any county, take you to a safe job with a contract, and stay by your side after you get there.","Vamos a buscarte a cualquier condado, te llevamos a un trabajo seguro con contrato y seguimos a tu lado después de que llegues.","Приїдемо по тебе в будь-який повіт, влаштуємо на безпечну роботу з договором і будемо поруч після твого приїзду.","Bármelyik megyéből érted megyünk, biztonságos, szerződéses munkahelyre viszünk, és utána is melletted maradunk."]
+});
+DD({
 "Din toată România, în toată Germania":["Aus ganz Rumänien, in ganz Deutschland","From all of Romania, to all of Germany","De toda Rumanía, a toda Alemania","З усієї Румунії — по всій Німеччині","Egész Romániából, egész Németországba"],
 "Recrutăm din orice județ. Plasăm în toată Germania, iar în locurile marcate lucrăm prin parteneri direcți.":["Wir rekrutieren aus jedem Kreis. Wir vermitteln in ganz Deutschland; an den markierten Orten arbeiten wir mit direkten Partnern.","We recruit from every county. We place across Germany; at the marked locations we work with direct partners.","Reclutamos en cualquier condado. Colocamos en toda Alemania; en los lugares marcados trabajamos con socios directos.","Набираємо з будь-якого повіту. Працевлаштовуємо по всій Німеччині; у позначених місцях працюємо з прямими партнерами.","Minden megyéből toborzunk. Egész Németországban közvetítünk; a jelölt helyeken közvetlen partnerekkel dolgozunk."],
 "Parteneri direcți":["Direkte Partner","Direct partners","Socios directos","Прямі партнери","Közvetlen partnerek"],
