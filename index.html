@@ -505,6 +505,29 @@
       url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=900&q=60');
   }
 }
+
+/* ===== Calculator salariu net ===== */
+.calc-wrap{background:linear-gradient(160deg,#0f2a4a,#16375e);border-radius:16px;padding:26px 20px;color:#fff;box-shadow:0 4px 24px rgba(15,42,74,.18);max-width:720px;margin:0 auto}
+.calc-wrap h3{font-size:22px;font-weight:800;margin:0 0 6px;color:#fff}
+.calc-wrap .c-sub{font-size:14px;color:#a8c0dc;margin:0 0 20px}
+.calc-wrap .c-lbl{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:#a8c0dc;font-weight:700;margin-bottom:9px}
+.c-rates{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:20px}
+.c-rates button{flex:1;min-width:100px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:11px;padding:12px 8px;font:inherit;font-size:14px;font-weight:800;cursor:pointer;transition:background .15s,border-color .15s}
+.c-rates button small{display:block;font-size:11px;font-weight:500;color:#a8c0dc;margin-top:3px}
+.c-rates button.on{background:#f59e0b;border-color:#f59e0b;color:#0f2a4a}
+.c-rates button.on small{color:#4a3208}
+.calc-wrap input[type=range]{width:100%;accent-color:#f59e0b;height:28px}
+.c-hrs{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2px}
+.c-hrs b{font-size:17px;font-weight:800;color:#f59e0b}
+.c-out{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:20px}
+.c-out .c{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:13px 14px;min-width:0}
+.c-out .c.big{grid-column:1/-1;background:rgba(245,158,11,.14);border-color:rgba(245,158,11,.4)}
+.c-out .k{font-size:11.5px;color:#a8c0dc;font-weight:600;margin-bottom:4px}
+.c-out .v{font-size:21px;font-weight:800;color:#fff;letter-spacing:-.3px}
+.c-out .c.big .v{font-size:32px;color:#f59e0b}
+.c-note{font-size:11.5px;color:#8fa8c4;margin:16px 0 0;line-height:1.55}
+.c-cta{display:block;margin-top:18px;background:#f59e0b;color:#0f2a4a;text-align:center;padding:14px;border-radius:11px;font-weight:800;text-decoration:none;font-size:15px}
+@media(max-width:600px){.calc-wrap{padding:22px 16px}.calc-wrap h3{font-size:19px}.c-out .c.big .v{font-size:27px}}
 </style>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"EmploymentAgency","name":"Smart Konsult Plus SRL","alternateName":"Smart Konsult Plus","url":"https://smartkonsultplus.ro/","description":"Agenție de recrutare și plasare de forță de muncă în Germania. Conectăm oameni cu locuri de muncă, legal și transparent.","email":"job@smartkonsultplus.ro","telephone":["+40774772117"],"address":{"@type":"PostalAddress","addressLocality":"Cluj-Napoca","addressCountry":"RO"},"areaServed":[{"@type":"Country","name":"Germania"},{"@type":"Country","name":"România"}],"knowsLanguage":["ro","de","en","es","uk","hu"]}</script>
@@ -747,6 +770,37 @@
           <a class="btn btn-primary" style="background:var(--navy)" href="#contact">Lasă-ne datele tale</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Calculator salariu -->
+<section id="calculator" style="padding:56px 0">
+  <div class="container">
+    <div class="calc-wrap">
+      <h3>Cât iei în mână în Germania?</h3>
+      <p class="c-sub">Estimare net, clasa fiscală I. Alege postul și orele pe lună.</p>
+
+      <div class="c-lbl">Postul</div>
+      <div class="c-rates" id="cRates">
+        <button type="button" data-r="15" class="on">15 €/h<small>Manipulant marfă</small></button>
+        <button type="button" data-r="18">18 €/h<small>Motostivuitorist</small></button>
+        <button type="button" data-r="19">19 €/h<small>Sudor MAG</small></button>
+      </div>
+
+      <div class="c-hrs"><span class="c-lbl" style="margin:0">Ore pe lună</span><b id="oreFV">174 ore / lună</b></div>
+      <input type="range" id="cRange" min="140" max="230" step="1" value="174" aria-label="Ore lucrate pe lună">
+
+      <div class="c-out">
+        <div class="c big"><div class="k">În mână, după cazare</div><div class="v" id="cNet">–</div></div>
+        <div class="c"><div class="k">Brut lunar</div><div class="v" id="cBrut">–</div></div>
+        <div class="c"><div class="k">Cazare, se reține</div><div class="v" id="cCaz">–</div></div>
+      </div>
+
+      <a class="c-cta" href="#cv">Trimite-ne CV-ul</a>
+
+      <p class="c-note">Estimare orientativă pentru clasa fiscală I, fără copii, după baremul german §32a EStG. La aceste posturi firma germană plătește chiria în avans și o reține din salariu. Suma finală depinde de landul federal, contribuția la biserică și situația ta familială.</p>
     </div>
   </div>
 </section>
@@ -1458,7 +1512,20 @@ DD({
 });
 //I18N-DATA
 var I18N_LANGS=['ro','de','en','es','uk','hu'];
-function oreUnit(l){l=l||(function(){try{return localStorage.getItem('skp_lang')||'ro'}catch(e){return 'ro'}})();var m={ro:'ore / lună',de:'Std. / Monat',en:'hours / month',es:'horas / mes',uk:'год / місяць',hu:'óra / hó'};return m[l]||m.ro;}window.oreUnit=oreUnit;DD({"Trimite-ne CV-ul":["Sende uns deinen Lebenslauf","Send us your CV","Envíanos tu CV","Надішли нам своє резюме","Küldd el az önéletrajzod"],"Aplică cu CV-ul tău":["Bewirb dich mit deinem Lebenslauf","Apply with your CV","Postula con tu CV","Подай заявку з резюме","Jelentkezz önéletrajzoddal"],"Atașează CV-ul și îl primim direct pe e-mail. Te contactăm în maximum 24 de ore, în limba română.":["Hänge deinen Lebenslauf an – wir erhalten ihn direkt per E-Mail. Wir melden uns innerhalb von 24 Stunden.","Attach your CV and we receive it directly by e-mail. We contact you within 24 hours.","Adjunta tu CV y lo recibimos directamente por correo. Te contactamos en 24 horas.","Прикріпи резюме — ми отримаємо його на пошту. Зв'яжемося протягом 24 годин.","Csatold az önéletrajzod – e-mailben kapjuk meg. 24 órán belül jelentkezünk."],"📎 Trimite CV-ul":["📎 Lebenslauf senden","📎 Send CV","📎 Enviar CV","📎 Надіслати резюме","📎 Önéletrajz küldése"],"✉️ Trimite pe e-mail":["✉️ Per E-Mail senden","✉️ Send by e-mail","✉️ Enviar por correo","✉️ Надіслати поштою","✉️ Küldés e-mailben"],"💬 Trimite pe WhatsApp":["💬 Per WhatsApp senden","💬 Send via WhatsApp","💬 Enviar por WhatsApp","💬 Надіслати у WhatsApp","💬 Küldés WhatsAppon"],"Datele tale sunt folosite exclusiv pentru intermedierea unui loc de muncă și nu sunt vândute terților.":["Deine Daten werden ausschließlich für die Arbeitsvermittlung verwendet und nicht an Dritte verkauft.","Your data is used solely for job placement and is never sold to third parties.","Tus datos se usan solo para la intermediación laboral y no se venden a terceros.","Твої дані використовуються лише для працевлаштування і не продаються третім особам.","Adataidat kizárólag munkaközvetítésre használjuk, és nem adjuk el harmadik félnek."],"CV-ul tău (PDF, Word sau poză) *":["Dein Lebenslauf (PDF, Word oder Foto) *","Your CV (PDF, Word or photo) *","Tu CV (PDF, Word o foto) *","Твоє резюме (PDF, Word або фото) *","Önéletrajzod (PDF, Word vagy fotó) *"],"Maxim 10 MB. Accept PDF, DOC, DOCX, JPG, PNG.":["Maximal 10 MB. PDF, DOC, DOCX, JPG, PNG.","Maximum 10 MB. PDF, DOC, DOCX, JPG, PNG.","Máximo 10 MB. PDF, DOC, DOCX, JPG, PNG.","Максимум 10 МБ. PDF, DOC, DOCX, JPG, PNG.","Maximum 10 MB. PDF, DOC, DOCX, JPG, PNG."],"Alege postul":["Stelle wählen","Choose the position","Elige el puesto","Обери посаду","Válassz pozíciót"]});DD({"Oamenii pleacă pentru un viitor mai bun. Noi îi ajutăm să îl construiască, pas cu pas.":["Menschen gehen für eine bessere Zukunft. Wir helfen ihnen, sie aufzubauen – Schritt für Schritt.","People leave for a better future. We help them build it, step by step.","La gente se va por un futuro mejor. Nosotros les ayudamos a construirlo, paso a paso.","Люди їдуть заради кращого майбутнього. Ми допомагаємо їм будувати його крок за кроком.","Az emberek egy jobb jövőért indulnak útnak. Mi segítünk nekik felépíteni, lépésről lépésre."],"Pentru noi, fiecare angajat este o poveste, nu un număr. Iar fiecare poveste merită începutul corect.":["Für uns ist jeder Mitarbeiter eine Geschichte, keine Nummer. Und jede Geschichte verdient den richtigen Anfang.","For us, every employee is a story, not a number. And every story deserves the right beginning.","Para nosotros, cada empleado es una historia, no un número. Y cada historia merece el comienzo correcto.","Для нас кожен працівник — це історія, а не номер. І кожна історія заслуговує на правильний початок.","Számunkra minden munkavállaló egy történet, nem egy szám. És minden történet megérdemli a helyes kezdetet."]});
+function oreUnit(l){l=l||(function(){try{return localStorage.getItem('skp_lang')||'ro'}catch(e){return 'ro'}})();var m={ro:'ore / lună',de:'Std. / Monat',en:'hours / month',es:'horas / mes',uk:'год / місяць',hu:'óra / hó'};return m[l]||m.ro;}window.oreUnit=oreUnit;DD({
+"Cât iei în mână în Germania?":["Wie viel bekommst du in Deutschland netto?","How much do you take home in Germany?","¿Cuánto cobras neto en Alemania?","Скільки ви отримаєте на руки в Німеччині?","Mennyi marad a zsebedben Németországban?"],
+"Estimare net, clasa fiscală I. Alege postul și orele pe lună.":["Nettoschätzung, Steuerklasse I. Wähle die Stelle und die Stunden pro Monat.","Net estimate, tax class I. Choose the job and the hours per month.","Estimación neta, clase fiscal I. Elige el puesto y las horas al mes.","Оцінка нетто, податковий клас I. Оберіть посаду та години на місяць.","Nettó becslés, I. adóosztály. Válaszd ki a munkakört és a havi órákat."],
+"Postul":["Die Stelle","The job","El puesto","Посада","A munkakör"],
+"Manipulant marfă":["Lagerhelfer","Warehouse worker","Mozo de almacén","Комплектувальник","Raktáros"],
+"Motostivuitorist":["Staplerfahrer","Forklift driver","Carretillero","Водій навантажувача","Targoncavezető"],
+"Sudor MAG":["MAG-Schweißer","MAG welder","Soldador MAG","Зварник MAG","MAG hegesztő"],
+"Ore pe lună":["Stunden pro Monat","Hours per month","Horas al mes","Годин на місяць","Óra havonta"],
+"În mână, după cazare":["Netto nach Unterkunft","Take-home after housing","Neto tras alojamiento","На руки після житла","Kézhez, szállás után"],
+"Brut lunar":["Brutto monatlich","Monthly gross","Bruto mensual","Брутто на місяць","Havi bruttó"],
+"Cazare, se reține":["Unterkunft, wird einbehalten","Housing, deducted","Alojamiento, se descuenta","Житло, утримується","Szállás, levonásra kerül"],
+"Estimare orientativă pentru clasa fiscală I, fără copii, după baremul german §32a EStG. La aceste posturi firma germană plătește chiria în avans și o reține din salariu. Suma finală depinde de landul federal, contribuția la biserică și situația ta familială.":["Orientierungswert für Steuerklasse I, ohne Kinder, nach §32a EStG. Bei diesen Stellen zahlt die deutsche Firma die Miete im Voraus und behält sie vom Lohn ein. Der Endbetrag hängt vom Bundesland, der Kirchensteuer und deiner familiären Situation ab.","Indicative estimate for tax class I, no children, under German §32a EStG. For these jobs the German company pays the rent upfront and deducts it from your wages. The final amount depends on the federal state, church tax and your family situation.","Estimación orientativa para la clase fiscal I, sin hijos, según §32a EStG. En estos puestos la empresa alemana paga el alquiler por adelantado y lo descuenta del salario. El importe final depende del estado federado, el impuesto eclesiástico y tu situación familiar.","Орієнтовна оцінка для податкового класу I, без дітей, за §32a EStG. На цих посадах німецька фірма сплачує оренду наперед і утримує її із зарплати. Остаточна сума залежить від федеральної землі, церковного податку та сімейного стану.","Tájékoztató becslés az I. adóosztályra, gyermek nélkül, a német §32a EStG szerint. Ezeknél a munkaköröknél a német cég előre kifizeti a bérleti díjat és levonja a fizetésből. A végösszeg a tartománytól, az egyházi adótól és a családi helyzettől függ."]
+});
+DD({"Trimite-ne CV-ul":["Sende uns deinen Lebenslauf","Send us your CV","Envíanos tu CV","Надішли нам своє резюме","Küldd el az önéletrajzod"],"Aplică cu CV-ul tău":["Bewirb dich mit deinem Lebenslauf","Apply with your CV","Postula con tu CV","Подай заявку з резюме","Jelentkezz önéletrajzoddal"],"Atașează CV-ul și îl primim direct pe e-mail. Te contactăm în maximum 24 de ore, în limba română.":["Hänge deinen Lebenslauf an – wir erhalten ihn direkt per E-Mail. Wir melden uns innerhalb von 24 Stunden.","Attach your CV and we receive it directly by e-mail. We contact you within 24 hours.","Adjunta tu CV y lo recibimos directamente por correo. Te contactamos en 24 horas.","Прикріпи резюме — ми отримаємо його на пошту. Зв'яжемося протягом 24 годин.","Csatold az önéletrajzod – e-mailben kapjuk meg. 24 órán belül jelentkezünk."],"📎 Trimite CV-ul":["📎 Lebenslauf senden","📎 Send CV","📎 Enviar CV","📎 Надіслати резюме","📎 Önéletrajz küldése"],"✉️ Trimite pe e-mail":["✉️ Per E-Mail senden","✉️ Send by e-mail","✉️ Enviar por correo","✉️ Надіслати поштою","✉️ Küldés e-mailben"],"💬 Trimite pe WhatsApp":["💬 Per WhatsApp senden","💬 Send via WhatsApp","💬 Enviar por WhatsApp","💬 Надіслати у WhatsApp","💬 Küldés WhatsAppon"],"Datele tale sunt folosite exclusiv pentru intermedierea unui loc de muncă și nu sunt vândute terților.":["Deine Daten werden ausschließlich für die Arbeitsvermittlung verwendet und nicht an Dritte verkauft.","Your data is used solely for job placement and is never sold to third parties.","Tus datos se usan solo para la intermediación laboral y no se venden a terceros.","Твої дані використовуються лише для працевлаштування і не продаються третім особам.","Adataidat kizárólag munkaközvetítésre használjuk, és nem adjuk el harmadik félnek."],"CV-ul tău (PDF, Word sau poză) *":["Dein Lebenslauf (PDF, Word oder Foto) *","Your CV (PDF, Word or photo) *","Tu CV (PDF, Word o foto) *","Твоє резюме (PDF, Word або фото) *","Önéletrajzod (PDF, Word vagy fotó) *"],"Maxim 10 MB. Accept PDF, DOC, DOCX, JPG, PNG.":["Maximal 10 MB. PDF, DOC, DOCX, JPG, PNG.","Maximum 10 MB. PDF, DOC, DOCX, JPG, PNG.","Máximo 10 MB. PDF, DOC, DOCX, JPG, PNG.","Максимум 10 МБ. PDF, DOC, DOCX, JPG, PNG.","Maximum 10 MB. PDF, DOC, DOCX, JPG, PNG."],"Alege postul":["Stelle wählen","Choose the position","Elige el puesto","Обери посаду","Válassz pozíciót"]});DD({"Oamenii pleacă pentru un viitor mai bun. Noi îi ajutăm să îl construiască, pas cu pas.":["Menschen gehen für eine bessere Zukunft. Wir helfen ihnen, sie aufzubauen – Schritt für Schritt.","People leave for a better future. We help them build it, step by step.","La gente se va por un futuro mejor. Nosotros les ayudamos a construirlo, paso a paso.","Люди їдуть заради кращого майбутнього. Ми допомагаємо їм будувати його крок за кроком.","Az emberek egy jobb jövőért indulnak útnak. Mi segítünk nekik felépíteni, lépésről lépésre."],"Pentru noi, fiecare angajat este o poveste, nu un număr. Iar fiecare poveste merită începutul corect.":["Für uns ist jeder Mitarbeiter eine Geschichte, keine Nummer. Und jede Geschichte verdient den richtigen Anfang.","For us, every employee is a story, not a number. And every story deserves the right beginning.","Para nosotros, cada empleado es una historia, no un número. Y cada historia merece el comienzo correcto.","Для нас кожен працівник — це історія, а не номер. І кожна історія заслуговує на правильний початок.","Számunkra minden munkavállaló egy történet, nem egy szám. És minden történet megérdemli a helyes kezdetet."]});
 DD({"Logistică, producție, construcții — joburi reale, cu contract german.":["Logistik, Produktion, Bau — echte Jobs mit deutschem Vertrag.","Logistics, production, construction — real jobs with a German contract.","Logística, producción, construcción — empleos reales con contrato alemán.","Логістика, виробництво, будівництво — реальні вакансії з німецьким контрактом.","Logisztika, termelés, építőipar — valódi állások német szerződéssel."],"Peste 200 de oameni lucrează deja în Germania prin noi.":["Über 200 Menschen arbeiten bereits durch uns in Deutschland.","Over 200 people already work in Germany through us.","Más de 200 personas ya trabajan en Alemania a través de nosotros.","Понад 200 людей уже працюють у Німеччині завдяки нам.","Több mint 200 ember dolgozik már Németországban rajtunk keresztül."],"Meseria ta are valoare în Germania.":["Dein Handwerk ist in Deutschland etwas wert.","Your trade has value in Germany.","Tu oficio tiene valor en Alemania.","Твоя професія має цінність у Німеччині.","A szakmád értéket ér Németországban."],"Sudori, mecanici, zidari — salarii de la 15 €/oră.":["Schweißer, Mechaniker, Maurer — Löhne ab 15 €/Stunde.","Welders, mechanics, bricklayers — wages from €15/hour.","Soldadores, mecánicos, albañiles — salarios desde 15 €/hora.","Зварювальники, механіки, муляри — зарплата від 15 €/год.","Hegesztők, szerelők, kőművesek — bér 15 €/órától."]});
 DD({"Angajatori verificați":["Geprüfte Arbeitgeber","Verified employers","Empleadores verificados","Перевірені роботодавці","Ellenőrzött munkaadók"],
 "Procedeul 135 (MAG sârmă plină): ISO 9606-1 – 135 P BW FM1 S t15 PA ss mb (t ≥ 12 mm) · 135 P FW FM1 S t10 PD ml":["Verfahren 135 (MAG Massivdraht): ISO 9606-1 – 135 P BW FM1 S t15 PA ss mb (t ≥ 12 mm) · 135 P FW FM1 S t10 PD ml","Process 135 (MAG solid wire): ISO 9606-1 – 135 P BW FM1 S t15 PA ss mb (t ≥ 12 mm) · 135 P FW FM1 S t10 PD ml","Proceso 135 (MAG hilo macizo): ISO 9606-1 – 135 P BW FM1 S t15 PA ss mb (t ≥ 12 mm) · 135 P FW FM1 S t10 PD ml","Процес 135 (MAG суцільний дріт): ISO 9606-1 – 135 P BW FM1 S t15 PA ss mb (t ≥ 12 mm) · 135 P FW FM1 S t10 PD ml","135-ös eljárás (MAG tömör huzal): ISO 9606-1 – 135 P BW FM1 S t15 PA ss mb (t ≥ 12 mm) · 135 P FW FM1 S t10 PD ml"],
@@ -1516,5 +1583,30 @@ function ckSet(v){try{localStorage.setItem("skp_cookie_consent",v?"all":"necessa
 (function(){var c=null;try{c=localStorage.getItem("skp_cookie_consent");}catch(e){}if(!c){setTimeout(function(){var b=document.getElementById("ck-bar");if(b)b.classList.add("show");},900);}})();
 </script>
 
+
+<script>
+/* Calculator salariu net — foloseste netGermania() deja existenta in pagina */
+(function(){
+  var box=document.getElementById('cRates'); if(!box) return;
+  var rate=15, RETINERE=350;
+  function $(id){return document.getElementById(id);}
+  function bani(v){return Math.round(v).toLocaleString('de-DE')+' €';}
+  function ruleaza(){
+    var h=+$('cRange').value, brut=h*rate, net=netGermania(brut);
+    $('oreFV').textContent = h+' '+(window.oreUnit?window.oreUnit():'ore / lună');
+    $('cBrut').textContent = bani(brut);
+    $('cCaz').textContent  = '− '+bani(RETINERE);
+    $('cNet').textContent  = '≈ '+bani(net-RETINERE);
+  }
+  box.addEventListener('click', function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    rate=+b.dataset.r;
+    Array.prototype.forEach.call(box.children,function(x){x.classList.remove('on');});
+    b.classList.add('on'); ruleaza();
+  });
+  $('cRange').addEventListener('input', ruleaza);
+  ruleaza();
+})();
+</script>
 </body>
 </html>
