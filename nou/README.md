@@ -38,4 +38,5 @@ python3 build.py --extract
 - Fostul angajator al fondatorului nu se numește niciodată în texte.
 - Site-ul nu încarcă fonturi de la Google (în Germania e risc de amendă). Folosește fonturile telefonului sau calculatorului.
 - Site-ul nu folosește cookie-uri și nici localStorage. Dacă se adaugă vreodată statistici, trebuie actualizată pagina de cookie-uri și cerut acordul.
-- Înainte de lansare lipsesc din paginile legale: CUI, numărul de la Registrul Comerțului, adresa completă și administratorul. Pentru Germania mai trebuie și o pagină „Impressum”.
+- Datele firmei (adresă, J2025094668006, CUI 53058020, TVA intracomunitar RO53171010) sunt în paginile legale și în „Date legale” (Impressum), obligatorie pentru clienții din Germania.
+- Pe site apare doar telefonul Dariei, +40 774 772 117. Numărul german al lui Gheorghe se dă doar direct clienților, nu se publică.

@@ -14,7 +14,7 @@ from html.parser import HTMLParser
 ROOT = os.path.dirname(os.path.abspath(__file__))
 LANGS = ['ro', 'de', 'en', 'es', 'uk', 'hu']
 NAMES = {'ro': 'Română', 'de': 'Deutsch', 'en': 'English', 'es': 'Español', 'uk': 'Українська', 'hu': 'Magyar'}
-PAGES = ['index.html', 'firme.html', 'candidati.html', 'confidentialitate.html', 'cookies.html', 'termeni.html']
+PAGES = ['index.html', 'firme.html', 'candidati.html', 'confidentialitate.html', 'cookies.html', 'termeni.html', 'impressum.html']
 ATTRS = ('alt', 'placeholder', 'aria-label', 'content', 'title')
 SKIP_TAGS = ('script', 'style')
 # texte care raman la fel in orice limba
