@@ -24,7 +24,7 @@
       <a href="candidati.html" aria-current="page">Für Bewerber</a>
       <a href="index.html#cum-lucram">So arbeiten wir</a>
       <a href="index.html#despre">Über uns</a>
-      <a href="index.html#contact">Kontakt</a>
+      <a class="nav-contact" href="index.html#contact">Kontakt</a>
     </nav>
     <div class="lang" id="lang">
       <button type="button" aria-haspopup="true" aria-expanded="false">DE
@@ -61,7 +61,7 @@
     <div class="sec-head">
       <span class="eyebrow rv">Stellen</span>
       <h2 class="rv d1">Wo du arbeiten kannst</h2>
-      <p class="lead rv d2">Für diese Bereiche suchen wir ständig Leute. Aktuelle Stellenanzeigen mit Lohn und genauem Ort erscheinen hier in Kürze.</p>
+      <p class="lead rv d2">Für diese Bereiche suchen wir ständig Leute. Keine passende Stelle dabei? Hinterlass deine Daten, wir melden uns, sobald eine frei wird.</p>
     </div>
     <div class="trade-cards">
       <div class="trade rv" style="--c:#2563eb"><span class="top"></span><div class="in">
@@ -144,7 +144,7 @@
       <div class="out" aria-live="polite">
         <div class="out-row"><small>Brutto im Monat</small><b id="brut">–</b></div>
         <div class="out-row big"><small>Voraussichtlich netto im Monat</small><b id="net">–</b></div>
-        <p class="disc">Schätzung für Steuerklasse I, ohne Kinder, Werte von 2025. Der genaue Betrag hängt von deiner Situation und deinem Vertrag ab.</p>
+        <p class="disc">Schätzung für Steuerklasse I, ohne Kinder, Werte von 2026. Der genaue Betrag hängt von deiner Situation und deinem Vertrag ab.</p>
       </div>
     </div>
   </div>
@@ -203,11 +203,16 @@
         <div class="field"><label for="c-nume">Vor- und Nachname *</label><input id="c-nume" name="Nume" required autocomplete="name"></div>
         <div class="field"><label for="c-tel">Telefon (WhatsApp) *</label><input id="c-tel" type="tel" name="Telefon" required autocomplete="tel"></div>
         <div class="field"><label for="c-dom">Bereich *</label><select id="c-dom" name="Domeniu" required><option value="">Auswählen</option><option value="Logistică">Logistik</option><option value="Construcții">Bau</option><option value="Sudură și industrie">Schweißen und Industrie</option><option value="Nu știu încă">Weiß ich noch nicht</option></select></div>
-        <div class="field"><label for="c-exp">Berufserfahrung</label><select id="c-exp" name="Experienta"><option value="Fără experiență">Keine Erfahrung</option><option value="Sub 1 an">Unter 1 Jahr</option><option value="1–3 ani">1–3 Jahre</option><option value="Peste 3 ani">Über 3 Jahre</option></select></div>
-        <div class="field"><label for="c-de">Deutsch</label><select id="c-de" name="Germana"><option value="Deloc">Gar nicht</option><option value="Puțin">Ein wenig</option><option value="Mă descurc">Ich komme zurecht</option><option value="Bine">Gut</option></select></div>
-        <div class="field"><label for="c-email">E-Mail</label><input id="c-email" type="email" name="Email" autocomplete="email"></div>
-        <div class="field full"><label for="c-msg">Nachricht</label><textarea id="c-msg" name="Mesaj" rows="3" placeholder="Zertifikate, wann du anfangen kannst, ob du mit jemandem kommst…"></textarea></div>
-        <div class="field full"><label for="c-cv">Lebenslauf, falls vorhanden</label><input id="c-cv" type="file" name="CV" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"><small>PDF, Word oder Foto, maximal 10 MB. Nicht verpflichtend.</small></div>
+        <details class="more full">
+          <summary>Weitere Angaben (optional)</summary>
+          <div class="fgrid">
+          <div class="field"><label for="c-exp">Berufserfahrung</label><select id="c-exp" name="Experienta"><option value="Fără experiență">Keine Erfahrung</option><option value="Sub 1 an">Unter 1 Jahr</option><option value="1–3 ani">1–3 Jahre</option><option value="Peste 3 ani">Über 3 Jahre</option></select></div>
+          <div class="field"><label for="c-de">Deutsch</label><select id="c-de" name="Germana"><option value="Deloc">Gar nicht</option><option value="Puțin">Ein wenig</option><option value="Mă descurc">Ich komme zurecht</option><option value="Bine">Gut</option></select></div>
+          <div class="field"><label for="c-email">E-Mail</label><input id="c-email" type="email" name="Email" autocomplete="email"></div>
+          <div class="field full"><label for="c-msg">Nachricht</label><textarea id="c-msg" name="Mesaj" rows="3" placeholder="Zertifikate, wann du anfangen kannst, ob du mit jemandem kommst…"></textarea></div>
+          <div class="field full"><label for="c-cv">Lebenslauf, falls vorhanden</label><input id="c-cv" type="file" name="CV" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"><small>PDF, Word oder Foto, maximal 10 MB. Nicht verpflichtend.</small></div>
+          </div>
+        </details>
       </div>
       <label class="check"><input type="checkbox" required> <span>Ich stimme der Verarbeitung meiner Daten gemäß der <a href="confidentialitate.html" target="_blank" rel="noopener">Datenschutzerklärung zu</a>.</span></label>
       <button class="btn btn-dark" type="submit">Bewerbung senden <span class="arrow">→</span></button>
@@ -231,6 +236,7 @@
   </div>
 </footer>
 
+<div class="mbar" aria-label="Schnellzugriff"><a class="btn btn-dark" href="#aplica">Jetzt bewerben</a><a class="btn btn-ghost" href="https://wa.me/40774772117" target="_blank" rel="noopener">WhatsApp</a></div>
 <script src="../site.js"></script>
 </body>
 </html>

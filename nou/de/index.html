@@ -25,7 +25,7 @@
       <a href="candidati.html">Für Bewerber</a>
       <a href="#cum-lucram">So arbeiten wir</a>
       <a href="#despre">Über uns</a>
-      <a href="#contact">Kontakt</a>
+      <a class="nav-contact" href="#contact">Kontakt</a>
     </nav>
     <div class="lang" id="lang">
       <button type="button" aria-haspopup="true" aria-expanded="false">DE
@@ -43,24 +43,29 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow rv">Personalberatung · Projektmanagement</span>
-      <h1 class="rv d1">Die richtigen Leute, organisiert von der Auswahl bis zur <em>ersten Schicht</em>.</h1>
-      <p class="lead rv d2">Beratung für Unternehmen mit Personalbedarf und komplettes Projektmanagement: Auswahl, Schulung, Unterkunft, Anreise und Begleitung am Arbeitsplatz in Deutschland.</p>
-      <div class="doors rv d3">
-        <a class="door door-firma" href="firme.html">
-          <small>Für Unternehmen</small>
-          <b>Ich suche Personal für mein Projekt</b>
-          <p>Deutschland und Luxemburg · Logistik und Industrie</p>
-          <span class="go">Lösungen für Unternehmen <span class="arrow">→</span></span>
-          <svg class="bg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 21V8l6-4v4l6-4v4l6-4v17H3Zm4-3h2v-3H7v3Zm4 0h2v-3h-2v3Zm4 0h2v-3h-2v3Z"/></svg>
-        </a>
-        <a class="door door-om" href="candidati.html">
-          <small>Für Bewerber</small>
-          <b>Ich suche Arbeit in Deutschland</b>
-          <p>Legaler Vertrag, Schulung, organisierte Unterkunft</p>
-          <span class="go">Unser Angebot <span class="arrow">→</span></span>
-          <svg class="bg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-4 0-8 2-8 5v2h16v-2c0-3-4-5-8-5Z"/></svg>
-        </a>
+      <div class="aud" role="tablist" aria-label="Für wen">
+        <button type="button" role="tab" data-aud="firma" aria-selected="true">Für Unternehmen</button>
+        <button type="button" role="tab" data-aud="cand" aria-selected="false">Für Bewerber</button>
+      </div>
+      <div class="aud-pane" data-pane="firma">
+        <span class="eyebrow">Personalberatung · Projektmanagement</span>
+        <h1>Das richtige Personal. Gut koordinierte Projekte.</h1>
+        <p class="lead">Von Auswahl und Schulung bis zu Unterkunft und Einarbeitung. Ein Ansprechpartner für Ihr Projekt in Deutschland oder Luxemburg.</p>
+        <div class="hero-cta">
+          <a class="btn btn-accent" href="firme.html#cerere">Angebot anfordern <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="firme.html">So arbeiten wir mit Unternehmen</a>
+        </div>
+        <p class="hero-note">Kommunikation auf Deutsch, Rumänisch und Englisch · Antwort in 24–48 h</p>
+      </div>
+      <div class="aud-pane" data-pane="cand" hidden>
+        <span class="eyebrow">Für deinen nächsten Schritt</span>
+        <h1>Arbeit in Deutschland. Mit allen Details vorab geklärt.</h1>
+        <p class="lead">Du erfährst vor der Abreise, welchen Vertrag du hast, was die Unterkunft kostet und wie die Arbeit aussieht. Wir helfen dir bei der Vorbereitung und den ersten Schritten.</p>
+        <div class="hero-cta">
+          <a class="btn btn-dark" href="candidati.html#aplica">Jetzt bewerben <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="https://wa.me/40774772117" target="_blank" rel="noopener">Auf WhatsApp schreiben</a>
+        </div>
+        <p class="hero-note">Persönliches Gespräch · Lebenslauf beim ersten Kontakt optional</p>
       </div>
     </div>
     <div class="hero-visual rv d2">
@@ -124,48 +129,10 @@
       <div class="rv d2"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3Zm-7 9.2V16c0 2.2 3.1 4 7 4s7-1.8 7-4v-3.8L12 16l-7-3.8Z"/></svg></span><h3>Schulung in der Logistik</h3><p>Die Mitarbeiter kommen vorbereitet auf die Prozesse in Ihrem Lager.</p></div>
       <div class="rv d3"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 5-5 1.4 1.4-6.4 6.4Z"/></svg></span><h3>Aktive Unterstützung beim Start</h3><p>Begleitung am Arbeitsplatz und ein einziger Ansprechpartner.</p></div>
     </div>
-    <div class="models">
-      <div class="model rv">
-        <small>Modell 1</small>
-        <h3>Deutscher Arbeitsvertrag</h3>
-        <ul><li>Anstellung direkt beim deutschen Partner</li><li>Sozialversicherung in Deutschland</li><li>Unterkunft wird gestellt, die Miete wird vom Lohn einbehalten</li></ul>
-      </div>
-      <div class="model rv d1">
-        <small>Modell 2</small>
-        <h3>Entsendung aus Rumänien</h3>
-        <ul><li>Rumänischer Arbeitsvertrag, Entsendung nach Deutschland</li><li>A1-Bescheinigung und Meldung beim Zoll</li><li>Unterkunft wird von SmartKonsult bezahlt</li></ul>
-      </div>
-    </div>
+    <p class="firme-more rv"><b>Schulung in 12 Lagerprozessen</b>, einschließlich Staplerschein durch eigenen Ausbilder, und zwei Beschäftigungsmodelle: deutscher Arbeitsvertrag oder Entsendung.</p>
     <div class="cta-row rv">
       <a class="btn btn-accent" href="firme.html#cerere">Angebot anfordern <span class="arrow">→</span></a>
-      <a class="btn btn-ghost-light" href="firme.html">Alles zur Zusammenarbeit</a>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESE -->
-<section class="proc" id="procese">
-  <div class="wrap">
-    <div class="proc-head">
-      <div>
-        <span class="eyebrow rv">Schulung</span>
-        <h2 class="rv d1" style="margin-top:14px">Wir schulen die Mitarbeiter in den Lagerprozessen</h2>
-      </div>
-      <p class="lead rv d2">Wir wählen die Mitarbeiter nach den Anforderungen des Kunden aus und bereiten sie auf seine Prozesse vor.</p>
-    </div>
-    <div class="proc-grid">
-      <div class="rv"><b>Wareneingang</b><i></i><span>Annahme, Prüfung, Erfassung, Einlagerung</span></div>
-      <div class="rv d1"><b>Nachschub</b><i></i><span>Versorgung der Kommissionierplätze</span></div>
-      <div class="rv d2"><b>Kommissionierung</b><i></i><span>Pick-by-Scan, Pick-by-Voice, Pick-by-Light</span></div>
-      <div class="rv d3"><b>Warenausgang</b><i></i><span>Verpackung, Konsolidierung, Verladung</span></div>
-      <div class="rv hl"><b>Flurförderzeuge</b><i>Staplerschein · DGUV 308-001</i><span>Schulung durch eigenen Ausbilder, jährliche Unterweisung</span></div>
-      <div class="rv d1 hl"><b>Tiefkühllager</b><i></i><span>Arbeit bis −22 °C, Einhaltung der Kühlkette</span></div>
-      <div class="rv d2"><b>Inventur</b><i></i><span>Stichtags- und permanente Inventur, mit Scanner</span></div>
-      <div class="rv d3"><b>Retouren</b><i></i><span>Annahme, Prüfung, Wiedereinlagerung</span></div>
-      <div class="rv"><b>Konfektionierung</b><i></i><span>Verpackung, Etikettierung, Palettierung</span></div>
-      <div class="rv d1"><b>Ladungssicherung</b><i></i><span>Sichere Verladung nach VDI 2700</span></div>
-      <div class="rv d2"><b>Leergut</b><i></i><span>Erfassung und Tausch von Europaletten</span></div>
-      <div class="rv d3"><b>Arbeitssicherheit</b><i></i><span>Unterweisung, PSA, Kälteschutz</span></div>
+      <a class="btn btn-ghost-light" href="firme.html">Alles zur Zusammenarbeit <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -185,7 +152,7 @@
         <div class="rv d3"><b>Persönliche Betreuung</b><span>Wir begleiten dich bei Unterlagen, Transport und in den ersten Arbeitstagen.</span></div>
       </div>
       <div class="trades rv">
-        <span>Logistik</span><span>Bau</span><span>Schweißen</span><span class="soon">Aktuelle Stellenanzeigen erscheinen hier in Kürze</span>
+        <span>Logistik</span><span>Bau</span><span>Schweißen</span>
       </div>
       <div class="cta-row rv">
         <a class="btn btn-dark" href="candidati.html#aplica">Jetzt bewerben <span class="arrow">→</span></a>
@@ -254,6 +221,7 @@
   </div>
 </footer>
 
+<div class="mbar" aria-label="Schnellzugriff"><a class="btn btn-dark" href="candidati.html#aplica">Jetzt bewerben</a><a class="btn btn-ghost" href="https://wa.me/40774772117" target="_blank" rel="noopener">WhatsApp</a></div>
 <script src="../site.js"></script>
 </body>
 </html>

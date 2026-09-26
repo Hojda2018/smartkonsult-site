@@ -25,7 +25,7 @@
       <a href="candidati.html">Для кандидатів</a>
       <a href="#cum-lucram">Як ми працюємо</a>
       <a href="#despre">Про нас</a>
-      <a href="#contact">Контакти</a>
+      <a class="nav-contact" href="#contact">Контакти</a>
     </nav>
     <div class="lang" id="lang">
       <button type="button" aria-haspopup="true" aria-expanded="false">UK
@@ -43,24 +43,29 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow rv">Кадровий консалтинг · Управління проєктами</span>
-      <h1 class="rv d1">Правильні люди, організовані від відбору до <em>першої зміни</em>.</h1>
-      <p class="lead rv d2">Консалтинг для компаній, яким потрібен персонал, і повне управління проєктом: відбір, навчання, житло, прибуття та супровід на робочому місці в Німеччині.</p>
-      <div class="doors rv d3">
-        <a class="door door-firma" href="firme.html">
-          <small>Для компаній</small>
-          <b>Шукаю персонал для свого проєкту</b>
-          <p>Німеччина та Люксембург · логістика і промисловість</p>
-          <span class="go">Рішення для компаній <span class="arrow">→</span></span>
-          <svg class="bg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 21V8l6-4v4l6-4v4l6-4v17H3Zm4-3h2v-3H7v3Zm4 0h2v-3h-2v3Zm4 0h2v-3h-2v3Z"/></svg>
-        </a>
-        <a class="door door-om" href="candidati.html">
-          <small>Для кандидатів</small>
-          <b>Шукаю роботу в Німеччині</b>
-          <p>Легальний договір, навчання, організоване житло</p>
-          <span class="go">Що ми пропонуємо <span class="arrow">→</span></span>
-          <svg class="bg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-4 0-8 2-8 5v2h16v-2c0-3-4-5-8-5Z"/></svg>
-        </a>
+      <div class="aud" role="tablist" aria-label="Для кого">
+        <button type="button" role="tab" data-aud="firma" aria-selected="true">Для компаній</button>
+        <button type="button" role="tab" data-aud="cand" aria-selected="false">Для кандидатів</button>
+      </div>
+      <div class="aud-pane" data-pane="firma">
+        <span class="eyebrow">Кадровий консалтинг · Управління проєктами</span>
+        <h1>Правильний персонал. Добре скоординовані проєкти.</h1>
+        <p class="lead">Від відбору й навчання до житла та інтеграції. Одна контактна особа для вашого проєкту в Німеччині чи Люксембурзі.</p>
+        <div class="hero-cta">
+          <a class="btn btn-accent" href="firme.html#cerere">Запросити пропозицію <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="firme.html">Як ми працюємо з компаніями</a>
+        </div>
+        <p class="hero-note">Спілкування румунською, німецькою та англійською · Відповідь за 24–48 год</p>
+      </div>
+      <div class="aud-pane" data-pane="cand" hidden>
+        <span class="eyebrow">Для твого наступного кроку</span>
+        <h1>Робота в Німеччині. Усі деталі зрозумілі наперед.</h1>
+        <p class="lead">Ще до від'їзду ти знаєш, який у тебе договір, скільки коштує житло і що передбачає робота. Ми допоможемо з підготовкою і першими кроками.</p>
+        <div class="hero-cta">
+          <a class="btn btn-dark" href="candidati.html#aplica">Подати заявку <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="https://wa.me/40774772117" target="_blank" rel="noopener">Написати у WhatsApp</a>
+        </div>
+        <p class="hero-note">Особиста розмова · Резюме необов'язкове під час першого контакту</p>
       </div>
     </div>
     <div class="hero-visual rv d2">
@@ -124,48 +129,10 @@
       <div class="rv d2"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3Zm-7 9.2V16c0 2.2 3.1 4 7 4s7-1.8 7-4v-3.8L12 16l-7-3.8Z"/></svg></span><h3>Навчання логістиці</h3><p>Люди приїжджають підготовленими до процесів на вашому складі.</p></div>
       <div class="rv d3"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 5-5 1.4 1.4-6.4 6.4Z"/></svg></span><h3>Активна підтримка на старті</h3><p>Супровід на робочому місці та одна контактна особа.</p></div>
     </div>
-    <div class="models">
-      <div class="model rv">
-        <small>Модель 1</small>
-        <h3>Німецький трудовий договір</h3>
-        <ul><li>Працевлаштування безпосередньо в німецького партнера</li><li>Соціальне страхування в Німеччині</li><li>Житло надається, оренда утримується із зарплати</li></ul>
-      </div>
-      <div class="model rv d1">
-        <small>Модель 2</small>
-        <h3>Відрядження з Румунії</h3>
-        <ul><li>Румунський договір, відрядження до Німеччини</li><li>Довідка A1 і повідомлення до митниці (Zoll)</li><li>Житло оплачує SmartKonsult</li></ul>
-      </div>
-    </div>
+    <p class="firme-more rv"><b>Навчання 12 складським процесам</b>, зокрема посвідчення навантажувача з власним інструктором, і дві моделі співпраці: німецький договір або відрядження.</p>
     <div class="cta-row rv">
       <a class="btn btn-accent" href="firme.html#cerere">Запросити пропозицію <span class="arrow">→</span></a>
-      <a class="btn btn-ghost-light" href="firme.html">Усе про співпрацю</a>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESE -->
-<section class="proc" id="procese">
-  <div class="wrap">
-    <div class="proc-head">
-      <div>
-        <span class="eyebrow rv">Навчання</span>
-        <h2 class="rv d1" style="margin-top:14px">Ми навчаємо людей складським процесам</h2>
-      </div>
-      <p class="lead rv d2">Ми відбираємо людей відповідно до вимог клієнта і готуємо їх до його процесів. Німецький термін — той, який вони почують у цеху.</p>
-    </div>
-    <div class="proc-grid">
-      <div class="rv"><b>Приймання товару</b><i>Wareneingang</i><span>приймання, перевірка, облік, розміщення</span></div>
-      <div class="rv d1"><b>Поповнення</b><i>Nachschub</i><span>поповнення місць комплектації</span></div>
-      <div class="rv d2"><b>Комплектація</b><i>Kommissionierung</i><span>Pick-by-Scan, Pick-by-Voice, Pick-by-Light</span></div>
-      <div class="rv d3"><b>Відвантаження</b><i>Warenausgang</i><span>пакування, консолідація, завантаження</span></div>
-      <div class="rv hl"><b>Навантажувач</b><i>Staplerschein · DGUV 308-001</i><span>курс із власним інструктором, щорічний інструктаж</span></div>
-      <div class="rv d1 hl"><b>Холодильний склад</b><i>Tiefkühllogistik</i><span>робота до −22 °C, холодовий ланцюг</span></div>
-      <div class="rv d2"><b>Інвентаризація</b><i>Inventur</i><span>періодична й постійна, зі сканером</span></div>
-      <div class="rv d3"><b>Повернення</b><i>Retourenabwicklung</i><span>приймання, перевірка, повернення на склад</span></div>
-      <div class="rv"><b>Пакування та маркування</b><i>Konfektionierung</i><span>пакування, маркування, палетизація</span></div>
-      <div class="rv d1"><b>Кріплення вантажу</b><i>Ladungssicherung</i><span>безпечне завантаження згідно з VDI 2700</span></div>
-      <div class="rv d2"><b>Палети</b><i>Leergutmanagement</i><span>облік і обмін європалет</span></div>
-      <div class="rv d3"><b>Охорона праці</b><i>Arbeitssicherheit</i><span>інструктаж, засоби захисту, холод</span></div>
+      <a class="btn btn-ghost-light" href="firme.html">Усе про співпрацю <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -185,7 +152,7 @@
         <div class="rv d3"><b>Особиста підтримка</b><span>Допомагаємо з документами, транспортом і в перші робочі дні.</span></div>
       </div>
       <div class="trades rv">
-        <span>Логістика</span><span>Будівництво</span><span>Зварювання</span><span class="soon">Актуальні вакансії скоро з'являться тут</span>
+        <span>Логістика</span><span>Будівництво</span><span>Зварювання</span>
       </div>
       <div class="cta-row rv">
         <a class="btn btn-dark" href="candidati.html#aplica">Подати заявку <span class="arrow">→</span></a>
@@ -254,6 +221,7 @@
   </div>
 </footer>
 
+<div class="mbar" aria-label="Швидкі дії"><a class="btn btn-dark" href="candidati.html#aplica">Подати заявку</a><a class="btn btn-ghost" href="https://wa.me/40774772117" target="_blank" rel="noopener">WhatsApp</a></div>
 <script src="../site.js"></script>
 </body>
 </html>

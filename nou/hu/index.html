@@ -25,7 +25,7 @@
       <a href="candidati.html">Jelentkezőknek</a>
       <a href="#cum-lucram">Hogyan dolgozunk</a>
       <a href="#despre">Rólunk</a>
-      <a href="#contact">Kapcsolat</a>
+      <a class="nav-contact" href="#contact">Kapcsolat</a>
     </nav>
     <div class="lang" id="lang">
       <button type="button" aria-haspopup="true" aria-expanded="false">HU
@@ -43,24 +43,29 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow rv">Munkaerő-tanácsadás · Projektmenedzsment</span>
-      <h1 class="rv d1">A megfelelő emberek, megszervezve a kiválasztástól az <em>első műszakig</em>.</h1>
-      <p class="lead rv d2">Tanácsadás munkaerőt kereső cégeknek és teljes projektmenedzsment: kiválasztás, képzés, szállás, érkezés és kísérés a németországi munkahelyen.</p>
-      <div class="doors rv d3">
-        <a class="door door-firma" href="firme.html">
-          <small>Cégeknek</small>
-          <b>Munkaerőt keresek a projektemhez</b>
-          <p>Németország és Luxemburg · logisztika és ipar</p>
-          <span class="go">Megoldások cégeknek <span class="arrow">→</span></span>
-          <svg class="bg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 21V8l6-4v4l6-4v4l6-4v17H3Zm4-3h2v-3H7v3Zm4 0h2v-3h-2v3Zm4 0h2v-3h-2v3Z"/></svg>
-        </a>
-        <a class="door door-om" href="candidati.html">
-          <small>Jelentkezőknek</small>
-          <b>Munkát keresek Németországban</b>
-          <p>Legális szerződés, képzés, szervezett szállás</p>
-          <span class="go">Amit kínálunk <span class="arrow">→</span></span>
-          <svg class="bg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-4 0-8 2-8 5v2h16v-2c0-3-4-5-8-5Z"/></svg>
-        </a>
+      <div class="aud" role="tablist" aria-label="Kinek szól">
+        <button type="button" role="tab" data-aud="firma" aria-selected="true">Cégeknek</button>
+        <button type="button" role="tab" data-aud="cand" aria-selected="false">Jelentkezőknek</button>
+      </div>
+      <div class="aud-pane" data-pane="firma">
+        <span class="eyebrow">Munkaerő-tanácsadás · Projektmenedzsment</span>
+        <h1>A megfelelő munkaerő. Jól koordinált projektek.</h1>
+        <p class="lead">A kiválasztástól és a képzéstől a szállásig és a beilleszkedésig. Egyetlen kapcsolattartó a németországi vagy luxemburgi projektjéhez.</p>
+        <div class="hero-cta">
+          <a class="btn btn-accent" href="firme.html#cerere">Ajánlatot kérek <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="firme.html">Hogyan dolgozunk a cégekkel</a>
+        </div>
+        <p class="hero-note">Kommunikáció románul, németül és angolul · Válasz 24–48 órán belül</p>
+      </div>
+      <div class="aud-pane" data-pane="cand" hidden>
+        <span class="eyebrow">A következő lépésedhez</span>
+        <h1>Munka Németországban. Minden részlet világosan.</h1>
+        <p class="lead">Indulás előtt megtudod, milyen szerződésed lesz, mennyibe kerül a szállás és mivel jár a munka. Segítünk a felkészülésben és az első lépésekben.</p>
+        <div class="hero-cta">
+          <a class="btn btn-dark" href="candidati.html#aplica">Jelentkezz most <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="https://wa.me/40774772117" target="_blank" rel="noopener">Írj WhatsAppon</a>
+        </div>
+        <p class="hero-note">Személyes beszélgetés · Az önéletrajz az első kapcsolatfelvételnél nem kötelező</p>
       </div>
     </div>
     <div class="hero-visual rv d2">
@@ -124,48 +129,10 @@
       <div class="rv d2"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3Zm-7 9.2V16c0 2.2 3.1 4 7 4s7-1.8 7-4v-3.8L12 16l-7-3.8Z"/></svg></span><h3>Logisztikai képzés</h3><p>Az emberek felkészülten érkeznek az Önök raktárának folyamataira.</p></div>
       <div class="rv d3"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 5-5 1.4 1.4-6.4 6.4Z"/></svg></span><h3>Aktív támogatás induláskor</h3><p>Kísérés a munkahelyen és egyetlen kapcsolattartó.</p></div>
     </div>
-    <div class="models">
-      <div class="model rv">
-        <small>1. modell</small>
-        <h3>Német munkaszerződés</h3>
-        <ul><li>Közvetlen alkalmazás a német partnernél</li><li>Társadalombiztosítás Németországban</li><li>Biztosított szállás, a lakbért a fizetésből vonják le</li></ul>
-      </div>
-      <div class="model rv d1">
-        <small>2. modell</small>
-        <h3>Kiküldetés Romániából</h3>
-        <ul><li>Román szerződés, kiküldetés Németországba</li><li>A1 igazolás és bejelentés a német vámhatóságnál (Zoll)</li><li>A szállást a SmartKonsult fizeti</li></ul>
-      </div>
-    </div>
+    <p class="firme-more rv"><b>Képzés 12 raktári folyamatra</b>, köztük targoncavezetői jogosítvány saját oktatóval, és két foglalkoztatási modell: német szerződés vagy kiküldetés.</p>
     <div class="cta-row rv">
       <a class="btn btn-accent" href="firme.html#cerere">Ajánlatot kérek <span class="arrow">→</span></a>
-      <a class="btn btn-ghost-light" href="firme.html">Minden az együttműködésről</a>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESE -->
-<section class="proc" id="procese">
-  <div class="wrap">
-    <div class="proc-head">
-      <div>
-        <span class="eyebrow rv">Képzés</span>
-        <h2 class="rv d1" style="margin-top:14px">Betanítjuk az embereket a raktári folyamatokra</h2>
-      </div>
-      <p class="lead rv d2">Az ügyfél igényei szerint választjuk ki az embereket, és felkészítjük őket az ő folyamataira. A német kifejezés az, amelyet a csarnokban hallani fognak.</p>
-    </div>
-    <div class="proc-grid">
-      <div class="rv"><b>Áruátvétel</b><i>Wareneingang</i><span>átvétel, ellenőrzés, rögzítés, betárolás</span></div>
-      <div class="rv d1"><b>Utántöltés</b><i>Nachschub</i><span>a komissiózó helyek feltöltése</span></div>
-      <div class="rv d2"><b>Komissiózás</b><i>Kommissionierung</i><span>Pick-by-Scan, Pick-by-Voice, Pick-by-Light</span></div>
-      <div class="rv d3"><b>Árukiadás</b><i>Warenausgang</i><span>csomagolás, konszolidálás, rakodás</span></div>
-      <div class="rv hl"><b>Targonca</b><i>Staplerschein · DGUV 308-001</i><span>tanfolyam saját oktatóval, éves oktatás</span></div>
-      <div class="rv d1 hl"><b>Mélyhűtött raktár</b><i>Tiefkühllogistik</i><span>munka −22 °C-ig, hűtési lánc</span></div>
-      <div class="rv d2"><b>Leltár</b><i>Inventur</i><span>fordulónapi és folyamatos, szkennerrel</span></div>
-      <div class="rv d3"><b>Visszáru</b><i>Retourenabwicklung</i><span>átvétel, ellenőrzés, visszatárolás</span></div>
-      <div class="rv"><b>Csomagolás és címkézés</b><i>Konfektionierung</i><span>csomagolás, címkézés, raklapozás</span></div>
-      <div class="rv d1"><b>Rakományrögzítés</b><i>Ladungssicherung</i><span>biztonságos rakodás a VDI 2700 szerint</span></div>
-      <div class="rv d2"><b>Raklapok</b><i>Leergutmanagement</i><span>EUR-raklapok nyilvántartása és cseréje</span></div>
-      <div class="rv d3"><b>Munkavédelem</b><i>Arbeitssicherheit</i><span>oktatás, védőfelszerelés, hideg</span></div>
+      <a class="btn btn-ghost-light" href="firme.html">Minden az együttműködésről <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -185,7 +152,7 @@
         <div class="rv d3"><b>Személyes támogatás</b><span>Segítünk az iratokkal, az utazással és az első munkanapokon.</span></div>
       </div>
       <div class="trades rv">
-        <span>Logisztika</span><span>Építőipar</span><span>Hegesztés</span><span class="soon">Az aktuális álláshirdetések hamarosan itt jelennek meg</span>
+        <span>Logisztika</span><span>Építőipar</span><span>Hegesztés</span>
       </div>
       <div class="cta-row rv">
         <a class="btn btn-dark" href="candidati.html#aplica">Jelentkezz most <span class="arrow">→</span></a>
@@ -254,6 +221,7 @@
   </div>
 </footer>
 
+<div class="mbar" aria-label="Gyors műveletek"><a class="btn btn-dark" href="candidati.html#aplica">Jelentkezz most</a><a class="btn btn-ghost" href="https://wa.me/40774772117" target="_blank" rel="noopener">WhatsApp</a></div>
 <script src="../site.js"></script>
 </body>
 </html>

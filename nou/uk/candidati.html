@@ -24,7 +24,7 @@
       <a href="candidati.html" aria-current="page">Для кандидатів</a>
       <a href="index.html#cum-lucram">Як ми працюємо</a>
       <a href="index.html#despre">Про нас</a>
-      <a href="index.html#contact">Контакти</a>
+      <a class="nav-contact" href="index.html#contact">Контакти</a>
     </nav>
     <div class="lang" id="lang">
       <button type="button" aria-haspopup="true" aria-expanded="false">UK
@@ -61,7 +61,7 @@
     <div class="sec-head">
       <span class="eyebrow rv">Вакансії</span>
       <h2 class="rv d1">Де ти можеш працювати</h2>
-      <p class="lead rv d2">Ми постійно шукаємо людей у ці галузі. Актуальні вакансії із зарплатою та точним місцем скоро з'являться тут.</p>
+      <p class="lead rv d2">Ми постійно шукаємо людей у ці галузі. Не бачиш потрібної вакансії? Залиш свої дані, і ми повідомимо, коли вона з'явиться.</p>
     </div>
     <div class="trade-cards">
       <div class="trade rv" style="--c:#2563eb"><span class="top"></span><div class="in">
@@ -144,7 +144,7 @@
       <div class="out" aria-live="polite">
         <div class="out-row"><small>Брутто на місяць</small><b id="brut">–</b></div>
         <div class="out-row big"><small>Орієнтовно нетто на місяць</small><b id="net">–</b></div>
-        <p class="disc">Оцінка для податкового класу I, без дітей, значення 2025 року. Точна сума залежить від твоєї ситуації та договору.</p>
+        <p class="disc">Оцінка для податкового класу I, без дітей, значення 2026 року. Точна сума залежить від твоєї ситуації та договору.</p>
       </div>
     </div>
   </div>
@@ -203,11 +203,16 @@
         <div class="field"><label for="c-nume">Ім'я та прізвище *</label><input id="c-nume" name="Nume" required autocomplete="name"></div>
         <div class="field"><label for="c-tel">Телефон (WhatsApp) *</label><input id="c-tel" type="tel" name="Telefon" required autocomplete="tel"></div>
         <div class="field"><label for="c-dom">Галузь *</label><select id="c-dom" name="Domeniu" required><option value="">Оберіть</option><option value="Logistică">Логістика</option><option value="Construcții">Будівництво</option><option value="Sudură și industrie">Зварювання та промисловість</option><option value="Nu știu încă">Ще не знаю</option></select></div>
-        <div class="field"><label for="c-exp">Досвід у професії</label><select id="c-exp" name="Experienta"><option value="Fără experiență">Без досвіду</option><option value="Sub 1 an">Менше 1 року</option><option value="1–3 ani">1–3 роки</option><option value="Peste 3 ani">Понад 3 роки</option></select></div>
-        <div class="field"><label for="c-de">Німецька</label><select id="c-de" name="Germana"><option value="Deloc">Зовсім ні</option><option value="Puțin">Трохи</option><option value="Mă descurc">Можу порозумітися</option><option value="Bine">Добре</option></select></div>
-        <div class="field"><label for="c-email">E-mail</label><input id="c-email" type="email" name="Email" autocomplete="email"></div>
-        <div class="field full"><label for="c-msg">Повідомлення</label><textarea id="c-msg" name="Mesaj" rows="3" placeholder="Сертифікати, коли можеш почати, чи їдеш з кимось…"></textarea></div>
-        <div class="field full"><label for="c-cv">Резюме, якщо є</label><input id="c-cv" type="file" name="CV" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"><small>PDF, Word або фото, до 10 МБ. Не обов'язково.</small></div>
+        <details class="more full">
+          <summary>Більше деталей (необов'язково)</summary>
+          <div class="fgrid">
+          <div class="field"><label for="c-exp">Досвід у професії</label><select id="c-exp" name="Experienta"><option value="Fără experiență">Без досвіду</option><option value="Sub 1 an">Менше 1 року</option><option value="1–3 ani">1–3 роки</option><option value="Peste 3 ani">Понад 3 роки</option></select></div>
+          <div class="field"><label for="c-de">Німецька</label><select id="c-de" name="Germana"><option value="Deloc">Зовсім ні</option><option value="Puțin">Трохи</option><option value="Mă descurc">Можу порозумітися</option><option value="Bine">Добре</option></select></div>
+          <div class="field"><label for="c-email">E-mail</label><input id="c-email" type="email" name="Email" autocomplete="email"></div>
+          <div class="field full"><label for="c-msg">Повідомлення</label><textarea id="c-msg" name="Mesaj" rows="3" placeholder="Сертифікати, коли можеш почати, чи їдеш з кимось…"></textarea></div>
+          <div class="field full"><label for="c-cv">Резюме, якщо є</label><input id="c-cv" type="file" name="CV" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"><small>PDF, Word або фото, до 10 МБ. Не обов'язково.</small></div>
+          </div>
+        </details>
       </div>
       <label class="check"><input type="checkbox" required> <span>Я погоджуюся на обробку моїх даних відповідно до <a href="confidentialitate.html" target="_blank" rel="noopener">Політики конфіденційності</a>.</span></label>
       <button class="btn btn-dark" type="submit">Надіслати заявку <span class="arrow">→</span></button>
@@ -231,6 +236,7 @@
   </div>
 </footer>
 
+<div class="mbar" aria-label="Швидкі дії"><a class="btn btn-dark" href="#aplica">Подати заявку</a><a class="btn btn-ghost" href="https://wa.me/40774772117" target="_blank" rel="noopener">WhatsApp</a></div>
 <script src="../site.js"></script>
 </body>
 </html>

@@ -19,7 +19,7 @@
       <a href="candidati.html">Pentru candidați</a>
       <a href="#cum-lucram">Cum lucrăm</a>
       <a href="#despre">Despre noi</a>
-      <a href="#contact">Contact</a>
+      <a class="nav-contact" href="#contact">Contact</a>
     </nav>
     <div class="lang" id="lang">
       <button type="button" aria-haspopup="true" aria-expanded="false">RO
@@ -44,24 +44,29 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow rv">Consultanță de personal · Management de proiect</span>
-      <h1 class="rv d1">Oamenii potriviți, organizați de la selecție până la <em>prima tură</em>.</h1>
-      <p class="lead rv d2">Consultanță pentru firmele care au nevoie de personal și management complet al proiectului: selecție, instruire, cazare, sosire și însoțire la locul de muncă în Germania.</p>
-      <div class="doors rv d3">
-        <a class="door door-firma" href="firme.html">
-          <small>Pentru firme</small>
-          <b>Caut personal pentru proiectul meu</b>
-          <p>Germania și Luxemburg · logistică și industrie</p>
-          <span class="go">Soluții pentru firme <span class="arrow">→</span></span>
-          <svg class="bg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 21V8l6-4v4l6-4v4l6-4v17H3Zm4-3h2v-3H7v3Zm4 0h2v-3h-2v3Zm4 0h2v-3h-2v3Z"/></svg>
-        </a>
-        <a class="door door-om" href="candidati.html">
-          <small>Pentru candidați</small>
-          <b>Caut de lucru în Germania</b>
-          <p>Contract legal, instruire, cazare organizată</p>
-          <span class="go">Vezi ce oferim <span class="arrow">→</span></span>
-          <svg class="bg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-4 0-8 2-8 5v2h16v-2c0-3-4-5-8-5Z"/></svg>
-        </a>
+      <div class="aud" role="tablist" aria-label="Pentru cine">
+        <button type="button" role="tab" data-aud="firma" aria-selected="true">Pentru firme</button>
+        <button type="button" role="tab" data-aud="cand" aria-selected="false">Pentru candidați</button>
+      </div>
+      <div class="aud-pane" data-pane="firma">
+        <span class="eyebrow">Consultanță de personal · Management de proiect</span>
+        <h1>Personal potrivit. Proiecte bine coordonate.</h1>
+        <p class="lead">De la selecție și instruire la cazare și integrare. Un singur interlocutor pentru proiectul dumneavoastră din Germania sau Luxemburg.</p>
+        <div class="hero-cta">
+          <a class="btn btn-accent" href="firme.html#cerere">Solicită o ofertă <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="firme.html">Cum lucrăm cu firmele</a>
+        </div>
+        <p class="hero-note">Comunicare în română, germană și engleză · Răspuns în 24–48 h</p>
+      </div>
+      <div class="aud-pane" data-pane="cand" hidden>
+        <span class="eyebrow">Pentru următorul tău pas</span>
+        <h1>Muncă în Germania. Cu toate detaliile clare.</h1>
+        <p class="lead">Afli ce contract ai, cât costă cazarea și ce presupune munca înainte să pleci. Noi te ajutăm cu pregătirea și primii pași.</p>
+        <div class="hero-cta">
+          <a class="btn btn-dark" href="candidati.html#aplica">Aplică acum <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="https://wa.me/40774772117" target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+        </div>
+        <p class="hero-note">Discutăm în română · CV-ul e opțional la primul contact</p>
       </div>
     </div>
     <div class="hero-visual rv d2">
@@ -125,48 +130,10 @@
       <div class="rv d2"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3Zm-7 9.2V16c0 2.2 3.1 4 7 4s7-1.8 7-4v-3.8L12 16l-7-3.8Z"/></svg></span><h3>Instruire în logistică</h3><p>Oamenii ajung pregătiți pe procesele din depozitul dumneavoastră.</p></div>
       <div class="rv d3"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 5-5 1.4 1.4-6.4 6.4Z"/></svg></span><h3>Suport activ la start</h3><p>Însoțire la locul de muncă și un singur interlocutor.</p></div>
     </div>
-    <div class="models">
-      <div class="model rv">
-        <small>Modelul 1</small>
-        <h3>Contract de muncă german</h3>
-        <ul><li>Angajare directă la partenerul german</li><li>Asigurări sociale în Germania</li><li>Cazare asigurată, chiria se reține din salariu</li></ul>
-      </div>
-      <div class="model rv d1">
-        <small>Modelul 2</small>
-        <h3>Detașare din România</h3>
-        <ul><li>Contract românesc, detașare în Germania</li><li>Formular A1 și declarare la vamă (Zoll)</li><li>Cazare plătită de SmartKonsult</li></ul>
-      </div>
-    </div>
+    <p class="firme-more rv"><b>Instruire pe 12 procese de depozit</b>, inclusiv Staplerschein cu instructor propriu, și două modele de colaborare: contract german sau detașare.</p>
     <div class="cta-row rv">
       <a class="btn btn-accent" href="firme.html#cerere">Solicită o ofertă <span class="arrow">→</span></a>
-      <a class="btn btn-ghost-light" href="firme.html">Totul despre colaborare</a>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESE -->
-<section class="proc" id="procese">
-  <div class="wrap">
-    <div class="proc-head">
-      <div>
-        <span class="eyebrow rv">Instruire</span>
-        <h2 class="rv d1" style="margin-top:14px">Instruim oamenii pe procesele din depozit</h2>
-      </div>
-      <p class="lead rv d2">Selectăm oamenii după cerințele clientului și îi pregătim pentru procesele lui. Termenul german e cel pe care îl vor auzi în hală.</p>
-    </div>
-    <div class="proc-grid">
-      <div class="rv"><b>Recepție marfă</b><i>Wareneingang</i><span>primire, verificare, înregistrare, depozitare</span></div>
-      <div class="rv d1"><b>Reaprovizionare</b><i>Nachschub</i><span>alimentarea locațiilor de picking</span></div>
-      <div class="rv d2"><b>Picking</b><i>Kommissionierung</i><span>Pick-by-Scan, Pick-by-Voice, Pick-by-Light</span></div>
-      <div class="rv d3"><b>Expediție</b><i>Warenausgang</i><span>ambalare, consolidare, încărcare</span></div>
-      <div class="rv hl"><b>Stivuitor</b><i>Staplerschein · DGUV 308-001</i><span>curs cu instructor propriu, instructaj anual</span></div>
-      <div class="rv d1 hl"><b>Depozit frigorific</b><i>Tiefkühllogistik</i><span>lucru până la −22 °C, lanțul de frig</span></div>
-      <div class="rv d2"><b>Inventar</b><i>Inventur</i><span>periodic și permanent, cu scannerul</span></div>
-      <div class="rv d3"><b>Retururi</b><i>Retourenabwicklung</i><span>primire, verificare, reintroducere în stoc</span></div>
-      <div class="rv"><b>Ambalare și etichetare</b><i>Konfektionierung</i><span>ambalare, etichetare, paletizare</span></div>
-      <div class="rv d1"><b>Asigurarea încărcăturii</b><i>Ladungssicherung</i><span>încărcare sigură, conform VDI 2700</span></div>
-      <div class="rv d2"><b>Paleți</b><i>Leergutmanagement</i><span>evidența și schimbul de europaleți</span></div>
-      <div class="rv d3"><b>Siguranța muncii</b><i>Arbeitssicherheit</i><span>instructaj, echipament de protecție, frig</span></div>
+      <a class="btn btn-ghost-light" href="firme.html">Totul despre colaborare <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -186,7 +153,7 @@
         <div class="rv d3"><b>Sprijin în limba ta</b><span>Te însoțim la acte, transport și primele zile de lucru.</span></div>
       </div>
       <div class="trades rv">
-        <span>Logistică</span><span>Construcții</span><span>Sudură</span><span class="soon">Anunțurile active apar aici în curând</span>
+        <span>Logistică</span><span>Construcții</span><span>Sudură</span>
       </div>
       <div class="cta-row rv">
         <a class="btn btn-dark" href="candidati.html#aplica">Aplică acum <span class="arrow">→</span></a>
@@ -255,6 +222,7 @@
   </div>
 </footer>
 
+<div class="mbar" aria-label="Acțiuni rapide"><a class="btn btn-dark" href="candidati.html#aplica">Aplică acum</a><a class="btn btn-ghost" href="https://wa.me/40774772117" target="_blank" rel="noopener">WhatsApp</a></div>
 <script src="site.js"></script>
 </body>
 </html>

@@ -396,3 +396,36 @@ nav.main a[aria-current="page"]{color:var(--ink)}
 .legal th,.legal td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
 .legal th{background:var(--bg);color:var(--ink)}
 @media(max-width:640px){.legal{padding:36px 0 60px}.legal table{font-size:14px}.legal th,.legal td{padding:8px}}
+
+/* Comutator firme / candidati in capul paginii */
+.aud{display:inline-flex;gap:4px;background:#eef1f6;border-radius:999px;padding:4px;margin-bottom:26px}
+.aud button{font:inherit;font-size:14.5px;font-weight:700;color:var(--muted);background:transparent;border:0;border-radius:999px;padding:9px 18px;cursor:pointer;transition:background .25s,color .25s,box-shadow .25s}
+.aud button[aria-selected="true"]{background:#fff;color:var(--ink);box-shadow:0 2px 8px rgba(11,27,46,.12)}
+.aud-pane[hidden]{display:none}
+.aud-pane:not([hidden]){animation:paneIn .45s ease}
+@keyframes paneIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero-note{margin-top:18px;font-size:14px;color:var(--muted)}
+@media(max-width:640px){.aud{display:flex}.aud button{flex:1;padding:9px 10px;font-size:14px}.hero-cta .btn{flex:1 1 auto;justify-content:center}}
+@media (prefers-reduced-motion: reduce){.aud-pane:not([hidden]){animation:none}}
+.firme-more{margin-top:26px;color:#c9d6e6;font-size:15.5px;max-width:760px}
+.firme-more b{color:#fff}
+
+/* Meniu: Contact doar pe telefon */
+nav.main .nav-contact{display:none}
+@media(max-width:900px){header.open nav.main .nav-contact{display:block}}
+/* Bara fixa de actiuni pe telefon */
+.mbar{display:none}
+@media(max-width:640px){
+  .mbar{display:flex;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
+  .mbar .btn{flex:1;justify-content:center;padding:12px 10px}
+  .mbar .btn-ghost{flex:0 0 38%}
+  body{padding-bottom:72px}
+}
+/* Formular: detalii optionale pliate */
+details.more{grid-column:1/-1;border:1.5px dashed var(--line);border-radius:12px;padding:0 14px}
+details.more summary{cursor:pointer;list-style:none;padding:13px 0;font-weight:700;color:var(--ink);font-size:14.5px;position:relative}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::after{content:"+";position:absolute;right:2px;top:9px;font-size:20px;color:var(--muted)}
+details.more[open] summary::after{content:"–"}
+details.more .fgrid{padding:4px 0 16px}

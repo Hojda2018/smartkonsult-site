@@ -25,7 +25,7 @@
       <a href="candidati.html">For candidates</a>
       <a href="#cum-lucram">How we work</a>
       <a href="#despre">About us</a>
-      <a href="#contact">Contact</a>
+      <a class="nav-contact" href="#contact">Contact</a>
     </nav>
     <div class="lang" id="lang">
       <button type="button" aria-haspopup="true" aria-expanded="false">EN
@@ -43,24 +43,29 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow rv">Staffing consultancy · Project management</span>
-      <h1 class="rv d1">The right people, organised from selection to the <em>first shift</em>.</h1>
-      <p class="lead rv d2">Consultancy for companies that need staff, and complete project management: selection, training, housing, arrival and support at the workplace in Germany.</p>
-      <div class="doors rv d3">
-        <a class="door door-firma" href="firme.html">
-          <small>For companies</small>
-          <b>I need staff for my project</b>
-          <p>Germany and Luxembourg · logistics and industry</p>
-          <span class="go">Solutions for companies <span class="arrow">→</span></span>
-          <svg class="bg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 21V8l6-4v4l6-4v4l6-4v17H3Zm4-3h2v-3H7v3Zm4 0h2v-3h-2v3Zm4 0h2v-3h-2v3Z"/></svg>
-        </a>
-        <a class="door door-om" href="candidati.html">
-          <small>For candidates</small>
-          <b>I'm looking for work in Germany</b>
-          <p>Legal contract, training, organised housing</p>
-          <span class="go">See what we offer <span class="arrow">→</span></span>
-          <svg class="bg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-4 0-8 2-8 5v2h16v-2c0-3-4-5-8-5Z"/></svg>
-        </a>
+      <div class="aud" role="tablist" aria-label="Who is this for">
+        <button type="button" role="tab" data-aud="firma" aria-selected="true">For companies</button>
+        <button type="button" role="tab" data-aud="cand" aria-selected="false">For candidates</button>
+      </div>
+      <div class="aud-pane" data-pane="firma">
+        <span class="eyebrow">Staffing consultancy · Project management</span>
+        <h1>The right staff. Well-coordinated projects.</h1>
+        <p class="lead">From selection and training to housing and onboarding. One point of contact for your project in Germany or Luxembourg.</p>
+        <div class="hero-cta">
+          <a class="btn btn-accent" href="firme.html#cerere">Request a quote <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="firme.html">How we work with companies</a>
+        </div>
+        <p class="hero-note">We communicate in Romanian, German and English · Reply within 24–48 h</p>
+      </div>
+      <div class="aud-pane" data-pane="cand" hidden>
+        <span class="eyebrow">For your next step</span>
+        <h1>Work in Germany. With every detail made clear.</h1>
+        <p class="lead">Find out what contract you have, what housing costs and what the work involves before you leave. We help you prepare and take the first steps.</p>
+        <div class="hero-cta">
+          <a class="btn btn-dark" href="candidati.html#aplica">Apply now <span class="arrow">→</span></a>
+          <a class="btn btn-ghost" href="https://wa.me/40774772117" target="_blank" rel="noopener">Message us on WhatsApp</a>
+        </div>
+        <p class="hero-note">A personal conversation · CV optional at first contact</p>
       </div>
     </div>
     <div class="hero-visual rv d2">
@@ -124,48 +129,10 @@
       <div class="rv d2"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3Zm-7 9.2V16c0 2.2 3.1 4 7 4s7-1.8 7-4v-3.8L12 16l-7-3.8Z"/></svg></span><h3>Logistics training</h3><p>People arrive trained on the processes in your warehouse.</p></div>
       <div class="rv d3"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 5-5 1.4 1.4-6.4 6.4Z"/></svg></span><h3>Active support at the start</h3><p>Support at the workplace and a single point of contact.</p></div>
     </div>
-    <div class="models">
-      <div class="model rv">
-        <small>Model 1</small>
-        <h3>German employment contract</h3>
-        <ul><li>Employed directly by the German partner</li><li>Social insurance in Germany</li><li>Housing provided, rent deducted from wages</li></ul>
-      </div>
-      <div class="model rv d1">
-        <small>Model 2</small>
-        <h3>Posting from Romania</h3>
-        <ul><li>Romanian contract, posted to Germany</li><li>A1 certificate and notification to German customs (Zoll)</li><li>Housing paid by SmartKonsult</li></ul>
-      </div>
-    </div>
+    <p class="firme-more rv"><b>Training in 12 warehouse processes</b>, including a forklift licence with our own instructor, and two employment models: German contract or posting.</p>
     <div class="cta-row rv">
       <a class="btn btn-accent" href="firme.html#cerere">Request a quote <span class="arrow">→</span></a>
-      <a class="btn btn-ghost-light" href="firme.html">How we work with companies</a>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESE -->
-<section class="proc" id="procese">
-  <div class="wrap">
-    <div class="proc-head">
-      <div>
-        <span class="eyebrow rv">Training</span>
-        <h2 class="rv d1" style="margin-top:14px">We train people on warehouse processes</h2>
-      </div>
-      <p class="lead rv d2">We select people to match the client's requirements and prepare them for the client's processes. The German term is the one they will hear on the warehouse floor.</p>
-    </div>
-    <div class="proc-grid">
-      <div class="rv"><b>Goods receipt</b><i>Wareneingang</i><span>receiving, checking, booking, put-away</span></div>
-      <div class="rv d1"><b>Replenishment</b><i>Nachschub</i><span>supplying the picking locations</span></div>
-      <div class="rv d2"><b>Order picking</b><i>Kommissionierung</i><span>Pick-by-Scan, Pick-by-Voice, Pick-by-Light</span></div>
-      <div class="rv d3"><b>Goods issue</b><i>Warenausgang</i><span>packing, consolidation, loading</span></div>
-      <div class="rv hl"><b>Forklift</b><i>Staplerschein · DGUV 308-001</i><span>course with our in-house instructor, annual refresher</span></div>
-      <div class="rv d1 hl"><b>Cold storage</b><i>Tiefkühllogistik</i><span>work down to −22 °C, cold chain</span></div>
-      <div class="rv d2"><b>Stocktaking</b><i>Inventur</i><span>periodic and perpetual, with the scanner</span></div>
-      <div class="rv d3"><b>Returns</b><i>Retourenabwicklung</i><span>receiving, checking, returning to stock</span></div>
-      <div class="rv"><b>Packing and labelling</b><i>Konfektionierung</i><span>packing, labelling, palletising</span></div>
-      <div class="rv d1"><b>Load securing</b><i>Ladungssicherung</i><span>safe loading according to VDI 2700</span></div>
-      <div class="rv d2"><b>Pallets</b><i>Leergutmanagement</i><span>tracking and exchanging Euro pallets</span></div>
-      <div class="rv d3"><b>Occupational safety</b><i>Arbeitssicherheit</i><span>safety briefing, protective equipment, cold</span></div>
+      <a class="btn btn-ghost-light" href="firme.html">How we work with companies <span class="arrow">→</span></a>
     </div>
   </div>
 </section>
@@ -185,7 +152,7 @@
         <div class="rv d3"><b>Personal support</b><span>We help you with paperwork, transport and your first days at work.</span></div>
       </div>
       <div class="trades rv">
-        <span>Logistics</span><span>Construction</span><span>Welding</span><span class="soon">Current job ads will appear here soon</span>
+        <span>Logistics</span><span>Construction</span><span>Welding</span>
       </div>
       <div class="cta-row rv">
         <a class="btn btn-dark" href="candidati.html#aplica">Apply now <span class="arrow">→</span></a>
@@ -254,6 +221,7 @@
   </div>
 </footer>
 
+<div class="mbar" aria-label="Quick actions"><a class="btn btn-dark" href="candidati.html#aplica">Apply now</a><a class="btn btn-ghost" href="https://wa.me/40774772117" target="_blank" rel="noopener">WhatsApp</a></div>
 <script src="../site.js"></script>
 </body>
 </html>

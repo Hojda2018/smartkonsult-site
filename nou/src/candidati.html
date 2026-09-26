@@ -18,7 +18,7 @@
       <a href="candidati.html" aria-current="page">Pentru candidați</a>
       <a href="index.html#cum-lucram">Cum lucrăm</a>
       <a href="index.html#despre">Despre noi</a>
-      <a href="index.html#contact">Contact</a>
+      <a class="nav-contact" href="index.html#contact">Contact</a>
     </nav>
     <div class="lang" id="lang">
       <button type="button" aria-haspopup="true" aria-expanded="false">RO
@@ -62,7 +62,7 @@
     <div class="sec-head">
       <span class="eyebrow rv">Locuri de muncă</span>
       <h2 class="rv d1">Unde poți lucra</h2>
-      <p class="lead rv d2">Căutăm oameni în mod constant pentru aceste domenii. Anunțurile active, cu salariu și loc exact, apar aici în curând.</p>
+      <p class="lead rv d2">Căutăm oameni în mod constant pentru aceste domenii. Nu vezi postul potrivit? Lasă-ne datele și te anunțăm când apare.</p>
     </div>
     <div class="trade-cards">
       <div class="trade rv" style="--c:#2563eb"><span class="top"></span><div class="in">
@@ -145,7 +145,7 @@
       <div class="out" aria-live="polite">
         <div class="out-row"><small>Brut pe lună</small><b id="brut">–</b></div>
         <div class="out-row big"><small>Net estimat pe lună</small><b id="net">–</b></div>
-        <p class="disc">Estimare pentru clasa de impozit I, fără copii, valorile din 2025. Suma exactă depinde de situația ta și de contract.</p>
+        <p class="disc">Estimare pentru clasa de impozit I, fără copii, valorile din 2026. Suma exactă depinde de situația ta și de contract.</p>
       </div>
     </div>
   </div>
@@ -204,11 +204,16 @@
         <div class="field"><label for="c-nume">Nume și prenume *</label><input id="c-nume" name="Nume" required autocomplete="name"></div>
         <div class="field"><label for="c-tel">Telefon (WhatsApp) *</label><input id="c-tel" type="tel" name="Telefon" required autocomplete="tel"></div>
         <div class="field"><label for="c-dom">Domeniu *</label><select id="c-dom" name="Domeniu" required><option value="">Alege</option><option value="Logistică">Logistică</option><option value="Construcții">Construcții</option><option value="Sudură și industrie">Sudură și industrie</option><option value="Nu știu încă">Nu știu încă</option></select></div>
-        <div class="field"><label for="c-exp">Experiență în meserie</label><select id="c-exp" name="Experienta"><option value="Fără experiență">Fără experiență</option><option value="Sub 1 an">Sub 1 an</option><option value="1–3 ani">1–3 ani</option><option value="Peste 3 ani">Peste 3 ani</option></select></div>
-        <div class="field"><label for="c-de">Germană</label><select id="c-de" name="Germana"><option value="Deloc">Deloc</option><option value="Puțin">Puțin</option><option value="Mă descurc">Mă descurc</option><option value="Bine">Bine</option></select></div>
-        <div class="field"><label for="c-email">E-mail</label><input id="c-email" type="email" name="Email" autocomplete="email"></div>
-        <div class="field full"><label for="c-msg">Mesaj</label><textarea id="c-msg" name="Mesaj" rows="3" placeholder="Certificate, când poți pleca, dacă vii cu cineva…"></textarea></div>
-        <div class="field full"><label for="c-cv">CV, dacă ai</label><input id="c-cv" type="file" name="CV" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"><small>PDF, Word sau poză, maxim 10 MB. Nu e obligatoriu.</small></div>
+        <details class="more full">
+          <summary>Mai multe detalii (opțional)</summary>
+          <div class="fgrid">
+          <div class="field"><label for="c-exp">Experiență în meserie</label><select id="c-exp" name="Experienta"><option value="Fără experiență">Fără experiență</option><option value="Sub 1 an">Sub 1 an</option><option value="1–3 ani">1–3 ani</option><option value="Peste 3 ani">Peste 3 ani</option></select></div>
+          <div class="field"><label for="c-de">Germană</label><select id="c-de" name="Germana"><option value="Deloc">Deloc</option><option value="Puțin">Puțin</option><option value="Mă descurc">Mă descurc</option><option value="Bine">Bine</option></select></div>
+          <div class="field"><label for="c-email">E-mail</label><input id="c-email" type="email" name="Email" autocomplete="email"></div>
+          <div class="field full"><label for="c-msg">Mesaj</label><textarea id="c-msg" name="Mesaj" rows="3" placeholder="Certificate, când poți pleca, dacă vii cu cineva…"></textarea></div>
+          <div class="field full"><label for="c-cv">CV, dacă ai</label><input id="c-cv" type="file" name="CV" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"><small>PDF, Word sau poză, maxim 10 MB. Nu e obligatoriu.</small></div>
+          </div>
+        </details>
       </div>
       <label class="check"><input type="checkbox" required> <span>Sunt de acord cu prelucrarea datelor conform <a href="confidentialitate.html" target="_blank" rel="noopener">Politicii de confidențialitate</a>.</span></label>
       <button class="btn btn-dark" type="submit">Trimite aplicarea <span class="arrow">→</span></button>
@@ -232,6 +237,7 @@
   </div>
 </footer>
 
+<div class="mbar" aria-label="Acțiuni rapide"><a class="btn btn-dark" href="#aplica">Aplică acum</a><a class="btn btn-ghost" href="https://wa.me/40774772117" target="_blank" rel="noopener">WhatsApp</a></div>
 <script src="site.js"></script>
 </body>
 </html>

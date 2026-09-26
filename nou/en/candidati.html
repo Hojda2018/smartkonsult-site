@@ -24,7 +24,7 @@
       <a href="candidati.html" aria-current="page">For candidates</a>
       <a href="index.html#cum-lucram">How we work</a>
       <a href="index.html#despre">About us</a>
-      <a href="index.html#contact">Contact</a>
+      <a class="nav-contact" href="index.html#contact">Contact</a>
     </nav>
     <div class="lang" id="lang">
       <button type="button" aria-haspopup="true" aria-expanded="false">EN
@@ -61,7 +61,7 @@
     <div class="sec-head">
       <span class="eyebrow rv">Jobs</span>
       <h2 class="rv d1">Where you can work</h2>
-      <p class="lead rv d2">We are always looking for people in these sectors. Current job ads, with pay and exact location, will appear here soon.</p>
+      <p class="lead rv d2">We are always looking for people in these sectors. Don't see the right job? Leave your details and we'll let you know when one comes up.</p>
     </div>
     <div class="trade-cards">
       <div class="trade rv" style="--c:#2563eb"><span class="top"></span><div class="in">
@@ -144,7 +144,7 @@
       <div class="out" aria-live="polite">
         <div class="out-row"><small>Gross per month</small><b id="brut">–</b></div>
         <div class="out-row big"><small>Estimated net per month</small><b id="net">–</b></div>
-        <p class="disc">Estimate for tax class I, no children, 2025 values. The exact amount depends on your situation and your contract.</p>
+        <p class="disc">Estimate for tax class I, no children, 2026 values. The exact amount depends on your situation and your contract.</p>
       </div>
     </div>
   </div>
@@ -203,11 +203,16 @@
         <div class="field"><label for="c-nume">Full name *</label><input id="c-nume" name="Nume" required autocomplete="name"></div>
         <div class="field"><label for="c-tel">Phone (WhatsApp) *</label><input id="c-tel" type="tel" name="Telefon" required autocomplete="tel"></div>
         <div class="field"><label for="c-dom">Sector *</label><select id="c-dom" name="Domeniu" required><option value="">Choose</option><option value="Logistică">Logistics</option><option value="Construcții">Construction</option><option value="Sudură și industrie">Welding and industry</option><option value="Nu știu încă">Not sure yet</option></select></div>
-        <div class="field"><label for="c-exp">Experience in the trade</label><select id="c-exp" name="Experienta"><option value="Fără experiență">No experience</option><option value="Sub 1 an">Less than 1 year</option><option value="1–3 ani">1–3 years</option><option value="Peste 3 ani">More than 3 years</option></select></div>
-        <div class="field"><label for="c-de">German</label><select id="c-de" name="Germana"><option value="Deloc">None</option><option value="Puțin">A little</option><option value="Mă descurc">I get by</option><option value="Bine">Good</option></select></div>
-        <div class="field"><label for="c-email">Email</label><input id="c-email" type="email" name="Email" autocomplete="email"></div>
-        <div class="field full"><label for="c-msg">Message</label><textarea id="c-msg" name="Mesaj" rows="3" placeholder="Certificates, when you can start, whether you&#x27;re coming with someone…"></textarea></div>
-        <div class="field full"><label for="c-cv">CV, if you have one</label><input id="c-cv" type="file" name="CV" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"><small>PDF, Word or photo, max. 10 MB. Not required.</small></div>
+        <details class="more full">
+          <summary>More details (optional)</summary>
+          <div class="fgrid">
+          <div class="field"><label for="c-exp">Experience in the trade</label><select id="c-exp" name="Experienta"><option value="Fără experiență">No experience</option><option value="Sub 1 an">Less than 1 year</option><option value="1–3 ani">1–3 years</option><option value="Peste 3 ani">More than 3 years</option></select></div>
+          <div class="field"><label for="c-de">German</label><select id="c-de" name="Germana"><option value="Deloc">None</option><option value="Puțin">A little</option><option value="Mă descurc">I get by</option><option value="Bine">Good</option></select></div>
+          <div class="field"><label for="c-email">Email</label><input id="c-email" type="email" name="Email" autocomplete="email"></div>
+          <div class="field full"><label for="c-msg">Message</label><textarea id="c-msg" name="Mesaj" rows="3" placeholder="Certificates, when you can start, whether you&#x27;re coming with someone…"></textarea></div>
+          <div class="field full"><label for="c-cv">CV, if you have one</label><input id="c-cv" type="file" name="CV" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"><small>PDF, Word or photo, max. 10 MB. Not required.</small></div>
+          </div>
+        </details>
       </div>
       <label class="check"><input type="checkbox" required> <span>I agree to the processing of my data in line with the <a href="confidentialitate.html" target="_blank" rel="noopener">Privacy Policy</a>.</span></label>
       <button class="btn btn-dark" type="submit">Send application <span class="arrow">→</span></button>
@@ -231,6 +236,7 @@
   </div>
 </footer>
 
+<div class="mbar" aria-label="Quick actions"><a class="btn btn-dark" href="#aplica">Apply now</a><a class="btn btn-ghost" href="https://wa.me/40774772117" target="_blank" rel="noopener">WhatsApp</a></div>
 <script src="../site.js"></script>
 </body>
 </html>
