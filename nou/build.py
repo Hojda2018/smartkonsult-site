@@ -14,7 +14,7 @@ from html.parser import HTMLParser
 ROOT = os.path.dirname(os.path.abspath(__file__))
 LANGS = ['ro', 'de', 'en', 'es', 'uk', 'hu']
 NAMES = {'ro': 'Română', 'de': 'Deutsch', 'en': 'English', 'es': 'Español', 'uk': 'Українська', 'hu': 'Magyar'}
-PAGES = ['index.html', 'firme.html', 'candidati.html']
+PAGES = ['index.html', 'firme.html', 'candidati.html', 'confidentialitate.html', 'cookies.html', 'termeni.html']
 ATTRS = ('alt', 'placeholder', 'aria-label', 'content', 'title')
 SKIP_TAGS = ('script', 'style')
 # texte care raman la fel in orice limba
@@ -88,7 +88,6 @@ def build_page(src, page, lang, tr):
     pre = '' if lang == 'ro' else '../'
     s = s.replace('<html lang="ro">', f'<html lang="{lang}">', 1)
     s = s.replace('href="site.css"', f'href="{pre}site.css"').replace('src="site.js"', f'src="{pre}site.js"')
-    s = s.replace('href="../politica', f'href="{pre}../politica').replace('href="../termeni', f'href="{pre}../termeni')
     # meniul de limbi: fiecare limba duce la aceeasi pagina
     cur = ' aria-current="true"'
     items = ''.join('<li><a href="%s%s" hreflang="%s" lang="%s"%s>%s <span>%s</span></a></li>'

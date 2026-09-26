@@ -1,6 +1,6 @@
 # Site-ul nou SmartKonsult Plus
 
-Trei pagini în șase limbi: prima pagină, „Pentru firme” și „Pentru candidați”.
+Șase pagini în șase limbi: prima pagină, „Pentru firme”, „Pentru candidați” și cele trei pagini legale (confidențialitate, cookie-uri, termeni).
 
 ## Ce e în folder
 
@@ -36,3 +36,6 @@ python3 build.py --extract
 - Formularele (`firme-nou`, `candidati-nou`) primesc cereri doar pe Netlify. Pe GitHub Pages butonul nu trimite nimic.
 - Paginile au `noindex` până la lansare, ca Google să nu le afișeze. Se scoate la mutarea domeniului.
 - Fostul angajator al fondatorului nu se numește niciodată în texte.
+- Site-ul nu încarcă fonturi de la Google (în Germania e risc de amendă). Folosește fonturile telefonului sau calculatorului.
+- Site-ul nu folosește cookie-uri și nici localStorage. Dacă se adaugă vreodată statistici, trebuie actualizată pagina de cookie-uri și cerut acordul.
+- Înainte de lansare lipsesc din paginile legale: CUI, numărul de la Registrul Comerțului, adresa completă și administratorul. Pentru Germania mai trebuie și o pagină „Impressum”.

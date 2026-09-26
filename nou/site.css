@@ -6,7 +6,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,-apple-system,sans-serif;color:var(--text);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--text);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
@@ -379,3 +379,20 @@ footer.site{padding:44px 0 36px;font-size:14px;color:var(--muted)}
 nav.main a[aria-current="page"]::after{width:100%}
 nav.main a[aria-current="page"]{color:var(--ink)}
 .proc-grid i:empty{display:none}
+
+/* =================== Pagini legale =================== */
+.page-hero.slim{padding:44px 0 48px}
+.page-hero.slim h1{font-size:clamp(30px,4vw,44px);margin:14px 0 8px}
+.legal{max-width:780px;padding:56px 0 80px}
+.legal .upd{font-size:14px;color:var(--muted);margin-bottom:28px}
+.legal h2{font-size:22px;margin:38px 0 12px}
+.legal p{margin:0 0 14px}
+.legal ul{margin:0 0 16px;padding-left:22px}
+.legal li{margin:6px 0}
+.legal a{color:var(--navy);text-decoration:underline}
+.legal .box{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:0 0 16px}
+.legal .box p{margin:0}
+.legal table{width:100%;border-collapse:collapse;font-size:15px;margin:0 0 18px}
+.legal th,.legal td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+.legal th{background:var(--bg);color:var(--ink)}
+@media(max-width:640px){.legal{padding:36px 0 60px}.legal table{font-size:14px}.legal th,.legal td{padding:8px}}
