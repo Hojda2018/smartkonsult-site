@@ -378,3 +378,4 @@ footer.site{padding:44px 0 36px;font-size:14px;color:var(--muted)}
 }
 nav.main a[aria-current="page"]::after{width:100%}
 nav.main a[aria-current="page"]{color:var(--ink)}
+.proc-grid i:empty{display:none}
