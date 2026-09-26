@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SmartKonsult Plus – Personal pentru logistică și industrie</title>
+<meta name="description" content="Consultanță de personal și management de proiect în Germania: selecție, instruire în logistică, cazare, sosire și însoțire la locul de muncă.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1200&q=70">
+<style>
+:root{
+  --ink:#0b1b2e; --navy:#0f2a4a; --navy-2:#163a63;
+  --accent:#f2a900; --accent-2:#ffc633;
+  --text:#1e2b3c; --muted:#5b6b80; --line:#e3e7ee; --bg:#f5f7fa; --white:#fff;
+  --r:16px; --shadow:0 10px 30px rgba(11,27,46,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;color:var(--text);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--accent)}
+h1,h2,h3{color:var(--ink);letter-spacing:-.02em;line-height:1.15}
+h2{font-size:clamp(28px,3.6vw,42px);font-weight:800}
+.lead{font-size:18px;color:var(--muted);max-width:640px}
+section{padding:96px 0}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:15.5px;padding:14px 22px;border-radius:12px;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-accent{background:var(--accent);color:var(--ink)}
+.btn-accent:hover{box-shadow:0 10px 24px rgba(242,169,0,.35)}
+.btn-dark{background:var(--navy);color:#fff}
+.btn-ghost{border:1.5px solid var(--line);color:var(--ink);background:#fff}
+.btn-ghost-light{border:1.5px solid rgba(255,255,255,.3);color:#fff}
+.arrow{transition:transform .2s}
+a:hover .arrow{transform:translateX(4px)}
+
+/* ---------- Header ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;gap:28px;height:72px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:17px;color:var(--ink);letter-spacing:-.01em}
+.logo-mark{width:38px;height:38px;border-radius:10px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:14px;font-weight:800;position:relative;overflow:hidden}
+.logo-mark::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--accent)}
+.logo small{display:block;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.04em;margin-top:-2px}
+nav.main{display:flex;gap:26px;margin-left:auto}
+nav.main a{font-size:15px;font-weight:600;color:var(--text);position:relative;padding:6px 0}
+nav.main a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--accent);transition:width .25s}
+nav.main a:hover::after{width:100%}
+.lang{position:relative}
+.lang button{display:flex;align-items:center;gap:6px;font:inherit;font-size:14px;font-weight:700;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;cursor:pointer}
+.lang ul{display:none;position:absolute;right:0;top:calc(100% + 8px);list-style:none;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);padding:6px;min-width:170px}
+.lang.open ul{display:block}
+.lang li a{display:flex;justify-content:space-between;gap:12px;padding:8px 10px;border-radius:8px;font-size:14px}
+.lang li a:hover{background:var(--bg)}
+.lang li a span{color:var(--muted);font-size:12px}
+.hd .btn{padding:10px 16px;font-size:14.5px}
+.burger{display:none;margin-left:auto;background:none;border:0;width:42px;height:42px;cursor:pointer}
+.burger span{display:block;width:22px;height:2px;background:var(--ink);margin:5px auto;transition:.25s}
+
+/* ---------- Hero ---------- */
+.hero{padding:64px 0 88px;background:linear-gradient(180deg,#fff 0%,var(--bg) 100%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(36px,5vw,60px);font-weight:800;margin:18px 0 20px}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,rgba(242,169,0,.45) 62%)}
+.hero .lead{font-size:18.5px}
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
+.door{position:relative;display:flex;flex-direction:column;gap:6px;padding:22px 22px 20px;border-radius:var(--r);overflow:hidden;min-height:170px;transition:transform .3s,box-shadow .3s}
+.door:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(11,27,46,.18)}
+.door small{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+.door b{font-size:21px;line-height:1.25;letter-spacing:-.01em}
+.door p{font-size:14.5px;opacity:.85}
+.door .go{margin-top:auto;padding-top:12px;font-weight:700;font-size:15px;display:flex;align-items:center;gap:8px}
+.door-firma{background:var(--navy);color:#fff}
+.door-firma b{color:#fff}
+.door-om{background:var(--accent);color:var(--ink)}
+.door-om b{color:var(--ink)}
+.door svg.bg{position:absolute;right:-18px;bottom:-22px;width:120px;height:120px;opacity:.12}
+.hero-visual{position:relative}
+.hero-img{border-radius:22px;height:clamp(420px,64vh,580px);width:100%;object-fit:cover;box-shadow:0 30px 60px rgba(11,27,46,.22);transform:perspective(1200px) rotateY(-6deg);transition:transform .8s ease}
+.hero-visual:hover .hero-img{transform:perspective(1200px) rotateY(0)}
+.float{position:absolute;background:#fff;border-radius:14px;box-shadow:0 14px 34px rgba(11,27,46,.16);padding:14px 16px;display:flex;gap:12px;align-items:center;animation:bob 6s ease-in-out infinite}
+.float b{display:block;color:var(--ink);font-size:17px;line-height:1.2}
+.float span{font-size:12.5px;color:var(--muted)}
+.float .ic{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;flex:none}
+.float .ic svg{width:22px;height:22px}
+.f1{left:-34px;top:16%}
+.f2{right:-22px;bottom:14%;animation-delay:-3s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* ---------- Dovada ---------- */
+.proof{padding:0;margin-top:-44px;position:relative;z-index:2}
+.proof-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);display:grid;grid-template-columns:repeat(4,1fr)}
+.proof-card>div{padding:26px 26px 24px;border-left:1px solid var(--line)}
+.proof-card>div:first-child{border-left:0}
+.proof-card b{display:block;font-size:34px;font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1.1}
+.proof-card span{font-size:14px;color:var(--muted)}
+.partners{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 34px;margin-top:26px;color:var(--muted);font-size:14px}
+.partners strong{color:var(--ink);font-weight:700;font-size:15px}
+
+/* ---------- Cum lucram ---------- */
+.steps{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:52px}
+.steps::before{content:"";position:absolute;left:4%;right:4%;top:27px;height:2px;background:var(--line)}
+.steps .bar{position:absolute;left:4%;top:27px;height:2px;background:var(--accent);width:0;transition:width 1.6s ease}
+.steps.vis .bar{width:92%}
+.step{position:relative;text-align:left}
+.step .n{width:56px;height:56px;border-radius:50%;background:#fff;border:2px solid var(--line);display:grid;place-items:center;font-weight:800;color:var(--ink);font-size:18px;position:relative;z-index:1;transition:border-color .4s,background .4s}
+.steps.vis .step .n{border-color:var(--accent)}
+.step h3{font-size:17px;margin:18px 0 6px}
+.step p{font-size:14.5px;color:var(--muted)}
+
+/* ---------- Pentru firme ---------- */
+.firme{background:var(--ink);color:#c9d6e6;position:relative;overflow:hidden}
+.firme::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 400px at 85% -10%,rgba(242,169,0,.14),transparent 60%),radial-gradient(700px 400px at -10% 110%,rgba(37,99,235,.18),transparent 60%)}
+.firme .wrap{position:relative}
+.firme h2,.firme h3{color:#fff}
+.firme .lead{color:#a9bad0}
+.firme .eyebrow{color:#a9bad0}
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.svc>div{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:24px;transition:background .3s,transform .3s}
+.svc>div:hover{background:rgba(255,255,255,.07);transform:translateY(-3px)}
+.svc .ic{width:44px;height:44px;border-radius:12px;background:rgba(242,169,0,.14);color:var(--accent);display:grid;place-items:center;margin-bottom:16px}
+.svc .ic svg{width:22px;height:22px}
+.svc h3{font-size:17.5px;margin-bottom:8px}
+.svc p{font-size:14.5px;color:#a9bad0}
+.models{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.model{border-radius:var(--r);padding:24px 26px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.02))}
+.model small{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.model h3{font-size:19px;margin:6px 0 10px}
+.model ul{list-style:none}
+.model li{font-size:14.5px;padding:4px 0 4px 24px;position:relative;color:#c9d6e6}
+.model li::before{content:"";position:absolute;left:2px;top:12px;width:12px;height:2px;background:var(--accent)}
+.firme .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+
+/* ---------- Procese ---------- */
+.proc{background:var(--bg)}
+.proc-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+.proc-grid div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;transition:border-color .25s,transform .25s}
+.proc-grid div:hover{border-color:var(--accent);transform:translateY(-2px)}
+.proc-grid b{display:block;color:var(--ink);font-size:15.5px}
+.proc-grid i{display:block;font-style:normal;font-size:12.5px;font-weight:700;color:#b07b00;margin-top:2px}
+.proc-grid span{display:block;font-size:13.5px;color:var(--muted);margin-top:6px}
+.proc-grid .hl{background:var(--navy);border-color:var(--navy)}
+.proc-grid .hl b{color:#fff}.proc-grid .hl i{color:var(--accent)}.proc-grid .hl span{color:#a9bad0}
+
+/* ---------- Pentru candidati ---------- */
+.cand-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.cand-img{border-radius:22px;aspect-ratio:4/5;height:auto;max-height:620px;object-fit:cover;width:100%;box-shadow:var(--shadow)}
+.promise{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:30px 0 26px}
+.promise div{border-top:3px solid var(--accent);padding-top:14px}
+.promise b{display:block;color:var(--ink);font-size:16.5px}
+.promise span{font-size:14.5px;color:var(--muted)}
+.trades{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.trades span{border:1.5px solid var(--line);border-radius:999px;padding:8px 15px;font-weight:600;font-size:14.5px;color:var(--ink);background:#fff}
+.trades span.soon{border-style:dashed;color:var(--muted);font-weight:500}
+.cand .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ---------- Despre ---------- */
+.about{background:var(--bg)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.exp{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid var(--line);border-radius:var(--r);margin-top:30px}
+.exp div{padding:22px 22px 20px;border-left:1px solid var(--line)}
+.exp div:nth-child(odd){border-left:0}
+.exp div:nth-child(n+3){border-top:1px solid var(--line)}
+.exp b{display:inline-block;font-size:26px;font-weight:800;color:var(--ink);border-top:3px solid var(--accent);padding-top:10px;line-height:1.2}
+.exp span{display:block;font-size:14px;color:var(--muted);margin-top:6px}
+blockquote{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:34px 34px 30px;position:relative;box-shadow:var(--shadow)}
+blockquote::before{content:"“";position:absolute;top:-18px;left:28px;font-size:90px;line-height:1;color:var(--accent);font-weight:800}
+blockquote p{font-size:20px;font-weight:600;color:var(--ink);line-height:1.5;letter-spacing:-.01em}
+blockquote footer{margin-top:18px;font-size:14px;color:var(--muted)}
+blockquote footer b{color:var(--ink)}
+
+/* ---------- Contact ---------- */
+.contact-band{background:linear-gradient(135deg,var(--navy),var(--navy-2));border-radius:24px;padding:56px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;color:#c9d6e6;position:relative;overflow:hidden}
+.contact-band::after{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;border:60px solid rgba(242,169,0,.1)}
+.contact-band h2{color:#fff}
+.contact-band .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.cdata{list-style:none;position:relative;z-index:1}
+.cdata li{display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.cdata li:last-child{border:0}
+.cdata .ic{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:var(--accent);flex:none}
+.cdata .ic svg{width:20px;height:20px}
+.cdata small{display:block;font-size:12px;color:#8fa5c0}
+.cdata a,.cdata strong{color:#fff;font-weight:600}
+
+footer.site{padding:44px 0 36px;font-size:14px;color:var(--muted)}
+.ft{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:28px}
+.ft nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+.ft nav a:hover{color:var(--ink)}
+
+/* ---------- Animatii la scroll ---------- */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.rv.vis{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  .float{animation:none}
+  .hero-img{transform:none}
+  .steps .bar{transition:none}
+}
+
+/* ---------- Responsive ---------- */
+@media(max-width:1060px){
+  nav.main{gap:18px}
+  .svc{grid-template-columns:1fr 1fr}
+  .proc-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:900px){
+  nav.main,.hd .btn,.lang{display:none}
+  .burger{display:block}
+  header.open nav.main{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-bottom:1px solid var(--line);padding:8px 24px 18px}
+  header.open nav.main a{padding:12px 0;border-bottom:1px solid var(--line)}
+  header.open .lang{display:block;position:absolute;top:18px;right:78px}
+  header.open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  header.open .burger span:nth-child(2){opacity:0}
+  header.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .hero-grid,.cand-grid,.about-grid,.proc-head,.contact-band{grid-template-columns:1fr}
+  .hero-visual{max-width:520px}
+  .hero-img{height:auto;aspect-ratio:16/10;transform:none}
+  .cand-img{aspect-ratio:16/10}
+  .f1{left:12px;top:auto;bottom:-24px}
+  .f2{display:none}
+  .proof{margin-top:32px}
+  .proof-card{grid-template-columns:1fr 1fr}
+  .proof-card>div:nth-child(3){border-left:0}
+  .proof-card>div:nth-child(n+3){border-top:1px solid var(--line)}
+  .steps{grid-template-columns:1fr;gap:0;margin-top:36px}
+  .steps::before{left:27px;right:auto;top:10px;bottom:10px;width:2px;height:auto}
+  .steps .bar{left:27px;top:10px;width:2px!important;height:0;transition:height 1.6s ease}
+  .steps.vis .bar{height:calc(100% - 20px)}
+  .step{display:grid;grid-template-columns:56px 1fr;grid-template-rows:auto 1fr;gap:0 18px;padding-bottom:22px}
+  .step .n{grid-row:1/3}
+  .step h3{margin:14px 0 2px}
+  .step p{grid-column:2}
+  .models{grid-template-columns:1fr}
+  .contact-band{padding:36px 26px}
+}
+@media(max-width:640px){
+  .wrap{padding:0 16px}
+  section{padding:68px 0}
+  .hero{padding:34px 0 64px}
+  .doors{grid-template-columns:1fr;gap:12px}
+  .door{min-height:0}
+  .svc,.promise{grid-template-columns:1fr}
+  .proc-grid{grid-template-columns:1fr 1fr;gap:8px}
+  .proc-grid div{padding:14px 12px}
+  .proc-grid b{font-size:14.5px}
+  .proc-grid span{font-size:12.5px}
+  .proof-card b{font-size:27px}
+  .proof-card>div{padding:18px 16px}
+  .exp b{font-size:21px}
+  .exp div{padding:16px 14px}
+  blockquote{padding:30px 22px 24px}
+  blockquote p{font-size:17.5px}
+  .logo small{display:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <div class="wrap hd">
+    <a class="logo" href="#top"><span class="logo-mark">SK</span><span>SmartKonsult Plus<small>Personal · Proiecte · Logistică</small></span></a>
+    <nav class="main" aria-label="Meniu principal">
+      <a href="#firme">Pentru firme</a>
+      <a href="#candidati">Pentru candidați</a>
+      <a href="#cum-lucram">Cum lucrăm</a>
+      <a href="#despre">Despre noi</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="lang" id="lang">
+      <button type="button" aria-haspopup="true" aria-expanded="false">RO
+        <svg width="12" height="12" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg></button>
+      <ul>
+        <li><a href="#">Română <span>RO</span></a></li>
+        <li><a href="#">Deutsch <span>DE</span></a></li>
+        <li><a href="#">English <span>EN</span></a></li>
+        <li><a href="#">Español <span>ES</span></a></li>
+        <li><a href="#">Українська <span>UK</span></a></li>
+        <li><a href="#">Magyar <span>HU</span></a></li>
+      </ul>
+    </div>
+    <a class="btn btn-accent" href="#contact">Contact</a>
+    <button class="burger" type="button" aria-label="Deschide meniul" onclick="document.getElementById('hd').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow rv">Consultanță de personal · Management de proiect</span>
+      <h1 class="rv d1">Oamenii potriviți, organizați de la selecție până la <em>prima tură</em>.</h1>
+      <p class="lead rv d2">Consultanță pentru firmele care au nevoie de personal și management complet al proiectului: selecție, instruire, cazare, sosire și însoțire la locul de muncă în Germania.</p>
+      <div class="doors rv d3">
+        <a class="door door-firma" href="#firme">
+          <small>Pentru firme</small>
+          <b>Caut personal pentru proiectul meu</b>
+          <p>Germania și Luxemburg · logistică și industrie</p>
+          <span class="go">Soluții pentru firme <span class="arrow">→</span></span>
+          <svg class="bg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 21V8l6-4v4l6-4v4l6-4v17H3Zm4-3h2v-3H7v3Zm4 0h2v-3h-2v3Zm4 0h2v-3h-2v3Z"/></svg>
+        </a>
+        <a class="door door-om" href="#candidati">
+          <small>Pentru candidați</small>
+          <b>Caut de lucru în Germania</b>
+          <p>Contract legal, instruire, cazare organizată</p>
+          <span class="go">Vezi ce oferim <span class="arrow">→</span></span>
+          <svg class="bg" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-4 0-8 2-8 5v2h16v-2c0-3-4-5-8-5Z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual rv d2">
+      <img class="hero-img" src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1200&q=70" alt="Rafturi înalte într-un depozit logistic" width="1200" height="1500">
+      <div class="float f1">
+        <span class="ic" style="background:#e8f1ff;color:#2563eb"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M11 2h2v4.6l3.3-3.3 1.4 1.4-4.7 4.7V11h1.6l4.7-4.7 1.4 1.4L17.4 11H22v2h-4.6l3.3 3.3-1.4 1.4-4.7-4.7H13v1.6l4.7 4.7-1.4 1.4-3.3-3.3V22h-2v-4.6l-3.3 3.3-1.4-1.4L11 14.6V13H9.4l-4.7 4.7-1.4-1.4L6.6 13H2v-2h4.6L3.3 7.7l1.4-1.4L9.4 11H11V9.4L6.3 4.7l1.4-1.4L11 6.6V2Z"/></svg></span>
+        <div><b>−22 °C</b><span>experiență în logistica de congelate</span></div>
+      </div>
+      <div class="float f2">
+        <span class="ic" style="background:#fff5d6;color:#b07b00"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 5-5 1.4 1.4-6.4 6.4Z"/></svg></span>
+        <div><b>Staplerschein</b><span>instructor propriu, DGUV 308-001</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOVADA -->
+<section class="proof">
+  <div class="wrap">
+    <div class="proof-card rv">
+      <div><b data-n="20" data-suf="+">20+</b><span>ani de experiență operațională în logistică</span></div>
+      <div><b data-n="200" data-suf="+">200+</b><span>oameni ajunși la muncă în Germania în 2026</span></div>
+      <div><b data-n="3" data-suf="">3</b><span>parteneri direcți în Germania</span></div>
+      <div><b data-n="24" data-suf=" h">24 h</b><span>timp maxim de răspuns</span></div>
+    </div>
+    <div class="partners rv d1">
+      <span>Lucrăm direct cu</span>
+      <strong>AlphaConsult Premium KG</strong>
+      <strong>Modern Business Solutions GmbH</strong>
+      <strong>Chronos Operations GmbH</strong>
+    </div>
+  </div>
+</section>
+
+<!-- CUM LUCRAM -->
+<section id="cum-lucram">
+  <div class="wrap">
+    <span class="eyebrow rv">Cum lucrăm</span>
+    <h2 class="rv d1" style="margin-top:14px">Un proiect, cinci etape, un singur partener</h2>
+    <p class="lead rv d2" style="margin-top:14px">Nu trimitem CV-uri și dispărem. Coordonăm tot drumul, până când omul lucrează stabil în tură.</p>
+    <div class="steps" id="steps">
+      <span class="bar" aria-hidden="true"></span>
+      <div class="step"><span class="n">1</span><h3>Analiza cerințelor</h3><p>Posturi, volum, ture, calificări și termene, stabilite împreună cu firma.</p></div>
+      <div class="step"><span class="n">2</span><h3>Selecție</h3><p>Căutăm și verificăm oamenii potriviți pentru cerințele clientului.</p></div>
+      <div class="step"><span class="n">3</span><h3>Instruire</h3><p>Procesele din depozit și Staplerschein, înainte de prima zi.</p></div>
+      <div class="step"><span class="n">4</span><h3>Cazare și sosire</h3><p>Cazare organizată, transport din România, acte pregătite.</p></div>
+      <div class="step"><span class="n">5</span><h3>Însoțire la locul de muncă</h3><p>Suport activ după start, până când echipa e stabilă.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PENTRU FIRME -->
+<section class="firme" id="firme">
+  <div class="wrap">
+    <span class="eyebrow rv">Pentru firme</span>
+    <h2 class="rv d1" style="margin-top:14px;max-width:760px">Nu suntem o agenție de recrutare clasică</h2>
+    <p class="lead rv d2" style="margin-top:14px;max-width:760px">Oferim consultanță firmelor care au nevoie de personal și ne ocupăm de managementul proiectului: oamenii potriviți, cazarea, sosirea și însoțirea lor până se așază la locul de muncă. Implementăm proiecte în logistică și oferim suport activ.</p>
+    <div class="svc">
+      <div class="rv"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10 2a8 8 0 0 1 6.3 12.9l5.4 5.4-1.4 1.4-5.4-5.4A8 8 0 1 1 10 2Zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z"/></svg></span><h3>Consultanță de personal</h3><p>Definim profilul, volumul și calendarul de care aveți nevoie.</p></div>
+      <div class="rv d1"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16v4H4V4Zm0 6h10v4H4v-4Zm0 6h16v4H4v-4Z"/></svg></span><h3>Management de proiect</h3><p>Selecție, cazare, transport și acte, coordonate de noi.</p></div>
+      <div class="rv d2"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3Zm-7 9.2V16c0 2.2 3.1 4 7 4s7-1.8 7-4v-3.8L12 16l-7-3.8Z"/></svg></span><h3>Instruire în logistică</h3><p>Oamenii ajung pregătiți pe procesele din depozitul dumneavoastră.</p></div>
+      <div class="rv d3"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 5-5 1.4 1.4-6.4 6.4Z"/></svg></span><h3>Suport activ la start</h3><p>Însoțire la locul de muncă și un singur interlocutor.</p></div>
+    </div>
+    <div class="models">
+      <div class="model rv">
+        <small>Modelul 1</small>
+        <h3>Contract de muncă german</h3>
+        <ul><li>Angajare directă la partenerul german</li><li>Asigurări sociale în Germania</li><li>Cazare asigurată, chiria se reține din salariu</li></ul>
+      </div>
+      <div class="model rv d1">
+        <small>Modelul 2</small>
+        <h3>Detașare din România</h3>
+        <ul><li>Contract românesc, detașare în Germania</li><li>Formular A1 și declarare la vamă (Zoll)</li><li>Cazare plătită de SmartKonsult</li></ul>
+      </div>
+    </div>
+    <div class="cta-row rv">
+      <a class="btn btn-accent" href="#contact">Solicită o ofertă <span class="arrow">→</span></a>
+      <a class="btn btn-ghost-light" href="#procese">Ce instruiri oferim</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESE -->
+<section class="proc" id="procese">
+  <div class="wrap">
+    <div class="proc-head">
+      <div>
+        <span class="eyebrow rv">Instruire</span>
+        <h2 class="rv d1" style="margin-top:14px">Instruim oamenii pe procesele din depozit</h2>
+      </div>
+      <p class="lead rv d2">Selectăm oamenii după cerințele clientului și îi pregătim pentru procesele lui. Termenul german e cel pe care îl vor auzi în hală.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="rv"><b>Recepție marfă</b><i>Wareneingang</i><span>primire, verificare, înregistrare, depozitare</span></div>
+      <div class="rv d1"><b>Reaprovizionare</b><i>Nachschub</i><span>alimentarea locațiilor de picking</span></div>
+      <div class="rv d2"><b>Picking</b><i>Kommissionierung</i><span>Pick-by-Scan, Pick-by-Voice, Pick-by-Light</span></div>
+      <div class="rv d3"><b>Expediție</b><i>Warenausgang</i><span>ambalare, consolidare, încărcare</span></div>
+      <div class="rv hl"><b>Stivuitor</b><i>Staplerschein · DGUV 308-001</i><span>curs cu instructor propriu, instructaj anual</span></div>
+      <div class="rv d1 hl"><b>Depozit frigorific</b><i>Tiefkühllogistik</i><span>lucru până la −22 °C, lanțul de frig</span></div>
+      <div class="rv d2"><b>Inventar</b><i>Inventur</i><span>periodic și permanent, cu scannerul</span></div>
+      <div class="rv d3"><b>Retururi</b><i>Retourenabwicklung</i><span>primire, verificare, reintroducere în stoc</span></div>
+      <div class="rv"><b>Ambalare și etichetare</b><i>Konfektionierung</i><span>ambalare, etichetare, paletizare</span></div>
+      <div class="rv d1"><b>Asigurarea încărcăturii</b><i>Ladungssicherung</i><span>încărcare sigură, conform VDI 2700</span></div>
+      <div class="rv d2"><b>Paleți</b><i>Leergutmanagement</i><span>evidența și schimbul de europaleți</span></div>
+      <div class="rv d3"><b>Siguranța muncii</b><i>Arbeitssicherheit</i><span>instructaj, echipament de protecție, frig</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PENTRU CANDIDATI -->
+<section class="cand" id="candidati">
+  <div class="wrap cand-grid">
+    <img class="cand-img rv" src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=65" alt="Echipă de muncitori cu veste reflectorizante pe un șantier" loading="lazy" width="1000" height="750">
+    <div>
+      <span class="eyebrow rv">Pentru candidați</span>
+      <h2 class="rv d1" style="margin-top:14px">Știi dinainte ce te așteaptă</h2>
+      <p class="lead rv d2" style="margin-top:14px">Nu e ușor nici acasă, nici departe de casă. De aceea îți spunem clar, înainte să pleci, ce contract ai, unde stai și cât câștigi.</p>
+      <div class="promise">
+        <div class="rv"><b>Contract legal</b><span>German sau detașare, explicat în română înainte de plecare.</span></div>
+        <div class="rv d1"><b>Cazare organizată</b><span>Îți spunem clar dacă o plătim noi sau se reține din salariu.</span></div>
+        <div class="rv d2"><b>Instruire înainte de start</b><span>Poți începe și fără experiență. Inclusiv Staplerschein.</span></div>
+        <div class="rv d3"><b>Sprijin în limba ta</b><span>Te însoțim la acte, transport și primele zile de lucru.</span></div>
+      </div>
+      <div class="trades rv">
+        <span>Logistică</span><span>Construcții</span><span>Sudură</span><span class="soon">Anunțurile active apar aici în curând</span>
+      </div>
+      <div class="cta-row rv">
+        <a class="btn btn-dark" href="#contact">Aplică acum <span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="https://wa.me/40774772117" target="_blank" rel="noopener">Scrie pe WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESPRE -->
+<section class="about" id="despre">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow rv">Despre noi</span>
+      <h2 class="rv d1" style="margin-top:14px">Logistica o cunoaștem din interior</h2>
+      <p class="lead rv d2" style="margin-top:14px">Conducerea firmei vine din operațiuni logistice în Germania. Cunoaștem procesul din interior, de la recrutare până la integrarea în tură.</p>
+      <div class="exp rv">
+        <div><b>20+ ani</b><span>experiență operațională în logistică</span></div>
+        <div><b>100+ angajați</b><span>coordonați direct în operațiuni de depozit în Germania</span></div>
+        <div><b>−22 °C</b><span>experiență în logistica produselor congelate</span></div>
+        <div><b>Proiect complet</b><span>selecție, cazare, transport și integrare, un singur partener</span></div>
+      </div>
+    </div>
+    <blockquote class="rv d2" style="margin-top:40px">
+      <p>Nu e ușor nici acasă, nici departe de casă. Decizia de a pleca e a ta, și nu e una mică. Treaba noastră e ca drumul să fie cât mai ușor, iar tu să știi dinainte, limpede, ce te așteaptă.</p>
+      <footer><b>Gheorghe Hojda</b> · Fondator, SmartKonsult Plus SRL</footer>
+    </blockquote>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-band rv">
+      <div style="position:relative;z-index:1">
+        <span class="eyebrow" style="color:#a9bad0">Contact</span>
+        <h2 style="margin-top:14px">Vorbim în maximum 24 de ore</h2>
+        <p style="margin-top:12px;font-size:17px;max-width:520px">Spuneți-ne de ce personal aveți nevoie sau ce loc de muncă cauți. Răspundem în română, germană sau engleză.</p>
+        <div class="cta-row">
+          <a class="btn btn-accent" href="mailto:office@smartkonsultplus.ro">Solicită o ofertă <span class="arrow">→</span></a>
+          <a class="btn btn-ghost-light" href="mailto:job@smartkonsultplus.ro">Trimite CV-ul</a>
+        </div>
+      </div>
+      <ul class="cdata">
+        <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z"/></svg></span><div><small>Telefon și WhatsApp</small><a href="tel:+40774772117">+40 774 772 117</a></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm8 7 8-5H4l8 5Z"/></svg></span><div><small>Firme</small><a href="mailto:office@smartkonsultplus.ro">office@smartkonsultplus.ro</a></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm8 7 8-5H4l8 5Z"/></svg></span><div><small>Candidați</small><a href="mailto:job@smartkonsultplus.ro">job@smartkonsultplus.ro</a></div></li>
+        <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg></span><div><small>Sediu</small><strong>Cluj-Napoca, România</strong></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap ft">
+    <a class="logo" href="#top"><span class="logo-mark">SK</span><span>SmartKonsult Plus SRL</span></a>
+    <nav aria-label="Legal">
+      <a href="../politica-confidentialitate.html">Confidențialitate</a>
+      <a href="../politica-cookies.html">Cookie-uri</a>
+      <a href="../termeni-si-conditii.html">Termeni și condiții</a>
+    </nav>
+    <span>© 2026 SmartKonsult Plus SRL · Cluj-Napoca</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* aparitie la scroll */
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target); } });
+  },{threshold:.15, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv,#steps').forEach(function(el){ reduce ? el.classList.add('vis') : io.observe(el); });
+
+  /* cifrele numara pana la valoare */
+  var ioN = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting) return; ioN.unobserve(e.target);
+      var el=e.target, t=+el.dataset.n, suf=el.dataset.suf||'', t0=null;
+      if(reduce){ el.textContent=t+suf; return; }
+      function f(ts){ if(!t0) t0=ts; var p=Math.min((ts-t0)/1300,1); el.textContent=Math.round(t*(1-Math.pow(1-p,3)))+suf; if(p<1) requestAnimationFrame(f); }
+      requestAnimationFrame(f);
+    });
+  },{threshold:.6});
+  document.querySelectorAll('[data-n]').forEach(function(el){ ioN.observe(el); });
+
+  /* meniul de limbi */
+  var lang=document.getElementById('lang'), lb=lang.querySelector('button');
+  lb.addEventListener('click',function(e){ e.stopPropagation(); var o=lang.classList.toggle('open'); lb.setAttribute('aria-expanded',o); });
+  document.addEventListener('click',function(){ lang.classList.remove('open'); lb.setAttribute('aria-expanded',false); });
+
+  /* meniul mobil se inchide dupa click pe link */
+  document.querySelectorAll('nav.main a').forEach(function(a){ a.addEventListener('click',function(){ document.getElementById('hd').classList.remove('open'); }); });
+})();
+</script>
+</body>
+</html>
