@@ -733,11 +733,15 @@
 @media(max-width:640px){.hero-bg{background-image:url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=900&h=1500&q=60')}}
 @media(prefers-reduced-motion:reduce){.hero-bg{animation:none}}
 
-/* Experienta fondatorului */
-.exp-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:6px 0 16px}
-.exp-chips span{background:color-mix(in srgb,var(--c) 10%,#fff);color:var(--c);font-weight:800;font-size:14.5px;padding:8px 15px;border-radius:999px}
+/* Experienta: grila sobra */
+.exp-grid{display:grid;grid-template-columns:repeat(4,1fr);margin:8px auto 18px;max-width:980px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-align:left}
+.exp-grid div{padding:20px 22px;border-left:1px solid var(--line)}
+.exp-grid div:first-child{border-left:0}
+.exp-grid b{display:inline-block;font-size:24px;font-weight:800;color:var(--navy);line-height:1.2;border-top:3px solid var(--blue);padding-top:10px}
+.exp-grid span{display:block;font-size:14px;color:var(--muted);margin-top:6px}
 .exp-txt{max-width:760px;margin:0 auto;font-size:15.5px;color:var(--text)}
-@media(max-width:640px){.exp-chips span{font-size:13.5px;padding:7px 12px}.exp-txt{text-align:left}}
+@media(max-width:900px){.exp-grid{grid-template-columns:1fr 1fr}.exp-grid div:nth-child(3){border-left:0}.exp-grid div:nth-child(n+3){border-top:1px solid var(--line)}}
+@media(max-width:640px){.exp-grid div{padding:16px 14px}.exp-grid b{font-size:20px}.exp-grid span{font-size:13px}}
 </style>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Smart Konsult Plus SRL","alternateName":"Smart Konsult Plus","url":"https://smartkonsultplus.ro/","description":"SmartKonsult Plus oferă consultanță firmelor care au nevoie de personal și se ocupă de managementul proiectului: oamenii potriviți, cazarea, sosirea și însoțirea lor până se așază la locul de muncă. Implementăm proiecte în logistică și oferim suport activ.","email":"job@smartkonsultplus.ro","telephone":["+40774772117"],"address":{"@type":"PostalAddress","addressLocality":"Cluj-Napoca","addressCountry":"RO"},"areaServed":[{"@type":"Country","name":"Germania"},{"@type":"Country","name":"România"}],"knowsLanguage":["ro","de","en","es","uk","hu"]}</script>
@@ -1126,13 +1130,13 @@
       <span class="kicker">Cine suntem</span>
       <h2>Nu suntem o agenție de recrutare clasică</h2>
       <p class="lead" style="max-width:760px;margin-left:auto;margin-right:auto">SmartKonsult Plus oferă consultanță firmelor care au nevoie de personal și se ocupă de managementul proiectului: oamenii potriviți, cazarea, sosirea și însoțirea lor până se așază la locul de muncă. Implementăm proiecte în logistică și oferim suport activ.</p>
-      <div class="exp-chips">
-        <span style="--c:#2563eb">20+ ani în logistică</span>
-        <span style="--c:#ea7a0c">6 ani șef de depozit în Germania</span>
-        <span style="--c:#16a34a">100+ oameni conduși</span>
-        <span style="--c:#0891b2">Logistică la −22 °C</span>
+      <div class="exp-grid">
+        <div><b>20+ ani</b><span>experiență operațională în logistică</span></div>
+        <div><b>100+ angajați</b><span>coordonați direct în operațiuni de depozit în Germania</span></div>
+        <div><b>−22 °C</b><span>experiență în logistica produselor congelate</span></div>
+        <div><b>Proiect complet</b><span>selecție, cazare, transport și integrare, coordonate de un singur partener</span></div>
       </div>
-      <p class="exp-txt">În spatele firmei stă experiență de teren. Gheorghe Hojda lucrează de peste 20 de ani în logistică și a fost 6 ani șef de depozit (Lagerleiter) în Germania, la un depozit renumit de produse congelate. Acolo se lucra la −22 °C, iar în subordinea lui erau peste 100 de oameni. I-a recrutat, i-a cazat și i-a însoțit la fiecare pas: acte, transport din România, drumul zilnic de la cazare la muncă, chiar și la doctor, când cineva din familie nu vorbea germana.</p>
+      <p class="exp-txt">Conducerea firmei vine din operațiuni logistice în Germania. Cunoaștem procesul din interior, de la recrutare până la integrarea în tură.</p>
     </div>
     <div class="quote-card" style="margin-top:0">
       <div class="portrait">GH</div>
@@ -1842,8 +1846,17 @@ DD({
 "100+ oameni conduși":["100+ Mitarbeiter geführt","100+ people managed","Más de 100 personas a cargo","100+ людей у підпорядкуванні","100+ fős csapat vezetése"]
 });
 DD({
-"Logistică la −22 °C":["Tiefkühllogistik bei −22 °C","Logistics at −22 °C","Logística a −22 °C","Логістика при −22 °C","Logisztika −22 °C-on"],
-"În spatele firmei stă experiență de teren. Gheorghe Hojda lucrează de peste 20 de ani în logistică și a fost 6 ani șef de depozit (Lagerleiter) în Germania, la un depozit renumit de produse congelate. Acolo se lucra la −22 °C, iar în subordinea lui erau peste 100 de oameni. I-a recrutat, i-a cazat și i-a însoțit la fiecare pas: acte, transport din România, drumul zilnic de la cazare la muncă, chiar și la doctor, când cineva din familie nu vorbea germana.":["Hinter dem Unternehmen steht Erfahrung aus der Praxis. Gheorghe Hojda arbeitet seit über 20 Jahren in der Logistik und war sechs Jahre Lagerleiter in Deutschland, in einem renommierten Tiefkühllager. Dort wurde bei −22 °C gearbeitet, und er führte mehr als 100 Mitarbeiter. Er hat sie selbst rekrutiert, untergebracht und bei jedem Schritt begleitet: Unterlagen, Transport aus Rumänien, der tägliche Weg von der Unterkunft zur Arbeit, sogar zum Arzt, wenn jemand aus der Familie kein Deutsch sprach.","Behind the company is hands-on experience. Gheorghe Hojda has worked in logistics for over 20 years and spent 6 years as warehouse manager (Lagerleiter) in Germany, at a renowned frozen-food warehouse. The work there was done at −22 °C, with more than 100 people on his team. He recruited them, housed them and supported them every step of the way: paperwork, transport from Romania, the daily trip from housing to work, even to the doctor when a family member didn't speak German.","Detrás de la empresa hay experiencia sobre el terreno. Gheorghe Hojda trabaja en logística desde hace más de 20 años y fue durante 6 años jefe de almacén (Lagerleiter) en Alemania, en un reconocido almacén de productos congelados. Allí se trabajaba a −22 °C, con más de 100 personas a su cargo. Las reclutó, les buscó alojamiento y las acompañó en cada paso: papeles, transporte desde Rumanía, el trayecto diario del alojamiento al trabajo, incluso al médico cuando alguien de la familia no hablaba alemán.","За компанією стоїть практичний досвід. Георге Хойда понад 20 років працює в логістиці й 6 років був керівником складу (Lagerleiter) у Німеччині, на відомому складі заморожених продуктів. Там працювали при −22 °C, а в його підпорядкуванні було понад 100 людей. Він сам їх набирав, розселяв і супроводжував на кожному кроці: документи, транспорт із Румунії, щоденна дорога від житла до роботи, навіть до лікаря, коли хтось із родини не говорив німецькою.","A cég mögött gyakorlati tapasztalat áll. Gheorghe Hojda több mint 20 éve dolgozik a logisztikában, és 6 évig raktárvezető (Lagerleiter) volt Németországban, egy neves fagyasztott élelmiszer-raktárban. Ott −22 °C-on folyt a munka, és több mint 100 beosztottja volt. Ő maga toborozta, szállásolta el és kísérte őket minden lépésnél: papírok, szállítás Romániából, a napi út a szállásról a munkába, sőt orvoshoz is, ha valaki a családból nem beszélt németül."]
+"Logistică la −22 °C":["Tiefkühllogistik bei −22 °C","Logistics at −22 °C","Logística a −22 °C","Логістика при −22 °C","Logisztika −22 °C-on"]
+});
+DD({
+"20+ ani":["20+ Jahre", "20+ years", "Más de 20 años", "20+ років", "20+ év"],
+"experiență operațională în logistică":["operative Erfahrung in der Logistik", "operational experience in logistics", "experiencia operativa en logística", "операційний досвід у логістиці", "operatív logisztikai tapasztalat"],
+"100+ angajați":["100+ Mitarbeiter", "100+ employees", "Más de 100 empleados", "100+ працівників", "100+ munkavállaló"],
+"coordonați direct în operațiuni de depozit în Germania":["direkt geführt im Lagerbetrieb in Deutschland", "managed directly in warehouse operations in Germany", "coordinados directamente en operaciones de almacén en Alemania", "під безпосереднім керівництвом у складських операціях у Німеччині", "közvetlen irányítással németországi raktári műveletekben"],
+"experiență în logistica produselor congelate":["Erfahrung in der Tiefkühllogistik", "experience in frozen-goods logistics", "experiencia en logística de productos congelados", "досвід у логістиці заморожених продуктів", "tapasztalat a fagyasztott áruk logisztikájában"],
+"Proiect complet":["Komplettprojekt", "Complete project", "Proyecto completo", "Повний проєкт", "Teljes projekt"],
+"selecție, cazare, transport și integrare, coordonate de un singur partener":["Auswahl, Unterkunft, Anreise und Einarbeitung aus einer Hand", "selection, housing, transport and onboarding, coordinated by a single partner", "selección, alojamiento, transporte e integración, coordinados por un solo socio", "відбір, житло, транспорт та інтеграція, скоординовані одним партнером", "kiválasztás, szállás, szállítás és beilleszkedés egyetlen partner koordinálásával"],
+"Conducerea firmei vine din operațiuni logistice în Germania. Cunoaștem procesul din interior, de la recrutare până la integrarea în tură.":["Unsere Geschäftsführung kommt aus dem operativen Logistikbetrieb in Deutschland. Wir kennen die Abläufe von innen, von der Personalauswahl bis zur Integration in die Schicht.", "The company's management comes from logistics operations in Germany. We know the process from the inside, from recruitment to integration into the shift.", "La dirección de la empresa procede de operaciones logísticas en Alemania. Conocemos el proceso desde dentro, desde la selección hasta la integración en el turno.", "Керівництво компанії має досвід логістичних операцій у Німеччині. Ми знаємо процес зсередини, від підбору до інтеграції у зміну.", "A cég vezetése németországi logisztikai műveletekből érkezik. Belülről ismerjük a folyamatot, a toborzástól a műszakba való beilleszkedésig."]
 });
 var i18nNodes=[], i18nAttrs=[];
 function i18nCollect(){
