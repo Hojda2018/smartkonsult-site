@@ -11,7 +11,6 @@ Un singur fișier HTML, fără framework, fără build. Se publică singur pe Ne
 | `politica-confidentialitate.html` | Pagina GDPR |
 | `politica-cookies.html` | Politica de cookie-uri |
 | `termeni-si-conditii.html` | Termeni și condiții |
-| `hero.mp4` | Filmul de fundal din capul paginii (4,5 MB) |
 | `anunt-angajare-zidar-germania.png` | Afișul de recrutare |
 | `robots.txt`, `sitemap.xml` | Pentru Google |
 | `netlify.toml` | Setări de publicare: cache și securitate. Nu-l modifica dacă nu știi ce faci |
@@ -72,7 +71,7 @@ Sau pe Netlify, în **Deploys**, alegi un deploy vechi și apeși **Publish depl
 
 - **Numărul de telefon** din pagină: `+40 774 772 117` (Daria)
 - **Cazarea** se declară la fiecare anunț în parte. La zidărie o plătește Smart Konsult. La logistică se reține din salariu. Nu scrie „cazare inclusă" unde se reține
-- **Filmul de fundal** nu se încarcă pe telefon, intenționat. Economisește 4,5 MB pentru cineva pe date mobile
+- **Capul paginii** are o poză cu apropiere lentă, nu film. Filmul vechi era reclama unui motostivuitor (marca Jungheinrich), nu material propriu. Când avem cadre filmate de noi, facem din ele un film de 12–15 secunde și îl punem în locul pozei
 - Pozele de fundal vin de pe Unsplash și Pexels, nu sunt în repo
 
 ## Istoric

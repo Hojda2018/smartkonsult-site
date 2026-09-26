@@ -9,6 +9,8 @@
 <meta name="author" content="Smart Konsult Plus SRL">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0f2a4a">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1920&h=1080&q=65" media="(min-width: 641px)">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=900&h=1500&q=60" media="(max-width: 640px)">
 <link rel="canonical" href="https://smartkonsultplus.ro/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Smart Konsult Plus">
@@ -723,6 +725,13 @@
 
 .job-body .tag[style]{color:var(--c);background:color-mix(in srgb,var(--c) 11%,#fff)}
 .job{border-top:4px solid transparent}
+
+/* Hero: poza cu apropiere lenta (in locul filmului) */
+.hero{background:var(--navy)!important}
+.hero-bg{position:absolute;inset:-2%;z-index:0;background:url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1920&h=1080&q=65') center 45%/cover no-repeat;transform-origin:50% 42%;animation:heroZoom 30s ease-in-out infinite alternate;will-change:transform}
+@keyframes heroZoom{from{transform:scale(1)}to{transform:scale(1.16)}}
+@media(max-width:640px){.hero-bg{background-image:url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=900&h=1500&q=60')}}
+@media(prefers-reduced-motion:reduce){.hero-bg{animation:none}}
 </style>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"EmploymentAgency","name":"Smart Konsult Plus SRL","alternateName":"Smart Konsult Plus","url":"https://smartkonsultplus.ro/","description":"Agenție de recrutare și plasare de forță de muncă în Germania. Conectăm oameni cu locuri de muncă, legal și transparent.","email":"job@smartkonsultplus.ro","telephone":["+40774772117"],"address":{"@type":"PostalAddress","addressLocality":"Cluj-Napoca","addressCountry":"RO"},"areaServed":[{"@type":"Country","name":"Germania"},{"@type":"Country","name":"România"}],"knowsLanguage":["ro","de","en","es","uk","hu"]}</script>
@@ -823,9 +832,7 @@
 
 <!-- Hero -->
 <div class="hero">
-  <video class="hero-vid" autoplay muted loop playsinline preload="auto">
-    <source src="hero.mp4" type="video/mp4" media="(min-width: 641px)">
-  </video>
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="container">
     <span class="pre">Recrutare de personal pentru Germania</span>
     <h1>Noi te ducem la muncă în <span>Germania</span> — serios, legal, direct.</h1>
