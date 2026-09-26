@@ -438,10 +438,10 @@
 #anunturi .seg button small{color:inherit;opacity:.75}
 
 /* CV upload + cookie banner */
-#cv{background:linear-gradient(180deg,#0f2a4a,#123156);padding:72px 0}
-#cv .kicker{color:#fbbf24}
-#cv h2{color:#fff}
-#cv .lead{color:#c4d3e6}
+
+
+
+
 .cv-card{max-width:760px;margin:28px auto 0;background:#16375e;border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px;box-shadow:0 18px 40px rgba(0,0,0,.32)}
 .cv-card .field label{color:#c4d3e6;display:block;margin-bottom:6px;font-weight:600;font-size:14px}
 .cv-card input,.cv-card select,.cv-card textarea{width:100%;background:#0a1c36;border:1px solid rgba(255,255,255,.18);color:#fff;border-radius:10px;padding:12px 14px;font:inherit}
@@ -707,6 +707,21 @@
   .vid-grid::-webkit-scrollbar{display:none}
   .vid{flex:0 0 78%;scroll-snap-align:center}
 }
+
+/* Formular unic: candidat / firma */
+.ct-card{max-width:none;margin:0;padding:22px 24px 26px}
+.ct-tabs{display:flex;gap:6px;background:#0a1c36;border-radius:999px;padding:5px;margin-bottom:22px}
+.ct-tabs button{flex:1;border:0;background:transparent;color:#c4d3e6;font:inherit;font-weight:700;font-size:14.5px;padding:11px 12px;border-radius:999px;cursor:pointer;transition:background .25s,color .25s}
+.ct-tabs button.on{background:#f59e0b;color:#0b1f3a}
+.ct-pane[hidden]{display:none}
+.ct-card form.ct-pane{background:none;border:0;padding:0;box-shadow:none}
+.ct-card .field{margin-bottom:0}
+.ct-anchor{position:relative;top:-80px;display:block;height:0}
+.contact-info .ico svg{width:20px;height:20px;fill:currentColor}
+@media(max-width:640px){.ct-card{padding:16px 14px 20px}.ct-tabs button{font-size:13.5px;padding:10px 6px}}
+
+.job-body .tag[style]{color:var(--c);background:color-mix(in srgb,var(--c) 11%,#fff)}
+.job{border-top:4px solid transparent}
 </style>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"EmploymentAgency","name":"Smart Konsult Plus SRL","alternateName":"Smart Konsult Plus","url":"https://smartkonsultplus.ro/","description":"Agenție de recrutare și plasare de forță de muncă în Germania. Conectăm oameni cu locuri de muncă, legal și transparent.","email":"job@smartkonsultplus.ro","telephone":["+40774772117"],"address":{"@type":"PostalAddress","addressLocality":"Cluj-Napoca","addressCountry":"RO"},"areaServed":[{"@type":"Country","name":"Germania"},{"@type":"Country","name":"România"}],"knowsLanguage":["ro","de","en","es","uk","hu"]}</script>
@@ -796,7 +811,6 @@
         <li><a href="#calculator">Cât câștigi</a></li>
         <li><a href="#cum-functioneaza">Cum funcționează</a></li>
         <li><a href="#colaborari">Colaborări</a></li>
-        <li><a href="#testimoniale">Testimoniale</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="pentru-angajatori.html">Pentru angajatori</a></li>
       </ul>
@@ -830,7 +844,7 @@
 <div class="stat-grid dovada-cifre">
       <div class="stat"><b data-n="236" data-suf="+">236+</b><span>Persoane plasate în Germania în 2026</span></div>
       <div class="stat"><b data-n="60" data-suf="+">60+</b><span>Posturi deschise acum</span></div>
-      <div class="stat"><b data-n="7" data-suf="">7</b><span>Parteneri germani de top</span></div>
+      <div class="stat"><b data-n="3" data-suf="">3</b><span>Parteneri germani de top</span></div>
       <div class="stat"><b data-n="24" data-suf="h">24h</b><span>Timp maxim de răspuns</span></div>
     </div>
   
@@ -872,7 +886,7 @@
       <div class="job">
         <div class="job-img" style="background:linear-gradient(rgba(15,42,74,.3),rgba(15,42,74,.6)),url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=60') center/cover"><span class="salary">de la 2.800 € net/lună</span></div>
         <div class="job-body">
-          <span class="tag">Construcții · Germania</span>
+          <span class="tag" style="--c:#ea7a0c">Construcții · Germania</span>
           <h3>Zidar — zidărie aparentă</h3>
           <ul>
             <li>Contract de muncă în România (detașare)</li>
@@ -885,7 +899,7 @@
       <div class="job">
         <div class="job-img" style="background:linear-gradient(rgba(15,42,74,.3),rgba(15,42,74,.6)),url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=60') center/cover"><span class="salary">2.400 € brut/lună</span></div>
         <div class="job-body">
-          <span class="tag">Logistică · Germania</span>
+          <span class="tag" style="--c:#2563eb">Logistică · Germania</span>
           <h3>Manipulator marfă în depozit</h3>
           <ul>
             <li>Nu necesită experiență</li>
@@ -898,7 +912,7 @@
       <div class="job">
         <div class="job-img" style="background:linear-gradient(rgba(51,65,85,.5),rgba(51,65,85,.72)),url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=60') center/cover"><span class="salary">Post nou în curând</span></div>
         <div class="job-body">
-          <span class="tag">Alte domenii</span>
+          <span class="tag" style="--c:#16a34a">Alte domenii</span>
           <h3>Nu găsești postul potrivit?</h3>
           <ul>
             <li>Primim cereri noi săptămânal</li>
@@ -1007,7 +1021,7 @@
         <div class="c"><div class="k">Cazare, se reține</div><div class="v" id="cCaz">–</div></div>
       </div>
 
-      <a class="c-cta" href="#cv">Trimite-ne CV-ul</a>
+      <a class="c-cta" href="#contact">Trimite-ne CV-ul</a>
 
       <p class="c-note">Estimare orientativă pentru clasa fiscală I, fără copii, după baremul german §32a EStG. Tariful crește cu calificarea, vechimea si limba germană. La aceste posturi firma germană plătește chiria in avans si o reține din salariu. Suma finală depinde de landul federal, contribuția la biserică și situația ta familială.</p>
     </div>
@@ -1091,113 +1105,79 @@
   </div>
 </section>
 
-<!-- Testimonials -->
-
-
-<section class="testimonials" id="testimoniale">
-  <div class="container center">
-    <span class="kicker">Rezultate reale</span>
-    <h2>Ce spun oamenii plasați de noi</h2>
-    <p class="lead">Peste 200 de persoane angajate în Germania prin Smart Konsult Plus.</p>
-    <div class="testi-grid" style="text-align:left">
-      <div class="testi">
-        <div class="stars">★★★★★</div>
-        <p>„În două săptămâni de la primul telefon eram deja angajat la depozit lângă München. Totul a fost exact cum mi s-a promis."</p>
-        <div class="who"><div class="avatar">MI</div><div><b>Marius I.</b><span>Manipulator marfă, Bavaria</span></div></div>
-      </div>
-      <div class="testi">
-        <div class="stars">★★★★★</div>
-        <p>„M-au ajutat cu toate actele și mi-au explicat contractul în română. Nu am plătit nimic, iar salariul e cel din anunț."</p>
-        <div class="who"><div class="avatar">VD</div><div><b>Vasile D.</b><span>Zidar, Stuttgart</span></div></div>
-      </div>
-      <div class="testi">
-        <div class="stars">★★★★★</div>
-        <p>„Colaborăm cu Smart Konsult Plus pentru personal de depozit. Oameni serioși, candidați bine pregătiți, comunicare rapidă."</p>
-        <div class="who"><div class="avatar">TL</div><div><b>Thomas L.</b><span>Manager logistică, firmă parteneră</span></div></div>
-      </div>
-    </div>
-    <div style="text-align:left"><div class="quote-card">
+<!-- Citat fondator -->
+<section class="testimonials" id="fondator" style="padding:56px 0">
+  <div class="container">
+    <div class="quote-card" style="margin-top:0">
       <div class="portrait">GH</div>
       <div>
         <blockquote><span>Oamenii pleacă pentru un viitor mai bun. Noi îi ajutăm să îl construiască, pas cu pas.</span><br><span>Pentru noi, fiecare angajat este o poveste, nu un număr. Iar fiecare poveste merită începutul corect.</span></blockquote>
         <div class="qwho"><b>Gheorghe Hojda</b><span>Fondator, Smart Konsult Plus SRL</span></div>
       </div>
-    </div></div>
+    </div>
   </div>
 </section>
 
 <!-- Contact -->
 <section id="contact">
+  <span id="cv" class="ct-anchor"></span>
   <div class="container">
     <div class="center">
       <span class="kicker">Hai să vorbim</span>
       <h2>Aplică sau cere o ofertă</h2>
-      <p class="lead">Completează formularul și te contactăm în maximum 24 de ore. Sau scrie-ne direct pe WhatsApp.</p>
+      <p class="lead">Te contactăm în maximum 24 de ore, în limba română. Sau scrie-ne direct pe WhatsApp.</p>
     </div>
     <div class="contact-wrap">
       <div class="contact-info">
-        <div class="row"><div class="ico">📞</div><div><b>Telefon</b><a href="tel:+40774772117">40 774 772 117</a></div></div>
-            <div class="row"><div class="ico">✉️</div><div><b>Email</b><a href="mailto:job@smartkonsultplus.ro">job@smartkonsultplus.ro</a></div></div>
-        <div class="row"><div class="ico">💬</div><div><b>WhatsApp</b><a href="https://wa.me/40774772117">Scrie-ne acum — răspundem rapid</a></div></div>
-        <div class="row" style="border:none"><div class="ico">📍</div><div><b>Sediu</b><span>Cluj-Napoca, România</span></div></div>
+        <div class="row"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8Z"/></svg></div><div><b>Telefon</b><a href="tel:+40774772117">40 774 772 117</a></div></div>
+        <div class="row"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm8 7 8-5H4l8 5Zm0 2L4 8v10h16V8l-8 5Z"/></svg></div><div><b>Email</b><a href="mailto:job@smartkonsultplus.ro">job@smartkonsultplus.ro</a></div></div>
+        <div class="row"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.1.1.6-.1 1.1Z"/></svg></div><div><b>WhatsApp</b><a href="https://wa.me/40774772117">Scrie-ne acum — răspundem rapid</a></div></div>
+        <div class="row" style="border:none"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg></div><div><b>Sediu</b><span>Cluj-Napoca, România</span></div></div>
       </div>
-      <form id="form-contact" name="contact" method="POST" data-netlify="true" netlify-honeypot="prenume-mijlociu" onsubmit="return false">
-        <input type="hidden" name="form-name" value="contact">
-        <p style="display:none"><label>Nu completa: <input name="prenume-mijlociu"></label></p>
-        <input type="hidden" name="Anunț" value="Formular general — site SmartKonsult Plus">
-        <div class="form-grid">
-          <div class="field"><label>Nume complet *</label><input type="text" name="Nume" placeholder="Ex: Ion Popescu" required></div>
-          <div class="field"><label>Telefon *</label><input type="tel" name="Telefon" placeholder="Ex: 07xx xxx xxx" required></div>
-          <div class="field"><label>Email</label><input type="email" name="Email" placeholder="exemplu@email.com"></div>
-          <div class="field"><label>Sunt interesat de</label>
-            <select name="Interes">
-              <option>Vreau un loc de muncă (candidat)</option>
-              <option>Caut angajați (firmă)</option>
-            </select>
-          </div>
-          <div class="field full"><label>Mesaj / experiența ta</label><textarea name="Mesaj" rows="4" placeholder="Spune-ne pe scurt ce fel de muncă cauți sau de ce personal ai nevoie…"></textarea></div>
+      <div class="cv-card ct-card">
+        <div class="ct-tabs" role="tablist">
+          <button type="button" class="on" role="tab" aria-selected="true" data-p="cand">Caut de lucru</button>
+          <button type="button" role="tab" aria-selected="false" data-p="firma">Sunt firmă, caut oameni</button>
         </div>
-        <div class="gdpr">
-          <input type="checkbox" id="gdpr" required>
-          <label for="gdpr" style="font-weight:400;margin:0">Sunt de acord cu prelucrarea datelor mele conform <a href="politica-confidentialitate.html" target="_blank" rel="noopener">Politicii de confidențialitate (GDPR)</a>. *</label>
-        </div>
-        <div style="text-align:center">
-          <button type="button" class="btn-wa" onclick="sendWA('form-contact','40774772117')">💬 Trimite pe WhatsApp</button>
-
-        </div>
-        <p class="wa-note">Mesajul se deschide în WhatsApp gata completat, cu toate datele — apeși doar „Send".</p>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- Trimite CV -->
-<section id="cv">
-  <div class="container">
-    <div class="center">
-      <span class="kicker">Trimite-ne CV-ul</span>
-      <h2>Aplică cu CV-ul tău</h2>
-      <p class="lead">Atașează CV-ul și îl primim direct pe e-mail. Te contactăm în maximum 24 de ore, în limba română.</p>
-    </div>
-    <form class="cv-card" name="cv" method="POST" action="/multumim.html" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="prenume-mijlociu">
+      <form class="ct-pane" id="form-cv" data-pane="cand" name="cv" method="POST" action="/multumim.html" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="prenume-mijlociu">
       <input type="hidden" name="form-name" value="cv">
       <p style="display:none"><label>Nu completa: <input name="prenume-mijlociu"></label></p>
-                                    <div class="cv-grid">
+      <div class="cv-grid">
         <div class="field"><label>Nume și prenume *</label><input type="text" name="Nume" placeholder="Ex: Ion Popescu" required></div>
         <div class="field"><label>Telefon (WhatsApp) *</label><input type="tel" name="Telefon" placeholder="Ex: 07xx xxx xxx" required></div>
-        <div class="field"><label>E-mail *</label><input type="email" name="Email" placeholder="exemplu@email.com" required></div>
+        <div class="field"><label>E-mail</label><input type="email" name="Email" placeholder="exemplu@email.com"></div>
         <div class="field"><label>Postul dorit *</label><select name="Post" required><option value="">Alege postul</option><option>Sudor MAG (135 / 136)</option><option>Constructor naval (Schiffbauer)</option><option>Mecanic / Electrician întreținere</option><option>Manipulant marfă / Lucrător depozit</option><option>Motostivuitorist</option><option>Zidar / Construcții</option><option>Altul / nu sunt sigur</option></select></div>
         <div class="field full"><label>Mesaj (opțional)</label><textarea name="Mesaj" rows="3" placeholder="Experiență, certificate, disponibilitate, echipă..."></textarea></div>
-        <div class="field full"><label>CV-ul tău (PDF, Word sau poză) *</label><div class="cv-file"><input type="file" name="CV" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required><p>Maxim 10 MB. Accept PDF, DOC, DOCX, JPG, PNG.</p></div></div>
+        <div class="field full"><label>CV-ul tău, dacă ai (PDF, Word sau poză)</label><div class="cv-file"><input type="file" name="CV" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"><p>Maxim 10 MB. Accept PDF, DOC, DOCX, JPG, PNG.</p></div></div>
       </div>
       <label class="cv-gdpr"><input type="checkbox" required> <span>Sunt de acord cu prelucrarea datelor mele conform <a href="politica-confidentialitate.html" target="_blank" rel="noopener">Politicii de confidențialitate (GDPR)</a>. *</span></label>
       <div class="cv-btns">
-        <button type="submit" class="cv-send">📎 Trimite CV-ul</button>
-        <a class="cv-alt" href="mailto:job@smartkonsultplus.ro?subject=CV%20-%20aplicare%20loc%20de%20munca%20Germania&amp;body=Buna%20ziua%2C%0A%0AVa%20trimit%20atasat%20CV-ul%20meu.%0ANume%3A%20%0ATelefon%3A%20%0APostul%20dorit%3A%20%0A%0AMultumesc!">✉️ Trimite pe e-mail</a>
-        <a class="cv-alt wa" href="https://wa.me/40774772117?text=Buna%20ziua!%20Vreau%20sa%20trimit%20CV-ul%20pentru%20un%20loc%20de%20munca%20in%20Germania." target="_blank" rel="noopener">💬 Trimite pe WhatsApp</a>
+        <button type="submit" class="cv-send">Trimite cererea</button>
+        <a class="cv-alt" href="mailto:job@smartkonsultplus.ro?subject=CV%20-%20aplicare%20loc%20de%20munca%20Germania&amp;body=Buna%20ziua%2C%0A%0AVa%20trimit%20atasat%20CV-ul%20meu.%0ANume%3A%20%0ATelefon%3A%20%0APostul%20dorit%3A%20%0A%0AMultumesc!">Trimite pe e-mail</a>
+        <a class="cv-alt wa" href="https://wa.me/40774772117?text=Buna%20ziua!%20Vreau%20sa%20trimit%20CV-ul%20pentru%20un%20loc%20de%20munca%20in%20Germania." target="_blank" rel="noopener">Scrie pe WhatsApp</a>
       </div>
       <p class="cv-note">Datele tale sunt folosite exclusiv pentru intermedierea unui loc de muncă și nu sunt vândute terților.</p>
     </form>
+      <form class="ct-pane" id="form-contact" data-pane="firma" name="contact" method="POST" data-netlify="true" netlify-honeypot="prenume-mijlociu" onsubmit="return false" hidden>
+        <input type="hidden" name="form-name" value="contact">
+        <p style="display:none"><label>Nu completa: <input name="prenume-mijlociu"></label></p>
+        <input type="hidden" name="Interes" value="Caut angajați (firmă)">
+        <div class="cv-grid">
+          <div class="field"><label>Firma *</label><input type="text" name="Firma" placeholder="Numele firmei" required></div>
+          <div class="field"><label>Persoana de contact *</label><input type="text" name="Nume" placeholder="Ex: Ion Popescu" required></div>
+          <div class="field"><label>Telefon *</label><input type="tel" name="Telefon" placeholder="Ex: +49 …" required></div>
+          <div class="field"><label>Email</label><input type="email" name="Email" placeholder="exemplu@email.com"></div>
+          <div class="field full"><label>De ce personal ai nevoie?</label><textarea name="Mesaj" rows="3" placeholder="Meserie, câți oameni, de când, unde…"></textarea></div>
+        </div>
+        <label class="cv-gdpr"><input type="checkbox" required> <span>Sunt de acord cu prelucrarea datelor mele conform <a href="politica-confidentialitate.html" target="_blank" rel="noopener">Politicii de confidențialitate (GDPR)</a>. *</span></label>
+        <div class="cv-btns">
+          <button type="button" class="cv-alt wa" onclick="sendWA('form-contact','40774772117')">Trimite pe WhatsApp</button>
+          <a class="cv-alt" href="pentru-angajatori.html">Auf Deutsch →</a>
+        </div>
+        <p class="cv-note">Cererea ne ajunge și nouă, chiar dacă nu trimiți mesajul în WhatsApp.</p>
+      </form>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1794,6 +1774,23 @@ DD({
 "Gunter povestește":["Gunter erzählt","Gunter's story","Gunter cuenta","Гюнтер розповідає","Gunter mesél"],
 "Ce spune despre lucrul cu noi":["Über die Zusammenarbeit mit uns","On working with us","Sobre trabajar con nosotros","Про роботу з нами","A velünk való munkáról"]
 });
+DD({
+"Caut de lucru":["Ich suche Arbeit","I'm looking for work","Busco trabajo","Шукаю роботу","Munkát keresek"],
+"Sunt firmă, caut oameni":["Wir sind eine Firma und suchen Personal","I'm a company looking for staff","Soy empresa y busco personal","Я компанія, шукаю працівників","Cég vagyok, munkaerőt keresek"],
+"Te contactăm în maximum 24 de ore, în limba română. Sau scrie-ne direct pe WhatsApp.":["Wir melden uns innerhalb von 24 Stunden. Oder schreib uns direkt auf WhatsApp.","We'll contact you within 24 hours. Or message us directly on WhatsApp.","Te contactamos en un máximo de 24 horas. O escríbenos directamente por WhatsApp.","Ми зв'яжемося з тобою протягом 24 годин. Або напиши нам одразу у WhatsApp.","24 órán belül jelentkezünk. Vagy írj nekünk közvetlenül WhatsAppon."],
+"E-mail":["E-Mail","Email","Correo electrónico","Ел. пошта","E-mail"],
+"CV-ul tău, dacă ai (PDF, Word sau poză)":["Dein Lebenslauf, falls vorhanden (PDF, Word oder Foto)","Your CV, if you have one (PDF, Word or photo)","Tu CV, si tienes (PDF, Word o foto)","Твоє резюме, якщо є (PDF, Word або фото)","Önéletrajzod, ha van (PDF, Word vagy fotó)"],
+"Trimite cererea":["Anfrage senden","Send request","Enviar solicitud","Надіслати заявку","Kérés küldése"],
+"Trimite pe e-mail":["Per E-Mail senden","Send by email","Enviar por correo","Надіслати поштою","Küldés e-mailben"],
+"Scrie pe WhatsApp":["Auf WhatsApp schreiben","Write on WhatsApp","Escribir por WhatsApp","Написати у WhatsApp","Írj WhatsAppon"],
+"Trimite pe WhatsApp":["Per WhatsApp senden","Send via WhatsApp","Enviar por WhatsApp","Надіслати у WhatsApp","Küldés WhatsAppon"],
+"Firma *":["Firma *","Company *","Empresa *","Компанія *","Cég *"],
+"Numele firmei":["Name der Firma","Company name","Nombre de la empresa","Назва компанії","A cég neve"],
+"Persoana de contact *":["Ansprechpartner *","Contact person *","Persona de contacto *","Контактна особа *","Kapcsolattartó *"],
+"De ce personal ai nevoie?":["Welches Personal brauchen Sie?","What staff do you need?","¿Qué personal necesitas?","Який персонал вам потрібен?","Milyen munkaerőre van szükséged?"],
+"Meserie, câți oameni, de când, unde…":["Beruf, wie viele Leute, ab wann, wo…","Trade, how many people, from when, where…","Oficio, cuántas personas, desde cuándo, dónde…","Професія, скільки людей, з якого часу, де…","Szakma, hány ember, mikortól, hol…"],
+"Cererea ne ajunge și nouă, chiar dacă nu trimiți mesajul în WhatsApp.":["Ihre Anfrage erreicht uns auch dann, wenn Sie die WhatsApp-Nachricht nicht absenden.","Your request reaches us even if you don't send the WhatsApp message.","Tu solicitud nos llega aunque no envíes el mensaje de WhatsApp.","Заявка дійде до нас, навіть якщо ти не надішлеш повідомлення у WhatsApp.","A kérésed akkor is megérkezik hozzánk, ha nem küldöd el a WhatsApp-üzenetet."]
+});
 var i18nNodes=[], i18nAttrs=[];
 function i18nCollect(){
   var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null);
@@ -2024,6 +2021,20 @@ function ckSet(v){try{localStorage.setItem("skp_cookie_consent",v?"all":"necessa
       f.addEventListener('mouseleave',function(){ f.style.transform=''; });
     });
   }
+})();
+</script>
+
+<script>
+/* Formular unic: comutare candidat / firma. Link-urile vechi #cv deschid partea de candidat */
+(function(){
+  var tabs=document.querySelectorAll('.ct-tabs button');
+  function show(p){
+    tabs.forEach(function(b){ var on=b.getAttribute('data-p')===p; b.classList.toggle('on',on); b.setAttribute('aria-selected',on); });
+    document.querySelectorAll('.ct-pane').forEach(function(f){ f.hidden = f.getAttribute('data-pane')!==p; });
+  }
+  tabs.forEach(function(b){ b.addEventListener('click',function(){ show(b.getAttribute('data-p')); }); });
+  if(/firma|angajator/.test(location.hash)) show('firma');
+  window.ctShow=show;
 })();
 </script>
 </body>
