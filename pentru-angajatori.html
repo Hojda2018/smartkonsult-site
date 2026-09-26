@@ -68,6 +68,14 @@ button{grid-column:1/-1;background:var(--amber);color:var(--navy);font:inherit;f
 
 footer{padding:30px 0;font-size:13px;color:var(--muted);text-align:center}
 @media(max-width:640px){form{grid-template-columns:1fr}.hero{padding:52px 0 60px}}
+
+.gruender{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:18px;padding:32px}
+.gruender .pic{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--navy));color:#fff;font-size:32px;font-weight:800;display:grid;place-items:center;border:5px solid #eff6ff}
+.gruender p{font-size:15.5px;margin-bottom:12px;max-width:700px}
+.gruender .who{font-size:14px;color:var(--muted);margin-top:4px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 20px}
+.chip{background:color-mix(in srgb,var(--c) 10%,#fff);color:var(--c);font-weight:800;font-size:14px;padding:8px 14px;border-radius:999px}
+@media(max-width:640px){.gruender{grid-template-columns:1fr;padding:24px 20px}}
 </style>
 </head>
 <body>
@@ -107,6 +115,26 @@ footer{padding:30px 0;font-size:13px;color:var(--muted);text-align:center}
       <div class="card"><span class="tag" style="background:#ffedd5;color:#9a3412">Bau</span><h3>Maurer, Sichtmauerwerk</h3><p>Teams für Baustellen in ganz Deutschland, Abreise im Team.</p></div>
       <div class="card"><span class="tag" style="background:#dbeafe;color:#1e40af">Logistik</span><h3>Staplerfahrer und Lagerhelfer</h3><p>Für Logistikzentren und Lager, auch ohne Vorerfahrung einsetzbar.</p></div>
       <div class="card"><span class="tag" style="background:#dcfce7;color:#166534">Technik</span><h3>Instandhaltung</h3><p>Mechaniker und Elektriker für Sortier- und Förderanlagen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:8px">
+  <div class="wrap">
+    <h2>Logistik aus eigener Erfahrung</h2>
+    <div class="gruender">
+      <div class="pic">GH</div>
+      <div>
+        <div class="chips">
+          <span class="chip" style="--c:#2563eb">20+ Jahre Logistik</span>
+          <span class="chip" style="--c:#ea7a0c">6 Jahre Lagerleiter</span>
+          <span class="chip" style="--c:#16a34a">100+ Mitarbeiter geführt</span>
+        </div>
+        <p>Gheorghe Hojda, Gründer von Smart Konsult Plus, arbeitet seit über 20 Jahren in der Logistik. Sechs Jahre lang war er Lagerleiter in einem Tiefkühllager und führte mehr als 100 Mitarbeiter.</p>
+        <p>Er hat seine Leute selbst rekrutiert, untergebracht und durch alle Formalitäten begleitet: Transport aus Rumänien, Fahrten zwischen Unterkunft und Arbeitsplatz, Behördengänge, bis hin zu Arztterminen für Familienangehörige ohne Deutschkenntnisse.</p>
+        <p><b style="color:var(--navy)">Diese Erfahrung aus dem Lager, nicht aus dem Büro, steckt in jedem unserer Projekte.</b></p>
+        <div class="who"><b style="color:var(--navy)">Gheorghe Hojda</b> · Gründer, Smart Konsult Plus SRL</div>
+      </div>
     </div>
   </div>
 </section>
