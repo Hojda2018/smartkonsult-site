@@ -311,7 +311,7 @@
   @keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
   /* Bandă statistici */
-  .statband{background:linear-gradient(135deg,var(--navy),var(--navy-2));color:#fff;padding:70px 0}
+  
   .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
   .stat b{display:block;font-size:clamp(34px,4.5vw,54px);font-weight:800;color:#ffc94d;line-height:1.1}
   .stat span{display:block;margin-top:8px;font-size:15px;color:#cbd5e1;font-weight:500}
@@ -658,6 +658,26 @@
 .apply-bar .wa svg{width:20px;height:20px;fill:currentColor;flex:none}
 @media (max-width:900px){ .apply-bar{display:flex} body{padding-bottom:calc(92px + env(safe-area-inset-bottom))} }
 @media (prefers-reduced-motion: reduce){ .apply-bar{transition:none} }
+
+/* Dovada: cifre + promisiuni intr-un singur card */
+.trustbar .trust-card{display:block;padding:30px 34px}
+.trustbar .dovada-cifre{grid-template-columns:repeat(4,1fr);gap:18px}
+.dovada-cifre .stat b{font-size:clamp(32px,3.6vw,46px);color:var(--c,var(--blue))}
+.dovada-cifre .stat span{color:var(--muted);font-size:14px;margin-top:4px}
+.dovada-cifre .stat:nth-child(1){--c:#2563eb}
+.dovada-cifre .stat:nth-child(2){--c:#ea7a0c}
+.dovada-cifre .stat:nth-child(3){--c:#16a34a}
+.dovada-cifre .stat:nth-child(4){--c:#c2410c}
+.dovada-sep{height:1px;background:var(--line);margin:24px 0}
+.dovada-promisiuni{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.trust-item .ico svg{width:24px;height:24px;fill:currentColor}
+@media(max-width:960px){.dovada-promisiuni{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){
+  .trustbar .trust-card{padding:22px 18px}
+  .trustbar .dovada-cifre{grid-template-columns:1fr 1fr;gap:18px 12px}
+  .dovada-promisiuni{grid-template-columns:1fr;gap:16px}
+  .dovada-sep{margin:20px 0}
+}
 </style>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"EmploymentAgency","name":"Smart Konsult Plus SRL","alternateName":"Smart Konsult Plus","url":"https://smartkonsultplus.ro/","description":"Agenție de recrutare și plasare de forță de muncă în Germania. Conectăm oameni cu locuri de muncă, legal și transparent.","email":"job@smartkonsultplus.ro","telephone":["+40774772117"],"address":{"@type":"PostalAddress","addressLocality":"Cluj-Napoca","addressCountry":"RO"},"areaServed":[{"@type":"Country","name":"Germania"},{"@type":"Country","name":"România"}],"knowsLanguage":["ro","de","en","es","uk","hu"]}</script>
@@ -778,11 +798,21 @@
 <div class="trustbar">
   <div class="container">
     <div class="trust-card">
-      <div class="trust-item"><div class="ico">🛡️</div><div><b>Firme verificate</b><span>Colaborăm doar cu angajatori germani serioși</span></div></div>
-      <div class="trust-item"><div class="ico">📄</div><div><b>Contract legal</b><span>Acte în regulă, salariu garantat prin contract</span></div></div>
-      <div class="trust-item"><div class="ico">🚐</div><div><b>Transport asigurat</b><span>Te ajutăm să ajungi la locul de muncă</span></div></div>
-      <div class="trust-item"><div class="ico">🤝</div><div><b>Sprijin în română</b><span>Te însoțim la integrare, pas cu pas</span></div></div>
+<div class="stat-grid dovada-cifre">
+      <div class="stat"><b data-n="236" data-suf="+">236+</b><span>Persoane plasate în Germania în 2026</span></div>
+      <div class="stat"><b data-n="60" data-suf="+">60+</b><span>Posturi deschise acum</span></div>
+      <div class="stat"><b data-n="7" data-suf="">7</b><span>Parteneri germani de top</span></div>
+      <div class="stat"><b data-n="24" data-suf="h">24h</b><span>Timp maxim de răspuns</span></div>
     </div>
+  
+<div class="dovada-sep"></div>
+<div class="dovada-promisiuni">
+      <div class="trust-item"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 14.2-3.5-3.5 1.4-1.4 2.1 2.1 5-5 1.4 1.4-6.4 6.4Z"/></svg></div><div><b>Firme verificate</b><span>Colaborăm doar cu angajatori germani serioși</span></div></div>
+      <div class="trust-item"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm-1 7V3.5L18.5 9H13ZM8 13h8v2H8v-2Zm0 4h8v2H8v-2Z"/></svg></div><div><b>Contract legal</b><span>Acte în regulă, salariu garantat prin contract</span></div></div>
+      <div class="trust-item"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h11v9H3V6Zm13 3h3l2 3v3h-5V9ZM6.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm11 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z"/></svg></div><div><b>Transport asigurat</b><span>Te ajutăm să ajungi la locul de muncă</span></div></div>
+      <div class="trust-item"><div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg></div><div><b>Sprijin în română</b><span>Te însoțim la integrare, pas cu pas</span></div></div>
+    </div>
+</div>
   </div>
 </div>
 
@@ -802,16 +832,7 @@
 </div>
 
 <!-- Bandă statistici -->
-<div class="statband">
-  <div class="container">
-    <div class="stat-grid">
-      <div class="stat"><b data-n="236" data-suf="+">236+</b><span>Persoane plasate în Germania în 2026</span></div>
-      <div class="stat"><b data-n="60" data-suf="+">60+</b><span>Posturi deschise acum</span></div>
-      <div class="stat"><b data-n="7" data-suf="">7</b><span>Parteneri germani de top</span></div>
-      <div class="stat"><b data-n="24" data-suf="h">24h</b><span>Timp maxim de răspuns</span></div>
-    </div>
-  </div>
-</div>
+
 
 <section id="joburi">
   <div class="container center">
