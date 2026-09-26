@@ -678,6 +678,35 @@
   .dovada-promisiuni{grid-template-columns:1fr;gap:16px}
   .dovada-sep{margin:20px 0}
 }
+
+/* Sectiunea video */
+.vid-sec{background:linear-gradient(180deg,var(--bg),#fff)}
+.vid-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px;perspective:1100px}
+.vid{margin:0;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;transform-style:preserve-3d;transition:transform .35s ease,box-shadow .35s ease}
+.vid:hover{box-shadow:0 18px 40px rgba(15,42,74,.16)}
+.vid-poster{position:relative;display:block;width:100%;aspect-ratio:16/10;border:0;padding:0;cursor:pointer;overflow:hidden;
+  background:radial-gradient(120% 90% at 20% 10%,color-mix(in srgb,var(--c) 55%,#fff) 0%,var(--c) 55%,color-mix(in srgb,var(--c) 60%,#0f2a4a) 100%);background-size:cover;background-position:center}
+.vid-poster[disabled]{cursor:default}
+.vid-poster::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(15,42,74,.45))}
+.vid-ic{position:absolute;right:-14px;bottom:-18px;width:130px;height:130px;opacity:.16;color:#fff}
+.vid-ic svg{width:100%;height:100%;fill:currentColor}
+.vid-play{position:absolute;left:50%;top:50%;width:62px;height:62px;transform:translate(-50%,-50%);z-index:1;transition:transform .3s ease}
+.vid-play circle{fill:rgba(255,255,255,.94)}
+.vid-play path{fill:var(--c)}
+.vid-poster:not([disabled]):hover .vid-play{transform:translate(-50%,-50%) scale(1.1)}
+.vid-poster[disabled] .vid-play{opacity:.55}
+.vid-soon{position:absolute;left:12px;top:12px;z-index:1;background:rgba(15,42,74,.72);color:#fff;font-size:12.5px;font-weight:700;padding:5px 10px;border-radius:99px;letter-spacing:.02em}
+.vid-media{display:block;width:100%;aspect-ratio:16/10;background:#000;border:0;object-fit:contain}
+.vid figcaption{padding:16px 18px 20px}
+.vid figcaption b{display:block;color:var(--navy);font-size:16.5px;margin-top:8px}
+.vid figcaption span:last-child{display:block;font-size:14px;color:var(--muted);margin-top:3px}
+.vid-chip{display:inline-block;font-size:12px;font-weight:700;color:var(--c);background:color-mix(in srgb,var(--c) 11%,#fff);padding:4px 10px;border-radius:99px}
+@media(max-width:960px){.vid-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){
+  .vid-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:26px -16px 0;padding:4px 16px 18px;scrollbar-width:none}
+  .vid-grid::-webkit-scrollbar{display:none}
+  .vid{flex:0 0 78%;scroll-snap-align:center}
+}
 </style>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"EmploymentAgency","name":"Smart Konsult Plus SRL","alternateName":"Smart Konsult Plus","url":"https://smartkonsultplus.ro/","description":"Agenție de recrutare și plasare de forță de muncă în Germania. Conectăm oameni cu locuri de muncă, legal și transparent.","email":"job@smartkonsultplus.ro","telephone":["+40774772117"],"address":{"@type":"PostalAddress","addressLocality":"Cluj-Napoca","addressCountry":"RO"},"areaServed":[{"@type":"Country","name":"Germania"},{"@type":"Country","name":"România"}],"knowsLanguage":["ro","de","en","es","uk","hu"]}</script>
@@ -879,6 +908,53 @@
           <a class="btn btn-primary" style="background:var(--navy)" href="#contact">Lasă-ne datele tale</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video: cazari, locuri de munca, oameni -->
+<section id="video" class="vid-sec">
+  <div class="container center">
+    <span class="kicker">Filmat de noi</span>
+    <h2>Vezi cu ochii tăi unde lucrezi și unde stai</h2>
+    <p class="lead">Cazările, halele și oamenii noștri, filmați la fața locului. Fără poze luate de pe internet.</p>
+    <div class="vid-grid" style="text-align:left">
+      <figure class="vid" data-cat="cazare" data-src="" data-yt="" data-poster="" style="--c:#2563eb">
+        <button class="vid-poster" type="button" aria-label="Redă filmul" disabled>
+          <span class="vid-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 11h3v9h5v-6h4v6h5v-9h3L12 3Z"/></svg></span><svg class="vid-play" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="31"/><path d="M26 20v24l19-12z"/></svg><span class="vid-soon">Film în curând</span>
+        </button>
+        <figcaption><span class="vid-chip">Cazare</span><b>Cazarea pentru logistică</b><span>Camere, bucătărie, baie. Chiria se reține din salariu</span></figcaption>
+      </figure>
+      <figure class="vid" data-cat="cazare" data-src="" data-yt="" data-poster="" style="--c:#2563eb">
+        <button class="vid-poster" type="button" aria-label="Redă filmul" disabled>
+          <span class="vid-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 11h3v9h5v-6h4v6h5v-9h3L12 3Z"/></svg></span><svg class="vid-play" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="31"/><path d="M26 20v24l19-12z"/></svg><span class="vid-soon">Film în curând</span>
+        </button>
+        <figcaption><span class="vid-chip">Cazare</span><b>Cazarea pentru construcții</b><span>Plătită de Smart Konsult</span></figcaption>
+      </figure>
+      <figure class="vid" data-cat="munca" data-src="" data-yt="" data-poster="" style="--c:#16a34a">
+        <button class="vid-poster" type="button" aria-label="Redă filmul" disabled>
+          <span class="vid-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20V9l6 3V9l6 3V5h8v15H2Zm4-2h2v-3H6v3Zm5 0h2v-3h-2v3Zm5 0h2v-3h-2v3Z"/></svg></span><svg class="vid-play" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="31"/><path d="M26 20v24l19-12z"/></svg><span class="vid-soon">Film în curând</span>
+        </button>
+        <figcaption><span class="vid-chip">Loc de muncă</span><b>Hala de logistică</b><span>Cum arată o zi de lucru</span></figcaption>
+      </figure>
+      <figure class="vid" data-cat="munca" data-src="" data-yt="" data-poster="" style="--c:#ea7a0c">
+        <button class="vid-poster" type="button" aria-label="Redă filmul" disabled>
+          <span class="vid-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20V9l6 3V9l6 3V5h8v15H2Zm4-2h2v-3H6v3Zm5 0h2v-3h-2v3Zm5 0h2v-3h-2v3Z"/></svg></span><svg class="vid-play" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="31"/><path d="M26 20v24l19-12z"/></svg><span class="vid-soon">Film în curând</span>
+        </button>
+        <figcaption><span class="vid-chip">Loc de muncă</span><b>Pe șantier, la zidărie</b><span>Zidărie aparentă, cu echipa noastră</span></figcaption>
+      </figure>
+      <figure class="vid" data-cat="oameni" data-src="" data-yt="" data-poster="" style="--c:#c2410c">
+        <button class="vid-poster" type="button" aria-label="Redă filmul" disabled>
+          <span class="vid-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg></span><svg class="vid-play" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="31"/><path d="M26 20v24l19-12z"/></svg><span class="vid-soon">Film în curând</span>
+        </button>
+        <figcaption><span class="vid-chip">Interviu</span><b>Melania povestește</b><span>Ce spune despre lucrul cu noi</span></figcaption>
+      </figure>
+      <figure class="vid" data-cat="oameni" data-src="" data-yt="" data-poster="" style="--c:#c2410c">
+        <button class="vid-poster" type="button" aria-label="Redă filmul" disabled>
+          <span class="vid-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5Z"/></svg></span><svg class="vid-play" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="31"/><path d="M26 20v24l19-12z"/></svg><span class="vid-soon">Film în curând</span>
+        </button>
+        <figcaption><span class="vid-chip">Interviu</span><b>Gunter povestește</b><span>Ce spune despre lucrul cu noi</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
@@ -1703,6 +1779,27 @@ DD({"Logistică, producție, construcții — joburi reale, cu contract german."
 DD({"Angajatori verificați":["Geprüfte Arbeitgeber","Verified employers","Empleadores verificados","Перевірені роботодавці","Ellenőrzött munkaadók"],
 "Procedeul 135 (MAG sârmă plină): ISO 9606-1 – 135 P BW FM1 S t15 PA ss mb (t ≥ 12 mm) · 135 P FW FM1 S t10 PD ml":["Verfahren 135 (MAG Massivdraht): ISO 9606-1 – 135 P BW FM1 S t15 PA ss mb (t ≥ 12 mm) · 135 P FW FM1 S t10 PD ml","Process 135 (MAG solid wire): ISO 9606-1 – 135 P BW FM1 S t15 PA ss mb (t ≥ 12 mm) · 135 P FW FM1 S t10 PD ml","Proceso 135 (MAG hilo macizo): ISO 9606-1 – 135 P BW FM1 S t15 PA ss mb (t ≥ 12 mm) · 135 P FW FM1 S t10 PD ml","Процес 135 (MAG суцільний дріт): ISO 9606-1 – 135 P BW FM1 S t15 PA ss mb (t ≥ 12 mm) · 135 P FW FM1 S t10 PD ml","135-ös eljárás (MAG tömör huzal): ISO 9606-1 – 135 P BW FM1 S t15 PA ss mb (t ≥ 12 mm) · 135 P FW FM1 S t10 PD ml"],
 "Procedeul 136 (MAG sârmă tubulară): ISO 9606-1 – 136 P BW FM1 P t15 PF ss mb (t ≥ 12 mm) · 136 P FW FM1 P t10 PF ml":["Verfahren 136 (MAG Fülldraht): ISO 9606-1 – 136 P BW FM1 P t15 PF ss mb (t ≥ 12 mm) · 136 P FW FM1 P t10 PF ml","Process 136 (MAG flux-cored wire): ISO 9606-1 – 136 P BW FM1 P t15 PF ss mb (t ≥ 12 mm) · 136 P FW FM1 P t10 PF ml","Proceso 136 (MAG hilo tubular): ISO 9606-1 – 136 P BW FM1 P t15 PF ss mb (t ≥ 12 mm) · 136 P FW FM1 P t10 PF ml","Процес 136 (MAG порошковий дріт): ISO 9606-1 – 136 P BW FM1 P t15 PF ss mb (t ≥ 12 mm) · 136 P FW FM1 P t10 PF ml","136-os eljárás (MAG porbeles huzal): ISO 9606-1 – 136 P BW FM1 P t15 PF ss mb (t ≥ 12 mm) · 136 P FW FM1 P t10 PF ml"]});
+DD({
+"Filmat de noi":["Von uns gefilmt","Filmed by us","Grabado por nosotros","Знято нами","Mi forgattuk"],
+"Vezi cu ochii tăi unde lucrezi și unde stai":["Sieh selbst, wo du arbeitest und wohnst","See for yourself where you work and live","Mira con tus propios ojos dónde trabajas y vives","Подивись на власні очі, де працюватимеш і житимеш","Nézd meg a saját szemeddel, hol dolgozol és hol laksz"],
+"Cazările, halele și oamenii noștri, filmați la fața locului. Fără poze luate de pe internet.":["Unterkünfte, Hallen und unsere Leute, vor Ort gefilmt. Keine Bilder aus dem Internet.","Housing, warehouses and our people, filmed on site. No pictures taken from the internet.","Alojamientos, naves y nuestra gente, grabados en el lugar. Sin fotos sacadas de internet.","Житло, цехи та наші люди, зняті на місці. Жодних фото з інтернету.","Szállások, csarnokok és a mi embereink, a helyszínen forgatva. Nem internetről vett képek."],
+"Cazare":["Unterkunft","Housing","Alojamiento","Житло","Szállás"],
+"Loc de muncă":["Arbeitsplatz","Workplace","Lugar de trabajo","Робоче місце","Munkahely"],
+"Interviu":["Interview","Interview","Entrevista","Інтерв'ю","Interjú"],
+"Film în curând":["Video folgt bald","Video coming soon","Vídeo próximamente","Відео незабаром","Videó hamarosan"],
+"Redă filmul":["Video abspielen","Play video","Reproducir vídeo","Відтворити відео","Videó lejátszása"],
+"Cazarea pentru logistică":["Unterkunft für die Logistik","Housing for logistics","Alojamiento para logística","Житло для логістики","Szállás a logisztikához"],
+"Camere, bucătărie, baie. Chiria se reține din salariu":["Zimmer, Küche, Bad. Die Miete wird vom Lohn abgezogen","Rooms, kitchen, bathroom. Rent is deducted from the salary","Habitaciones, cocina, baño. El alquiler se descuenta del salario","Кімнати, кухня, ванна. Оренда утримується із зарплати","Szobák, konyha, fürdő. A lakbért a fizetésből vonják le"],
+"Cazarea pentru construcții":["Unterkunft für den Bau","Housing for construction","Alojamiento para construcción","Житло для будівництва","Szállás az építőiparhoz"],
+"Plătită de Smart Konsult":["Von Smart Konsult bezahlt","Paid by Smart Konsult","Pagado por Smart Konsult","Оплачує Smart Konsult","A Smart Konsult fizeti"],
+"Hala de logistică":["Die Logistikhalle","The logistics warehouse","La nave logística","Логістичний склад","A logisztikai csarnok"],
+"Cum arată o zi de lucru":["So sieht ein Arbeitstag aus","What a working day looks like","Cómo es un día de trabajo","Як виглядає робочий день","Így néz ki egy munkanap"],
+"Pe șantier, la zidărie":["Auf der Baustelle, beim Mauern","On site, bricklaying","En la obra, albañilería","На будівництві, мурування","Az építkezésen, falazás"],
+"Zidărie aparentă, cu echipa noastră":["Sichtmauerwerk, mit unserem Team","Facing brickwork, with our team","Ladrillo visto, con nuestro equipo","Лицьова кладка, з нашою командою","Látszó téglafalazás, a csapatunkkal"],
+"Melania povestește":["Melania erzählt","Melania's story","Melania cuenta","Меланія розповідає","Melania mesél"],
+"Gunter povestește":["Gunter erzählt","Gunter's story","Gunter cuenta","Гюнтер розповідає","Gunter mesél"],
+"Ce spune despre lucrul cu noi":["Über die Zusammenarbeit mit uns","On working with us","Sobre trabajar con nosotros","Про роботу з нами","A velünk való munkáról"]
+});
 var i18nNodes=[], i18nAttrs=[];
 function i18nCollect(){
   var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null);
@@ -1894,6 +1991,45 @@ function ckSet(v){try{localStorage.setItem("skp_cookie_consent",v?"all":"necessa
   addEventListener('resize', hotaraste, {passive:true});
   document.addEventListener('click', function(e){ if(e.target.closest('#ck-bar')) setTimeout(hotaraste,120); });
   hotaraste();
+})();
+</script>
+
+<script>
+/* Video: facada — filmul se incarca doar la click. data-src = mp4 din repo, data-yt = id YouTube */
+(function(){
+  var cards=document.querySelectorAll('.vid');
+  cards.forEach(function(f){
+    var src=f.getAttribute('data-src'), yt=f.getAttribute('data-yt'), po=f.getAttribute('data-poster');
+    var btn=f.querySelector('.vid-poster');
+    if(po) btn.style.backgroundImage='url("'+po+'")';
+    if(!src && !yt) return;
+    btn.disabled=false;
+    var soon=btn.querySelector('.vid-soon'); if(soon) soon.remove();
+    btn.addEventListener('click',function(){
+      var m;
+      if(yt){
+        m=document.createElement('iframe');
+        m.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(yt)+'?autoplay=1&rel=0';
+        m.allow='autoplay; encrypted-media; picture-in-picture'; m.allowFullscreen=true;
+        m.title=(f.querySelector('b')||{}).textContent||'Film';
+      } else {
+        m=document.createElement('video');
+        m.src=src; m.controls=true; m.autoplay=true; m.playsInline=true; m.preload='metadata';
+      }
+      m.className='vid-media';
+      btn.replaceWith(m);
+    });
+  });
+  /* 3D: cardul se inclina usor dupa mouse, doar pe calculator */
+  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    cards.forEach(function(f){
+      f.addEventListener('mousemove',function(e){
+        var r=f.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+        f.style.transform='rotateY('+(x*9)+'deg) rotateX('+(-y*9)+'deg) translateZ(6px)';
+      });
+      f.addEventListener('mouseleave',function(){ f.style.transform=''; });
+    });
+  }
 })();
 </script>
 </body>

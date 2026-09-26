@@ -47,6 +47,20 @@ git commit -m "ce am schimbat"
 git push
 ```
 
+## Cum pui un film în secțiunea video
+
+Fiecare card din secțiunea „Vezi cu ochii tăi” are trei câmpuri goale în `index.html`:
+
+```html
+<figure class="vid" data-cat="cazare" data-src="" data-yt="" data-poster="" ...>
+```
+
+- `data-src` — un film pus în folderul `video/` din repo, de exemplu `video/cazare-logistica.mp4`. Ține-l sub 20 MB (filmat pe telefon, 30–60 de secunde, 720p)
+- `data-yt` — sau, în loc de fișier, codul unui film de pe YouTube (partea de după `v=` din link)
+- `data-poster` — o poză de copertă, opțional, de exemplu `video/cazare-logistica.jpg`
+
+Cât timp câmpurile sunt goale, cardul arată „Film în curând”. Filmul se descarcă doar când cineva apasă pe el, așa că pagina rămâne ușoară pe telefon.
+
 ## Cum te întorci la o versiune veche
 
 Pe GitHub, fila **Commits**, alegi versiunea dorită și apeși **Revert**.
